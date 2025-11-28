@@ -258,7 +258,6 @@ docs/Model/V2PayeeBatchPayoutsResponseDataPagination.md
 docs/Model/V2ProcessorBatchPayoutResponse.md
 docs/Model/V2ProcessorBatchPayoutsResponse.md
 docs/Model/V2TransactionResponse.md
-docs/Model/V2TransactionResponseData.md
 docs/Model/V3AccountIntelligenceRequestObject.md
 docs/Model/V3AccountIntelligenceThresholdResponse.md
 docs/Model/V3AccountIntelligenceV1Response.md
@@ -556,7 +555,6 @@ lib/Model/V2PayeeBatchPayoutsResponseDataPagination.php
 lib/Model/V2ProcessorBatchPayoutResponse.php
 lib/Model/V2ProcessorBatchPayoutsResponse.php
 lib/Model/V2TransactionResponse.php
-lib/Model/V2TransactionResponseData.php
 lib/Model/V3AccountIntelligenceRequestObject.php
 lib/Model/V3AccountIntelligenceThresholdResponse.php
 lib/Model/V3AccountIntelligenceV1Response.php
@@ -849,7 +847,6 @@ test/Model/V2PayeeBatchPayoutsResponseDataTest.php
 test/Model/V2PayeeBatchPayoutsResponseTest.php
 test/Model/V2ProcessorBatchPayoutResponseTest.php
 test/Model/V2ProcessorBatchPayoutsResponseTest.php
-test/Model/V2TransactionResponseDataTest.php
 test/Model/V2TransactionResponseTest.php
 test/Model/V3AccountIntelligenceRequestObjectTest.php
 test/Model/V3AccountIntelligenceThresholdResponseTest.php

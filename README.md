@@ -389,7 +389,6 @@ Class | Method | HTTP request | Description
 - [V2ProcessorBatchPayoutResponse](docs/Model/V2ProcessorBatchPayoutResponse.md)
 - [V2ProcessorBatchPayoutsResponse](docs/Model/V2ProcessorBatchPayoutsResponse.md)
 - [V2TransactionResponse](docs/Model/V2TransactionResponse.md)
-- [V2TransactionResponseData](docs/Model/V2TransactionResponseData.md)
 - [V3AccountIntelligenceRequestObject](docs/Model/V3AccountIntelligenceRequestObject.md)
 - [V3AccountIntelligenceThresholdResponse](docs/Model/V3AccountIntelligenceThresholdResponse.md)
 - [V3AccountIntelligenceV1Response](docs/Model/V3AccountIntelligenceV1Response.md)

@@ -57,7 +57,38 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\TheLogicStudio\GrailPay\Model\V2TransactionResponseData'
+        'uuid' => 'string',
+        'payer_uuid' => 'string',
+        'payee_uuid' => 'string',
+        'processor_mid' => 'string',
+        'batch_payout_id' => 'string',
+        'transaction_status' => 'string',
+        'capture_status' => 'string',
+        'payout_status' => 'string',
+        'clawback_status' => 'string',
+        'reverse_payout_status' => 'string',
+        'currency' => 'string',
+        'amount' => 'int',
+        'transaction_fee' => 'int',
+        'client_reference_id' => 'string',
+        'payout_delay_days' => 'int',
+        'company_name' => 'string',
+        'description' => 'string',
+        'addenda' => 'string',
+        'type' => 'string',
+        'ach_return_code' => 'string',
+        'cancel_reason' => 'string',
+        'spped' => 'string',
+        'failure_code' => 'string',
+        'failure_reason' => 'string',
+        'payer_bank_account' => '\TheLogicStudio\GrailPay\Model\V1TransactionResponsePayerBankAccount',
+        'payee_bank_account' => '\TheLogicStudio\GrailPay\Model\V1TransactionResponsePayeeBankAccount',
+        'payout_ach_return_code' => '\DateTime',
+        'payout_failure_reason' => '\DateTime',
+        'vendor_name' => '\DateTime',
+        'trace_ids' => '\TheLogicStudio\GrailPay\Model\V1TransactionResponseTraceIds',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -68,7 +99,38 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'uuid' => null,
+        'payer_uuid' => null,
+        'payee_uuid' => null,
+        'processor_mid' => null,
+        'batch_payout_id' => null,
+        'transaction_status' => null,
+        'capture_status' => null,
+        'payout_status' => null,
+        'clawback_status' => null,
+        'reverse_payout_status' => null,
+        'currency' => null,
+        'amount' => null,
+        'transaction_fee' => null,
+        'client_reference_id' => null,
+        'payout_delay_days' => null,
+        'company_name' => null,
+        'description' => null,
+        'addenda' => null,
+        'type' => null,
+        'ach_return_code' => null,
+        'cancel_reason' => null,
+        'spped' => null,
+        'failure_code' => null,
+        'failure_reason' => null,
+        'payer_bank_account' => null,
+        'payee_bank_account' => null,
+        'payout_ach_return_code' => 'date-time',
+        'payout_failure_reason' => 'date-time',
+        'vendor_name' => 'date-time',
+        'trace_ids' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time'
     ];
 
     /**
@@ -77,7 +139,38 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'data' => false
+        'uuid' => false,
+        'payer_uuid' => false,
+        'payee_uuid' => false,
+        'processor_mid' => false,
+        'batch_payout_id' => false,
+        'transaction_status' => false,
+        'capture_status' => false,
+        'payout_status' => false,
+        'clawback_status' => true,
+        'reverse_payout_status' => true,
+        'currency' => false,
+        'amount' => false,
+        'transaction_fee' => false,
+        'client_reference_id' => false,
+        'payout_delay_days' => false,
+        'company_name' => false,
+        'description' => true,
+        'addenda' => true,
+        'type' => false,
+        'ach_return_code' => false,
+        'cancel_reason' => true,
+        'spped' => false,
+        'failure_code' => true,
+        'failure_reason' => true,
+        'payer_bank_account' => false,
+        'payee_bank_account' => false,
+        'payout_ach_return_code' => false,
+        'payout_failure_reason' => false,
+        'vendor_name' => false,
+        'trace_ids' => false,
+        'created_at' => false,
+        'updated_at' => false
     ];
 
     /**
@@ -166,7 +259,38 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'uuid' => 'uuid',
+        'payer_uuid' => 'payer_uuid',
+        'payee_uuid' => 'payee_uuid',
+        'processor_mid' => 'processor_mid',
+        'batch_payout_id' => 'batch_payout_id',
+        'transaction_status' => 'transaction_status',
+        'capture_status' => 'capture_status',
+        'payout_status' => 'payout_status',
+        'clawback_status' => 'clawback_status',
+        'reverse_payout_status' => 'reverse_payout_status',
+        'currency' => 'currency',
+        'amount' => 'amount',
+        'transaction_fee' => 'transaction_fee',
+        'client_reference_id' => 'client_reference_id',
+        'payout_delay_days' => 'payout_delay_days',
+        'company_name' => 'company_name',
+        'description' => 'description',
+        'addenda' => 'addenda',
+        'type' => 'type',
+        'ach_return_code' => 'ach_return_code',
+        'cancel_reason' => 'cancel_reason',
+        'spped' => 'spped',
+        'failure_code' => 'failure_code',
+        'failure_reason' => 'failure_reason',
+        'payer_bank_account' => 'payer_bank_account',
+        'payee_bank_account' => 'payee_bank_account',
+        'payout_ach_return_code' => 'payout_ach_return_code',
+        'payout_failure_reason' => 'payout_failure_reason',
+        'vendor_name' => 'vendor_name',
+        'trace_ids' => 'trace_ids',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -175,7 +299,38 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'uuid' => 'setUuid',
+        'payer_uuid' => 'setPayerUuid',
+        'payee_uuid' => 'setPayeeUuid',
+        'processor_mid' => 'setProcessorMid',
+        'batch_payout_id' => 'setBatchPayoutId',
+        'transaction_status' => 'setTransactionStatus',
+        'capture_status' => 'setCaptureStatus',
+        'payout_status' => 'setPayoutStatus',
+        'clawback_status' => 'setClawbackStatus',
+        'reverse_payout_status' => 'setReversePayoutStatus',
+        'currency' => 'setCurrency',
+        'amount' => 'setAmount',
+        'transaction_fee' => 'setTransactionFee',
+        'client_reference_id' => 'setClientReferenceId',
+        'payout_delay_days' => 'setPayoutDelayDays',
+        'company_name' => 'setCompanyName',
+        'description' => 'setDescription',
+        'addenda' => 'setAddenda',
+        'type' => 'setType',
+        'ach_return_code' => 'setAchReturnCode',
+        'cancel_reason' => 'setCancelReason',
+        'spped' => 'setSpped',
+        'failure_code' => 'setFailureCode',
+        'failure_reason' => 'setFailureReason',
+        'payer_bank_account' => 'setPayerBankAccount',
+        'payee_bank_account' => 'setPayeeBankAccount',
+        'payout_ach_return_code' => 'setPayoutAchReturnCode',
+        'payout_failure_reason' => 'setPayoutFailureReason',
+        'vendor_name' => 'setVendorName',
+        'trace_ids' => 'setTraceIds',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -184,7 +339,38 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'uuid' => 'getUuid',
+        'payer_uuid' => 'getPayerUuid',
+        'payee_uuid' => 'getPayeeUuid',
+        'processor_mid' => 'getProcessorMid',
+        'batch_payout_id' => 'getBatchPayoutId',
+        'transaction_status' => 'getTransactionStatus',
+        'capture_status' => 'getCaptureStatus',
+        'payout_status' => 'getPayoutStatus',
+        'clawback_status' => 'getClawbackStatus',
+        'reverse_payout_status' => 'getReversePayoutStatus',
+        'currency' => 'getCurrency',
+        'amount' => 'getAmount',
+        'transaction_fee' => 'getTransactionFee',
+        'client_reference_id' => 'getClientReferenceId',
+        'payout_delay_days' => 'getPayoutDelayDays',
+        'company_name' => 'getCompanyName',
+        'description' => 'getDescription',
+        'addenda' => 'getAddenda',
+        'type' => 'getType',
+        'ach_return_code' => 'getAchReturnCode',
+        'cancel_reason' => 'getCancelReason',
+        'spped' => 'getSpped',
+        'failure_code' => 'getFailureCode',
+        'failure_reason' => 'getFailureReason',
+        'payer_bank_account' => 'getPayerBankAccount',
+        'payee_bank_account' => 'getPayeeBankAccount',
+        'payout_ach_return_code' => 'getPayoutAchReturnCode',
+        'payout_failure_reason' => 'getPayoutFailureReason',
+        'vendor_name' => 'getVendorName',
+        'trace_ids' => 'getTraceIds',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -244,7 +430,38 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('data', $data ?? [], null);
+        $this->setIfExists('uuid', $data ?? [], null);
+        $this->setIfExists('payer_uuid', $data ?? [], null);
+        $this->setIfExists('payee_uuid', $data ?? [], null);
+        $this->setIfExists('processor_mid', $data ?? [], null);
+        $this->setIfExists('batch_payout_id', $data ?? [], null);
+        $this->setIfExists('transaction_status', $data ?? [], null);
+        $this->setIfExists('capture_status', $data ?? [], null);
+        $this->setIfExists('payout_status', $data ?? [], null);
+        $this->setIfExists('clawback_status', $data ?? [], null);
+        $this->setIfExists('reverse_payout_status', $data ?? [], null);
+        $this->setIfExists('currency', $data ?? [], null);
+        $this->setIfExists('amount', $data ?? [], null);
+        $this->setIfExists('transaction_fee', $data ?? [], null);
+        $this->setIfExists('client_reference_id', $data ?? [], null);
+        $this->setIfExists('payout_delay_days', $data ?? [], null);
+        $this->setIfExists('company_name', $data ?? [], null);
+        $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('addenda', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('ach_return_code', $data ?? [], null);
+        $this->setIfExists('cancel_reason', $data ?? [], null);
+        $this->setIfExists('spped', $data ?? [], null);
+        $this->setIfExists('failure_code', $data ?? [], null);
+        $this->setIfExists('failure_reason', $data ?? [], null);
+        $this->setIfExists('payer_bank_account', $data ?? [], null);
+        $this->setIfExists('payee_bank_account', $data ?? [], null);
+        $this->setIfExists('payout_ach_return_code', $data ?? [], null);
+        $this->setIfExists('payout_failure_reason', $data ?? [], null);
+        $this->setIfExists('vendor_name', $data ?? [], null);
+        $this->setIfExists('trace_ids', $data ?? [], null);
+        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('updated_at', $data ?? [], null);
     }
 
     /**
@@ -290,28 +507,914 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets data
+     * Gets uuid
      *
-     * @return \TheLogicStudio\GrailPay\Model\V2TransactionResponseData|null
+     * @return string|null
      */
-    public function getData()
+    public function getUuid()
     {
-        return $this->container['data'];
+        return $this->container['uuid'];
     }
 
     /**
-     * Sets data
+     * Sets uuid
      *
-     * @param \TheLogicStudio\GrailPay\Model\V2TransactionResponseData|null $data data
+     * @param string|null $uuid uuid
      *
      * @return self
      */
-    public function setData($data)
+    public function setUuid($uuid)
     {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+        if (is_null($uuid)) {
+            throw new \InvalidArgumentException('non-nullable uuid cannot be null');
         }
-        $this->container['data'] = $data;
+        $this->container['uuid'] = $uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets payer_uuid
+     *
+     * @return string|null
+     */
+    public function getPayerUuid()
+    {
+        return $this->container['payer_uuid'];
+    }
+
+    /**
+     * Sets payer_uuid
+     *
+     * @param string|null $payer_uuid payer_uuid
+     *
+     * @return self
+     */
+    public function setPayerUuid($payer_uuid)
+    {
+        if (is_null($payer_uuid)) {
+            throw new \InvalidArgumentException('non-nullable payer_uuid cannot be null');
+        }
+        $this->container['payer_uuid'] = $payer_uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets payee_uuid
+     *
+     * @return string|null
+     */
+    public function getPayeeUuid()
+    {
+        return $this->container['payee_uuid'];
+    }
+
+    /**
+     * Sets payee_uuid
+     *
+     * @param string|null $payee_uuid payee_uuid
+     *
+     * @return self
+     */
+    public function setPayeeUuid($payee_uuid)
+    {
+        if (is_null($payee_uuid)) {
+            throw new \InvalidArgumentException('non-nullable payee_uuid cannot be null');
+        }
+        $this->container['payee_uuid'] = $payee_uuid;
+
+        return $this;
+    }
+
+    /**
+     * Gets processor_mid
+     *
+     * @return string|null
+     */
+    public function getProcessorMid()
+    {
+        return $this->container['processor_mid'];
+    }
+
+    /**
+     * Sets processor_mid
+     *
+     * @param string|null $processor_mid processor_mid
+     *
+     * @return self
+     */
+    public function setProcessorMid($processor_mid)
+    {
+        if (is_null($processor_mid)) {
+            throw new \InvalidArgumentException('non-nullable processor_mid cannot be null');
+        }
+        $this->container['processor_mid'] = $processor_mid;
+
+        return $this;
+    }
+
+    /**
+     * Gets batch_payout_id
+     *
+     * @return string|null
+     */
+    public function getBatchPayoutId()
+    {
+        return $this->container['batch_payout_id'];
+    }
+
+    /**
+     * Sets batch_payout_id
+     *
+     * @param string|null $batch_payout_id batch_payout_id
+     *
+     * @return self
+     */
+    public function setBatchPayoutId($batch_payout_id)
+    {
+        if (is_null($batch_payout_id)) {
+            throw new \InvalidArgumentException('non-nullable batch_payout_id cannot be null');
+        }
+        $this->container['batch_payout_id'] = $batch_payout_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_status
+     *
+     * @return string|null
+     */
+    public function getTransactionStatus()
+    {
+        return $this->container['transaction_status'];
+    }
+
+    /**
+     * Sets transaction_status
+     *
+     * @param string|null $transaction_status transaction_status
+     *
+     * @return self
+     */
+    public function setTransactionStatus($transaction_status)
+    {
+        if (is_null($transaction_status)) {
+            throw new \InvalidArgumentException('non-nullable transaction_status cannot be null');
+        }
+        $this->container['transaction_status'] = $transaction_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets capture_status
+     *
+     * @return string|null
+     */
+    public function getCaptureStatus()
+    {
+        return $this->container['capture_status'];
+    }
+
+    /**
+     * Sets capture_status
+     *
+     * @param string|null $capture_status capture_status
+     *
+     * @return self
+     */
+    public function setCaptureStatus($capture_status)
+    {
+        if (is_null($capture_status)) {
+            throw new \InvalidArgumentException('non-nullable capture_status cannot be null');
+        }
+        $this->container['capture_status'] = $capture_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets payout_status
+     *
+     * @return string|null
+     */
+    public function getPayoutStatus()
+    {
+        return $this->container['payout_status'];
+    }
+
+    /**
+     * Sets payout_status
+     *
+     * @param string|null $payout_status payout_status
+     *
+     * @return self
+     */
+    public function setPayoutStatus($payout_status)
+    {
+        if (is_null($payout_status)) {
+            throw new \InvalidArgumentException('non-nullable payout_status cannot be null');
+        }
+        $this->container['payout_status'] = $payout_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets clawback_status
+     *
+     * @return string|null
+     */
+    public function getClawbackStatus()
+    {
+        return $this->container['clawback_status'];
+    }
+
+    /**
+     * Sets clawback_status
+     *
+     * @param string|null $clawback_status clawback_status
+     *
+     * @return self
+     */
+    public function setClawbackStatus($clawback_status)
+    {
+        if (is_null($clawback_status)) {
+            array_push($this->openAPINullablesSetToNull, 'clawback_status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('clawback_status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['clawback_status'] = $clawback_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets reverse_payout_status
+     *
+     * @return string|null
+     */
+    public function getReversePayoutStatus()
+    {
+        return $this->container['reverse_payout_status'];
+    }
+
+    /**
+     * Sets reverse_payout_status
+     *
+     * @param string|null $reverse_payout_status reverse_payout_status
+     *
+     * @return self
+     */
+    public function setReversePayoutStatus($reverse_payout_status)
+    {
+        if (is_null($reverse_payout_status)) {
+            array_push($this->openAPINullablesSetToNull, 'reverse_payout_status');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('reverse_payout_status', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['reverse_payout_status'] = $reverse_payout_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     *
+     * @return string|null
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     *
+     * @param string|null $currency currency
+     *
+     * @return self
+     */
+    public function setCurrency($currency)
+    {
+        if (is_null($currency)) {
+            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        }
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int|null
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int|null $amount amount
+     *
+     * @return self
+     */
+    public function setAmount($amount)
+    {
+        if (is_null($amount)) {
+            throw new \InvalidArgumentException('non-nullable amount cannot be null');
+        }
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_fee
+     *
+     * @return int|null
+     */
+    public function getTransactionFee()
+    {
+        return $this->container['transaction_fee'];
+    }
+
+    /**
+     * Sets transaction_fee
+     *
+     * @param int|null $transaction_fee transaction_fee
+     *
+     * @return self
+     */
+    public function setTransactionFee($transaction_fee)
+    {
+        if (is_null($transaction_fee)) {
+            throw new \InvalidArgumentException('non-nullable transaction_fee cannot be null');
+        }
+        $this->container['transaction_fee'] = $transaction_fee;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_reference_id
+     *
+     * @return string|null
+     */
+    public function getClientReferenceId()
+    {
+        return $this->container['client_reference_id'];
+    }
+
+    /**
+     * Sets client_reference_id
+     *
+     * @param string|null $client_reference_id client_reference_id
+     *
+     * @return self
+     */
+    public function setClientReferenceId($client_reference_id)
+    {
+        if (is_null($client_reference_id)) {
+            throw new \InvalidArgumentException('non-nullable client_reference_id cannot be null');
+        }
+        $this->container['client_reference_id'] = $client_reference_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets payout_delay_days
+     *
+     * @return int|null
+     */
+    public function getPayoutDelayDays()
+    {
+        return $this->container['payout_delay_days'];
+    }
+
+    /**
+     * Sets payout_delay_days
+     *
+     * @param int|null $payout_delay_days payout_delay_days
+     *
+     * @return self
+     */
+    public function setPayoutDelayDays($payout_delay_days)
+    {
+        if (is_null($payout_delay_days)) {
+            throw new \InvalidArgumentException('non-nullable payout_delay_days cannot be null');
+        }
+        $this->container['payout_delay_days'] = $payout_delay_days;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_name
+     *
+     * @return string|null
+     */
+    public function getCompanyName()
+    {
+        return $this->container['company_name'];
+    }
+
+    /**
+     * Sets company_name
+     *
+     * @param string|null $company_name company_name
+     *
+     * @return self
+     */
+    public function setCompanyName($company_name)
+    {
+        if (is_null($company_name)) {
+            throw new \InvalidArgumentException('non-nullable company_name cannot be null');
+        }
+        $this->container['company_name'] = $company_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string|null $description description
+     *
+     * @return self
+     */
+    public function setDescription($description)
+    {
+        if (is_null($description)) {
+            array_push($this->openAPINullablesSetToNull, 'description');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('description', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets addenda
+     *
+     * @return string|null
+     */
+    public function getAddenda()
+    {
+        return $this->container['addenda'];
+    }
+
+    /**
+     * Sets addenda
+     *
+     * @param string|null $addenda addenda
+     *
+     * @return self
+     */
+    public function setAddenda($addenda)
+    {
+        if (is_null($addenda)) {
+            array_push($this->openAPINullablesSetToNull, 'addenda');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('addenda', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['addenda'] = $addenda;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string|null
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string|null $type type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets ach_return_code
+     *
+     * @return string|null
+     */
+    public function getAchReturnCode()
+    {
+        return $this->container['ach_return_code'];
+    }
+
+    /**
+     * Sets ach_return_code
+     *
+     * @param string|null $ach_return_code ach_return_code
+     *
+     * @return self
+     */
+    public function setAchReturnCode($ach_return_code)
+    {
+        if (is_null($ach_return_code)) {
+            throw new \InvalidArgumentException('non-nullable ach_return_code cannot be null');
+        }
+        $this->container['ach_return_code'] = $ach_return_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancel_reason
+     *
+     * @return string|null
+     */
+    public function getCancelReason()
+    {
+        return $this->container['cancel_reason'];
+    }
+
+    /**
+     * Sets cancel_reason
+     *
+     * @param string|null $cancel_reason cancel_reason
+     *
+     * @return self
+     */
+    public function setCancelReason($cancel_reason)
+    {
+        if (is_null($cancel_reason)) {
+            array_push($this->openAPINullablesSetToNull, 'cancel_reason');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('cancel_reason', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['cancel_reason'] = $cancel_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets spped
+     *
+     * @return string|null
+     */
+    public function getSpped()
+    {
+        return $this->container['spped'];
+    }
+
+    /**
+     * Sets spped
+     *
+     * @param string|null $spped spped
+     *
+     * @return self
+     */
+    public function setSpped($spped)
+    {
+        if (is_null($spped)) {
+            throw new \InvalidArgumentException('non-nullable spped cannot be null');
+        }
+        $this->container['spped'] = $spped;
+
+        return $this;
+    }
+
+    /**
+     * Gets failure_code
+     *
+     * @return string|null
+     */
+    public function getFailureCode()
+    {
+        return $this->container['failure_code'];
+    }
+
+    /**
+     * Sets failure_code
+     *
+     * @param string|null $failure_code failure_code
+     *
+     * @return self
+     */
+    public function setFailureCode($failure_code)
+    {
+        if (is_null($failure_code)) {
+            array_push($this->openAPINullablesSetToNull, 'failure_code');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('failure_code', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['failure_code'] = $failure_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets failure_reason
+     *
+     * @return string|null
+     */
+    public function getFailureReason()
+    {
+        return $this->container['failure_reason'];
+    }
+
+    /**
+     * Sets failure_reason
+     *
+     * @param string|null $failure_reason failure_reason
+     *
+     * @return self
+     */
+    public function setFailureReason($failure_reason)
+    {
+        if (is_null($failure_reason)) {
+            array_push($this->openAPINullablesSetToNull, 'failure_reason');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('failure_reason', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['failure_reason'] = $failure_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets payer_bank_account
+     *
+     * @return \TheLogicStudio\GrailPay\Model\V1TransactionResponsePayerBankAccount|null
+     */
+    public function getPayerBankAccount()
+    {
+        return $this->container['payer_bank_account'];
+    }
+
+    /**
+     * Sets payer_bank_account
+     *
+     * @param \TheLogicStudio\GrailPay\Model\V1TransactionResponsePayerBankAccount|null $payer_bank_account payer_bank_account
+     *
+     * @return self
+     */
+    public function setPayerBankAccount($payer_bank_account)
+    {
+        if (is_null($payer_bank_account)) {
+            throw new \InvalidArgumentException('non-nullable payer_bank_account cannot be null');
+        }
+        $this->container['payer_bank_account'] = $payer_bank_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets payee_bank_account
+     *
+     * @return \TheLogicStudio\GrailPay\Model\V1TransactionResponsePayeeBankAccount|null
+     */
+    public function getPayeeBankAccount()
+    {
+        return $this->container['payee_bank_account'];
+    }
+
+    /**
+     * Sets payee_bank_account
+     *
+     * @param \TheLogicStudio\GrailPay\Model\V1TransactionResponsePayeeBankAccount|null $payee_bank_account payee_bank_account
+     *
+     * @return self
+     */
+    public function setPayeeBankAccount($payee_bank_account)
+    {
+        if (is_null($payee_bank_account)) {
+            throw new \InvalidArgumentException('non-nullable payee_bank_account cannot be null');
+        }
+        $this->container['payee_bank_account'] = $payee_bank_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets payout_ach_return_code
+     *
+     * @return \DateTime|null
+     */
+    public function getPayoutAchReturnCode()
+    {
+        return $this->container['payout_ach_return_code'];
+    }
+
+    /**
+     * Sets payout_ach_return_code
+     *
+     * @param \DateTime|null $payout_ach_return_code payout_ach_return_code
+     *
+     * @return self
+     */
+    public function setPayoutAchReturnCode($payout_ach_return_code)
+    {
+        if (is_null($payout_ach_return_code)) {
+            throw new \InvalidArgumentException('non-nullable payout_ach_return_code cannot be null');
+        }
+        $this->container['payout_ach_return_code'] = $payout_ach_return_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets payout_failure_reason
+     *
+     * @return \DateTime|null
+     */
+    public function getPayoutFailureReason()
+    {
+        return $this->container['payout_failure_reason'];
+    }
+
+    /**
+     * Sets payout_failure_reason
+     *
+     * @param \DateTime|null $payout_failure_reason payout_failure_reason
+     *
+     * @return self
+     */
+    public function setPayoutFailureReason($payout_failure_reason)
+    {
+        if (is_null($payout_failure_reason)) {
+            throw new \InvalidArgumentException('non-nullable payout_failure_reason cannot be null');
+        }
+        $this->container['payout_failure_reason'] = $payout_failure_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets vendor_name
+     *
+     * @return \DateTime|null
+     */
+    public function getVendorName()
+    {
+        return $this->container['vendor_name'];
+    }
+
+    /**
+     * Sets vendor_name
+     *
+     * @param \DateTime|null $vendor_name vendor_name
+     *
+     * @return self
+     */
+    public function setVendorName($vendor_name)
+    {
+        if (is_null($vendor_name)) {
+            throw new \InvalidArgumentException('non-nullable vendor_name cannot be null');
+        }
+        $this->container['vendor_name'] = $vendor_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets trace_ids
+     *
+     * @return \TheLogicStudio\GrailPay\Model\V1TransactionResponseTraceIds|null
+     */
+    public function getTraceIds()
+    {
+        return $this->container['trace_ids'];
+    }
+
+    /**
+     * Sets trace_ids
+     *
+     * @param \TheLogicStudio\GrailPay\Model\V1TransactionResponseTraceIds|null $trace_ids trace_ids
+     *
+     * @return self
+     */
+    public function setTraceIds($trace_ids)
+    {
+        if (is_null($trace_ids)) {
+            throw new \InvalidArgumentException('non-nullable trace_ids cannot be null');
+        }
+        $this->container['trace_ids'] = $trace_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime|null $created_at created_at
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        if (is_null($created_at)) {
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        }
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime|null $updated_at updated_at
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        if (is_null($updated_at)) {
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        }
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
