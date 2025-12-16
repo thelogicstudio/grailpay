@@ -85,7 +85,7 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'payee_bank_account' => '\TheLogicStudio\GrailPay\Model\V1TransactionResponsePayeeBankAccount',
         'payout_ach_return_code' => '\DateTime',
         'payout_failure_reason' => '\DateTime',
-        'vendor_name' => '\DateTime',
+        'vendor_name' => 'string',
         'trace_ids' => '\TheLogicStudio\GrailPay\Model\V1TransactionResponseTraceIds',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime'
@@ -127,7 +127,7 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
         'payee_bank_account' => null,
         'payout_ach_return_code' => 'date-time',
         'payout_failure_reason' => 'date-time',
-        'vendor_name' => 'date-time',
+        'vendor_name' => null,
         'trace_ids' => null,
         'created_at' => 'date-time',
         'updated_at' => 'date-time'
@@ -1314,7 +1314,7 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Gets vendor_name
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getVendorName()
     {
@@ -1324,7 +1324,7 @@ class V2TransactionResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets vendor_name
      *
-     * @param \DateTime|null $vendor_name vendor_name
+     * @param string|null $vendor_name vendor_name
      *
      * @return self
      */

@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **payee_bank_account** | [**\TheLogicStudio\GrailPay\Model\V1TransactionResponsePayeeBankAccount**](V1TransactionResponsePayeeBankAccount.md) |  | [optional]
 **payout_ach_return_code** | **\DateTime** |  | [optional]
 **payout_failure_reason** | **\DateTime** |  | [optional]
-**vendor_name** | **\DateTime** |  | [optional]
+**vendor_name** | **string** |  | [optional]
 **trace_ids** | [**\TheLogicStudio\GrailPay\Model\V1TransactionResponseTraceIds**](V1TransactionResponseTraceIds.md) |  | [optional]
 **created_at** | **\DateTime** |  | [optional]
 **updated_at** | **\DateTime** |  | [optional]
