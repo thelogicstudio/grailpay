@@ -7,8 +7,10 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**getBatchRefunds()**](RefundsApi.md#getBatchRefunds) | **GET** /3p/api/v2/batch-refunds | Get All Batch Refunds ( STABLE ) |
-| [**getTransactionsRefunds()**](RefundsApi.md#getTransactionsRefunds) | **GET** /3p/api/v1/transactions/{transaction_uuid}/refunds | Get Transaction Refunds ( STABLE ) |
-| [**postTransactionsRefund()**](RefundsApi.md#postTransactionsRefund) | **POST** /3p/api/v1/transactions/{uuid}/refund | Refund a transaction ( STABLE ) |
+| [**getBatchRefundsByBatchRefundUuid()**](RefundsApi.md#getBatchRefundsByBatchRefundUuid) | **GET** /3p/api/v2/batch-refunds/{batch_refund_uuid} | Get Batch Refund ( STABLE ) |
+| [**getRefundsByRefundUuid()**](RefundsApi.md#getRefundsByRefundUuid) | **GET** /3p/api/v1/refunds/{refund_uuid} | Get Refund Details ( Refunds ) |
+| [**getTransactionsByTransactionUuidRefunds()**](RefundsApi.md#getTransactionsByTransactionUuidRefunds) | **GET** /3p/api/v1/transactions/{transaction_uuid}/refunds | Get Transaction Refunds ( STABLE ) |
+| [**postTransactionsByUuidRefund()**](RefundsApi.md#postTransactionsByUuidRefund) | **POST** /3p/api/v1/transactions/{uuid}/refund | Refund a transaction ( STABLE ) |
 
 
 ## `getBatchRefunds()`
@@ -28,11 +30,15 @@ This API retrieves a list of all batch refunds. The response provides details fo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new TheLogicStudio\GrailPay\Api\RefundsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $start_date = Fri Mar 01 13:00:00 NZDT 2024; // \DateTime | This parameter will filter the user's records based on the creation date of the batch refund.Date format: Y-m-d
 $end_date = Sun Mar 10 13:00:00 NZDT 2024; // \DateTime | This parameter will filter the user's records based on the creation date of the batch refund.Date format: Y-m-d
@@ -64,7 +70,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[APIToken](../../README.md#APIToken)
 
 ### HTTP request headers
 
@@ -75,10 +81,130 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getTransactionsRefunds()`
+## `getBatchRefundsByBatchRefundUuid()`
 
 ```php
-getTransactionsRefunds($transaction_uuid): \TheLogicStudio\GrailPay\Model\RefundListResponse
+getBatchRefundsByBatchRefundUuid($batch_refund_uuid): \TheLogicStudio\GrailPay\Model\GetBatchRefundsByBatchRefundUuid200Response
+```
+
+Get Batch Refund ( STABLE )
+
+This API retrieves the details of a specific batch refund using its unique batch refund UUID. The response provides comprehensive information about the refund, including the total amount and the associated transactions.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\RefundsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$batch_refund_uuid = 'batch_refund_uuid_example'; // string | UUID of the batch refund
+
+try {
+    $result = $apiInstance->getBatchRefundsByBatchRefundUuid($batch_refund_uuid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundsApi->getBatchRefundsByBatchRefundUuid: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **batch_refund_uuid** | **string**| UUID of the batch refund | |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\GetBatchRefundsByBatchRefundUuid200Response**](../Model/GetBatchRefundsByBatchRefundUuid200Response.md)
+
+### Authorization
+
+[APIToken](../../README.md#APIToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getRefundsByRefundUuid()`
+
+```php
+getRefundsByRefundUuid($refund_uuid): \TheLogicStudio\GrailPay\Model\GetRefundsByRefundUuid200Response
+```
+
+Get Refund Details ( Refunds )
+
+This API returns the details of a refund request.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\RefundsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$refund_uuid = 'refund_uuid_example'; // string | Refund UUID
+
+try {
+    $result = $apiInstance->getRefundsByRefundUuid($refund_uuid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundsApi->getRefundsByRefundUuid: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **refund_uuid** | **string**| Refund UUID | |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\GetRefundsByRefundUuid200Response**](../Model/GetRefundsByRefundUuid200Response.md)
+
+### Authorization
+
+[APIToken](../../README.md#APIToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getTransactionsByTransactionUuidRefunds()`
+
+```php
+getTransactionsByTransactionUuidRefunds($transaction_uuid): \TheLogicStudio\GrailPay\Model\RefundListResponse
 ```
 
 Get Transaction Refunds ( STABLE )
@@ -92,19 +218,23 @@ This API returns a list of refund requests for a specific transaction.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new TheLogicStudio\GrailPay\Api\RefundsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $transaction_uuid = 9c2af585-9fea-4c47-ac12-e00f42943cd8; // string | Transaction UUID
 
 try {
-    $result = $apiInstance->getTransactionsRefunds($transaction_uuid);
+    $result = $apiInstance->getTransactionsByTransactionUuidRefunds($transaction_uuid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundsApi->getTransactionsRefunds: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundsApi->getTransactionsByTransactionUuidRefunds: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -120,7 +250,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[APIToken](../../README.md#APIToken)
 
 ### HTTP request headers
 
@@ -131,10 +261,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `postTransactionsRefund()`
+## `postTransactionsByUuidRefund()`
 
 ```php
-postTransactionsRefund($uuid, $v1_refund_transaction_request): \TheLogicStudio\GrailPay\Model\PostTransactionsRefund201Response
+postTransactionsByUuidRefund($uuid, $v1_refund_transaction_request): \TheLogicStudio\GrailPay\Model\PostTransactionsByUuidRefund201Response
 ```
 
 Refund a transaction ( STABLE )
@@ -148,20 +278,24 @@ Once a transaction has been completed, this API can be used to issue a refund, t
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new TheLogicStudio\GrailPay\Api\RefundsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uuid = 'uuid_example'; // string | UUID of the transaction to refund
 $v1_refund_transaction_request = new \TheLogicStudio\GrailPay\Model\V1RefundTransactionRequest(); // \TheLogicStudio\GrailPay\Model\V1RefundTransactionRequest
 
 try {
-    $result = $apiInstance->postTransactionsRefund($uuid, $v1_refund_transaction_request);
+    $result = $apiInstance->postTransactionsByUuidRefund($uuid, $v1_refund_transaction_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundsApi->postTransactionsRefund: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundsApi->postTransactionsByUuidRefund: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -174,11 +308,11 @@ try {
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\PostTransactionsRefund201Response**](../Model/PostTransactionsRefund201Response.md)
+[**\TheLogicStudio\GrailPay\Model\PostTransactionsByUuidRefund201Response**](../Model/PostTransactionsByUuidRefund201Response.md)
 
 ### Authorization
 
-No authorization required
+[APIToken](../../README.md#APIToken)
 
 ### HTTP request headers
 

@@ -28,11 +28,15 @@ Deregistering a webhook via API involves removing a previously registered webhoo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $v1_de_register_webhook_request = new \TheLogicStudio\GrailPay\Model\V1DeRegisterWebhookRequest(); // \TheLogicStudio\GrailPay\Model\V1DeRegisterWebhookRequest
 
@@ -56,7 +60,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[APIToken](../../README.md#APIToken)
 
 ### HTTP request headers
 
@@ -84,11 +88,15 @@ Retrieve a list of registered webhooks for the authenticated user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -109,7 +117,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[APIToken](../../README.md#APIToken)
 
 ### HTTP request headers
 
@@ -137,11 +145,15 @@ Registering a webhook via API call involves configuring a client application to 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $v1_register_webhook_request = new \TheLogicStudio\GrailPay\Model\V1RegisterWebhookRequest(); // \TheLogicStudio\GrailPay\Model\V1RegisterWebhookRequest
 
@@ -165,7 +177,7 @@ try {
 
 ### Authorization
 
-No authorization required
+[APIToken](../../README.md#APIToken)
 
 ### HTTP request headers
 

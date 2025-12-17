@@ -6,13 +6,13 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getMerchantsBilling()**](BillingApi.md#getMerchantsBilling) | **GET** /3p/api/v2/merchants/{uuid}/billing | Get Billing by Merchant User UUID ( STABLE ) |
+| [**getMerchantsByUuidBilling()**](BillingApi.md#getMerchantsByUuidBilling) | **GET** /3p/api/v2/merchants/{uuid}/billing | Get Billing by Merchant User UUID ( STABLE ) |
 
 
-## `getMerchantsBilling()`
+## `getMerchantsByUuidBilling()`
 
 ```php
-getMerchantsBilling($uuid, $start_date, $end_date): \TheLogicStudio\GrailPay\Model\GetMerchantsBilling200Response
+getMerchantsByUuidBilling($uuid, $start_date, $end_date): \TheLogicStudio\GrailPay\Model\GetMerchantsByUuidBilling200Response
 ```
 
 Get Billing by Merchant User UUID ( STABLE )
@@ -26,21 +26,25 @@ This retrieves a summary of all billed events for a specific merchant, providing
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (Token) authorization: APIToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new TheLogicStudio\GrailPay\Api\BillingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $uuid = 'uuid_example'; // string | UUID of the merchant user
 $start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Start date for billing summary (YYYY-MM-DD)
 $end_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | End date for billing summary (YYYY-MM-DD)
 
 try {
-    $result = $apiInstance->getMerchantsBilling($uuid, $start_date, $end_date);
+    $result = $apiInstance->getMerchantsByUuidBilling($uuid, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BillingApi->getMerchantsBilling: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BillingApi->getMerchantsByUuidBilling: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -54,11 +58,11 @@ try {
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\GetMerchantsBilling200Response**](../Model/GetMerchantsBilling200Response.md)
+[**\TheLogicStudio\GrailPay\Model\GetMerchantsByUuidBilling200Response**](../Model/GetMerchantsByUuidBilling200Response.md)
 
 ### Authorization
 
-No authorization required
+[APIToken](../../README.md#APIToken)
 
 ### HTTP request headers
 

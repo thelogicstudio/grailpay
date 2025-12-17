@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**line_1** | **string** | Data Objects | [optional]
+**line_1** | **string** |  | [optional]
 **line_2** | **string** |  | [optional]
 **city** | **string** |  | [optional]
 **state** | **string** |  | [optional]
