@@ -60,7 +60,7 @@ class PostTransaction422Response implements ModelInterface, ArrayAccess, \JsonSe
         'status' => 'bool',
         'message' => 'string',
         'data' => 'string',
-        'errors' => 'string',
+        'errors' => 'object',
         'error_code' => 'string'
     ];
 
@@ -401,7 +401,7 @@ class PostTransaction422Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Gets errors
      *
-     * @return string|null
+     * @return object|null
      */
     public function getErrors()
     {
@@ -411,7 +411,7 @@ class PostTransaction422Response implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets errors
      *
-     * @param string|null $errors errors
+     * @param object|null $errors errors
      *
      * @return self
      */
