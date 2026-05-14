@@ -31,7 +31,7 @@ This endpoint allows to cancel a transaction in the GrailPay ACH API Ecosystem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -63,7 +63,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -91,7 +91,7 @@ Retrieve a list of transactions based on filter parameters
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -139,7 +139,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -167,7 +167,7 @@ When making a request to an API for a transaction's information, you typically n
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -199,7 +199,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -227,7 +227,7 @@ Once authenticated, the client application can send a request to create a new tr
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -259,7 +259,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -287,7 +287,7 @@ This endpoint allows to pause a transaction in the GrailPay ACH API Ecosystem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -319,7 +319,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -347,7 +347,7 @@ This endpoint allows to resume a paused transaction in the GrailPay ACH API Ecos
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -379,7 +379,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 

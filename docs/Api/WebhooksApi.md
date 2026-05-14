@@ -28,7 +28,7 @@ Deregistering a webhook via API involves removing a previously registered webhoo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -60,7 +60,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -88,7 +88,7 @@ Retrieve a list of registered webhooks for the authenticated user.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -117,7 +117,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -145,7 +145,7 @@ Registering a webhook via API call involves configuring a client application to 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -177,7 +177,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 

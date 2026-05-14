@@ -8,8 +8,8 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 | ------------- | ------------- | ------------- |
 | [**getBatchRefunds()**](RefundsApi.md#getBatchRefunds) | **GET** /3p/api/v2/batch-refunds | Get All Batch Refunds ( STABLE ) |
 | [**getBatchRefundsByBatchRefundUuid()**](RefundsApi.md#getBatchRefundsByBatchRefundUuid) | **GET** /3p/api/v2/batch-refunds/{batch_refund_uuid} | Get Batch Refund ( STABLE ) |
-| [**getRefundsByRefundUuid()**](RefundsApi.md#getRefundsByRefundUuid) | **GET** /3p/api/v1/refunds/{refund_uuid} | Get Refund Details ( Refunds ) |
-| [**getTransactionsByTransactionUuidRefunds()**](RefundsApi.md#getTransactionsByTransactionUuidRefunds) | **GET** /3p/api/v1/transactions/{transaction_uuid}/refunds | Get Transaction Refunds ( STABLE ) |
+| [**getRefunds()**](RefundsApi.md#getRefunds) | **GET** /api/v3/refunds | Get All Refunds ( STABLE ) |
+| [**getRefundsByUuid()**](RefundsApi.md#getRefundsByUuid) | **GET** /api/v3/refunds/{uuid} | Get Refund ( STABLE ) |
 | [**postTransactionsByUuidRefund()**](RefundsApi.md#postTransactionsByUuidRefund) | **POST** /3p/api/v1/transactions/{uuid}/refund | Refund a transaction ( STABLE ) |
 
 
@@ -30,7 +30,7 @@ This API retrieves a list of all batch refunds. The response provides details fo
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -70,7 +70,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -98,7 +98,7 @@ This API retrieves the details of a specific batch refund using its unique batch
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -130,7 +130,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -141,15 +141,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getRefundsByRefundUuid()`
+## `getRefunds()`
 
 ```php
-getRefundsByRefundUuid($refund_uuid): \TheLogicStudio\GrailPay\Model\GetRefundsByRefundUuid200Response
+getRefunds($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_start_date, $filter_end_date, $filter_amount, $filter_transaction_uuid, $filter_merchant_uuid, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetRefunds200Response
 ```
 
-Get Refund Details ( Refunds )
+Get All Refunds ( STABLE )
 
-This API returns the details of a refund request.
+This endpoint provides a paginated list of refunds visible to the authenticated user, with filtering and sorting options.
 
 ### Example
 
@@ -158,7 +158,7 @@ This API returns the details of a refund request.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -168,13 +168,24 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\RefundsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$refund_uuid = 'refund_uuid_example'; // string | Refund UUID
+$filter_uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | Filter by refund UUID
+$filter_status = REFUND_COMPLETE; // string | Filter by refund status
+$filter_ach_id = ach_1331Ds7MrGmp8iCkEFFdmR; // string | Filter by capture or refund ACH trace ID
+$filter_r_code = R01; // string | Filter by ACH return code
+$filter_start_date = Mon Jan 01 13:00:00 NZDT 2024; // \DateTime | Filter refunds created on or after this date (YYYY-MM-DD)
+$filter_end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | Filter refunds created on or before this date (YYYY-MM-DD)
+$filter_amount = >=100; // string | Filter by amount. Supports dynamic operators (e.g. filter[amount]=100, filter[amount]=>100, filter[amount]=<=500)
+$filter_transaction_uuid = 3fa85f64-5717-4562-b3fc-2c963f66afa6; // string | Filter by the parent transaction UUID
+$filter_merchant_uuid = 6a8fc154-1a50-483b-a690-fd1dfaf9408b; // string | Filter by payee or payer merchant UUID
+$sort = -created_at; // string | Sort by field (created_at, amount). Prefix with '-' for descending order
+$page = 1; // int | Page number for pagination
+$per_page = 15; // int | Number of records per page
 
 try {
-    $result = $apiInstance->getRefundsByRefundUuid($refund_uuid);
+    $result = $apiInstance->getRefunds($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_start_date, $filter_end_date, $filter_amount, $filter_transaction_uuid, $filter_merchant_uuid, $sort, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundsApi->getRefundsByRefundUuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundsApi->getRefunds: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -182,15 +193,26 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **refund_uuid** | **string**| Refund UUID | |
+| **filter_uuid** | **string**| Filter by refund UUID | [optional] |
+| **filter_status** | **string**| Filter by refund status | [optional] |
+| **filter_ach_id** | **string**| Filter by capture or refund ACH trace ID | [optional] |
+| **filter_r_code** | **string**| Filter by ACH return code | [optional] |
+| **filter_start_date** | **\DateTime**| Filter refunds created on or after this date (YYYY-MM-DD) | [optional] |
+| **filter_end_date** | **\DateTime**| Filter refunds created on or before this date (YYYY-MM-DD) | [optional] |
+| **filter_amount** | **string**| Filter by amount. Supports dynamic operators (e.g. filter[amount]&#x3D;100, filter[amount]&#x3D;&gt;100, filter[amount]&#x3D;&lt;&#x3D;500) | [optional] |
+| **filter_transaction_uuid** | **string**| Filter by the parent transaction UUID | [optional] |
+| **filter_merchant_uuid** | **string**| Filter by payee or payer merchant UUID | [optional] |
+| **sort** | **string**| Sort by field (created_at, amount). Prefix with &#39;-&#39; for descending order | [optional] |
+| **page** | **int**| Page number for pagination | [optional] |
+| **per_page** | **int**| Number of records per page | [optional] [default to 15] |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\GetRefundsByRefundUuid200Response**](../Model/GetRefundsByRefundUuid200Response.md)
+[**\TheLogicStudio\GrailPay\Model\GetRefunds200Response**](../Model/GetRefunds200Response.md)
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -201,15 +223,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getTransactionsByTransactionUuidRefunds()`
+## `getRefundsByUuid()`
 
 ```php
-getTransactionsByTransactionUuidRefunds($transaction_uuid): \TheLogicStudio\GrailPay\Model\RefundListResponse
+getRefundsByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetRefundsByUuid200Response
 ```
 
-Get Transaction Refunds ( STABLE )
+Get Refund ( STABLE )
 
-This API returns a list of refund requests for a specific transaction.
+This endpoint returns the details of a single refund along with its parent transaction. The UUID is generated when the refund is created and is associated with the refund record.
 
 ### Example
 
@@ -218,7 +240,7 @@ This API returns a list of refund requests for a specific transaction.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -228,13 +250,13 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\RefundsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transaction_uuid = 9c2af585-9fea-4c47-ac12-e00f42943cd8; // string | Transaction UUID
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | refund UUID
 
 try {
-    $result = $apiInstance->getTransactionsByTransactionUuidRefunds($transaction_uuid);
+    $result = $apiInstance->getRefundsByUuid($uuid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundsApi->getTransactionsByTransactionUuidRefunds: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundsApi->getRefundsByUuid: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -242,15 +264,15 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **transaction_uuid** | **string**| Transaction UUID | |
+| **uuid** | **string**| refund UUID | |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\RefundListResponse**](../Model/RefundListResponse.md)
+[**\TheLogicStudio\GrailPay\Model\GetRefundsByUuid200Response**](../Model/GetRefundsByUuid200Response.md)
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -278,7 +300,7 @@ Once a transaction has been completed, this API can be used to issue a refund, t
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -312,7 +334,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 

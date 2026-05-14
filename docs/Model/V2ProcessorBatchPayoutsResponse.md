@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **bool** |  | [optional]
 **message** | **string** |  | [optional]
-**data** | [**\TheLogicStudio\GrailPay\Model\V2PayeeBatchPayoutsResponseData**](V2PayeeBatchPayoutsResponseData.md) |  | [optional]
+**data** | [**\TheLogicStudio\GrailPay\Model\V2ProcessorBatchPayoutsResponseData**](V2ProcessorBatchPayoutsResponseData.md) |  | [optional]
 **errors** | **string** |  | [optional]
 **error_code** | **string** |  | [optional]
 

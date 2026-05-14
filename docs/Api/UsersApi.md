@@ -18,6 +18,8 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 | [**patchPeopleByUuid()**](UsersApi.md#patchPeopleByUuid) | **PATCH** /api/v3/people/{uuid} | Update a Person into the ACH application ( STABLE ) |
 | [**postBusinesses()**](UsersApi.md#postBusinesses) | **POST** /api/v3/businesses | Onboard a new Business into the ACH application ( STABLE ) |
 | [**postMerchants()**](UsersApi.md#postMerchants) | **POST** /api/v3/merchants | Onboard a new Merchant into the ACH application ( STABLE ) |
+| [**postMerchantsByUuidActivate()**](UsersApi.md#postMerchantsByUuidActivate) | **POST** /api/v3/merchants/{uuid}/activate | Activate a Merchant ( STABLE ) |
+| [**postMerchantsByUuidDeactivate()**](UsersApi.md#postMerchantsByUuidDeactivate) | **POST** /api/v3/merchants/{uuid}/deactivate | Deactivate a Merchant ( STABLE ) |
 | [**postPeople()**](UsersApi.md#postPeople) | **POST** /api/v3/people | Onboard a new Person into the ACH application ( STABLE ) |
 | [**postRegisterPerson()**](UsersApi.md#postRegisterPerson) | **POST** /3p/api/v1/register/person | Onboard a new person ( DEPRECATED ) |
 
@@ -25,7 +27,7 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 ## `deleteUsersByUuid()`
 
 ```php
-deleteUsersByUuid($uuid): \TheLogicStudio\GrailPay\Model\DeleteUsersByUuid200Response
+deleteUsersByUuid($uuid): mixed[]
 ```
 
 Deleting a User ( STABLE )
@@ -39,7 +41,7 @@ This API deletes a specific user from the system based on their unique user UUID
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -67,11 +69,11 @@ try {
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\DeleteUsersByUuid200Response**](../Model/DeleteUsersByUuid200Response.md)
+**mixed[]**
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -99,7 +101,7 @@ This endpoint provides a comprehensive list of all registered businesses, includ
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -139,7 +141,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -167,7 +169,7 @@ This endpoint will return detail of the business. When making a request to an AP
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -199,7 +201,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -227,7 +229,7 @@ This endpoint provides a comprehensive list of all registered merchants, includi
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -269,7 +271,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -297,7 +299,7 @@ This endpoint will return detail of the merchant. When making a request to an AP
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -329,7 +331,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -357,7 +359,7 @@ This endpoint provides a comprehensive list of all registered people, including 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -401,7 +403,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -429,7 +431,7 @@ This endpoint will return detail of the person. When making a request to an API 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -461,7 +463,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -489,7 +491,7 @@ This endpoint allows for updating a Business to the GrailPay ACH API Ecosystem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -523,7 +525,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -551,7 +553,7 @@ This endpoint allows for updating a Merchant to the GrailPay ACH API Ecosystem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -585,7 +587,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -613,7 +615,7 @@ This endpoint allows for updating a Person to the GrailPay ACH API Ecosystem.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -647,7 +649,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -675,7 +677,7 @@ This endpoint allows for adding a new Business to the GrailPay ACH API Ecosystem
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -707,7 +709,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -735,7 +737,7 @@ This endpoint allows for adding a new Merchant to the GrailPay ACH API Ecosystem
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -767,7 +769,129 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postMerchantsByUuidActivate()`
+
+```php
+postMerchantsByUuidActivate($uuid): \TheLogicStudio\GrailPay\Model\PostMerchantsByUuidActivate200Response
+```
+
+Activate a Merchant ( STABLE )
+
+This endpoint allows for activating a Merchant in the GrailPay ACH API Ecosystem. The operation is idempotent: calling it on an already active merchant returns 200 and leaves state unchanged.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: ApiToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | merchant UUID
+
+try {
+    $result = $apiInstance->postMerchantsByUuidActivate($uuid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->postMerchantsByUuidActivate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uuid** | **string**| merchant UUID | |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\PostMerchantsByUuidActivate200Response**](../Model/PostMerchantsByUuidActivate200Response.md)
+
+### Authorization
+
+[ApiToken](../../README.md#ApiToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postMerchantsByUuidDeactivate()`
+
+```php
+postMerchantsByUuidDeactivate($uuid, $post_merchants_by_uuid_deactivate_request): \TheLogicStudio\GrailPay\Model\PostMerchantsByUuidDeactivate200Response
+```
+
+Deactivate a Merchant ( STABLE )
+
+This endpoint allows for deactivating a Merchant in the GrailPay ACH API Ecosystem. The operation is idempotent: calling it on an already inactive merchant returns 200 and leaves state unchanged.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: ApiToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | merchant UUID
+$post_merchants_by_uuid_deactivate_request = new \TheLogicStudio\GrailPay\Model\PostMerchantsByUuidDeactivateRequest(); // \TheLogicStudio\GrailPay\Model\PostMerchantsByUuidDeactivateRequest
+
+try {
+    $result = $apiInstance->postMerchantsByUuidDeactivate($uuid, $post_merchants_by_uuid_deactivate_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->postMerchantsByUuidDeactivate: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uuid** | **string**| merchant UUID | |
+| **post_merchants_by_uuid_deactivate_request** | [**\TheLogicStudio\GrailPay\Model\PostMerchantsByUuidDeactivateRequest**](../Model/PostMerchantsByUuidDeactivateRequest.md)|  | [optional] |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\PostMerchantsByUuidDeactivate200Response**](../Model/PostMerchantsByUuidDeactivate200Response.md)
+
+### Authorization
+
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -795,7 +919,7 @@ This endpoint allows for adding a new Person to the GrailPay ACH API Ecosystem. 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -827,7 +951,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -855,7 +979,7 @@ Onboard a new person ( DEPRECATED )
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -887,7 +1011,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 

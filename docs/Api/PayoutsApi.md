@@ -36,7 +36,7 @@ Get Batch Merchant Payout ( SUNSETTING )
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -68,7 +68,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -96,7 +96,7 @@ Get All Batch Payouts ( SUNSETTING )
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -136,7 +136,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -164,7 +164,7 @@ This API retrieves all business batch payouts associated with the business user 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -206,7 +206,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -234,7 +234,7 @@ This API retrieves the details of a business batch payout using the business use
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -268,7 +268,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -296,7 +296,7 @@ Get Batch Payout ( SUNSETTING )
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -328,7 +328,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -356,7 +356,7 @@ This API retrieves all merchant batch payouts associated with the merchant user 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -398,7 +398,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -426,7 +426,7 @@ This API retrieves the details of a merchant batch payout using the merchant use
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -460,7 +460,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -488,7 +488,7 @@ This API retrieves all person batch payouts associated with the person user UUID
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -530,7 +530,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -558,7 +558,7 @@ This API retrieves the details of a person batch payout using the person user UU
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -592,7 +592,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -620,7 +620,7 @@ This API retrieves all batch payouts associated with the processor. The response
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -660,7 +660,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 
@@ -688,7 +688,7 @@ This API retrieves the details of a processor batch payout using the unique batc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Token) authorization: APIToken
+// Configure Bearer (Token) authorization: ApiToken
 $config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
@@ -720,7 +720,7 @@ try {
 
 ### Authorization
 
-[APIToken](../../README.md#APIToken)
+[ApiToken](../../README.md#ApiToken)
 
 ### HTTP request headers
 

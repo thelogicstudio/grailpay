@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **is_beneficial_owner** | **bool** |  |
 **is_director** | **bool** |  |
 **is_significant_control_person** | **bool** |  |
-**ownership_percentage** | **float** |  |
+**ownership_percentage** | **float** |  | [optional]
 **email** | **string** |  |
 **phone** | **string** |  |
 **occupation** | **string** |  |
