@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **user_status** | **string** |  | [optional]
 **kyb_status** | **string** |  | [optional]
 **kyb_rejected_reason** | **string** |  | [optional]
-**financing_credit_balance** | **float** |  | [optional]
 **payout_type** | **string** |  | [optional]
 **role** | **string** |  | [optional]
 **vendor_name** | **string** |  | [optional]

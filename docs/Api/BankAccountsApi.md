@@ -6,31 +6,27 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteBankAccountsByAggregatorTypeByAccountUuid()**](BankAccountsApi.md#deleteBankAccountsByAggregatorTypeByAccountUuid) | **DELETE** /3p/api/v2/bank-accounts/{aggregator_type}/{account_uuid} | Delete a bank account ( STABLE ) |
-| [**getBankAccountByUserUuid()**](BankAccountsApi.md#getBankAccountByUserUuid) | **GET** /3p/api/v1/bank-account/{user_uuid} | Get bank account details ( STABLE ) |
-| [**getBankAccounts()**](BankAccountsApi.md#getBankAccounts) | **GET** /api/v3/bank-accounts | Get All Bank Accounts ( STABLE ) |
-| [**getBankAccountsByAggregatorTypeByAccountUuidHistory()**](BankAccountsApi.md#getBankAccountsByAggregatorTypeByAccountUuidHistory) | **GET** /3p/api/v2/bank-accounts/{aggregator_type}/{account_uuid}/history | Fetch the transaction history for a bank account. ( STABLE ) |
-| [**getBankAccountsByUuid()**](BankAccountsApi.md#getBankAccountsByUuid) | **GET** /api/v3/bank-accounts/{uuid} | Get Bank Account ( STABLE ) |
-| [**getBankAccountsByUuidBalance()**](BankAccountsApi.md#getBankAccountsByUuidBalance) | **GET** /api/v3/bank-accounts/{uuid}/balance | Get Bank Account Balance (STABLE) |
+| [**deleteBankAccountsByUuid()**](BankAccountsApi.md#deleteBankAccountsByUuid) | **DELETE** /api/v3/bank-accounts/{uuid} | Delete a bank account. ( STABLE ) |
+| [**getBankAccounts()**](BankAccountsApi.md#getBankAccounts) | **GET** /api/v3/bank-accounts | List bank accounts for an entity. ( STABLE ) |
+| [**getBankAccountsByUuid()**](BankAccountsApi.md#getBankAccountsByUuid) | **GET** /api/v3/bank-accounts/{uuid} | Show a bank account. ( STABLE ) |
+| [**getBankAccountsByUuidBalance()**](BankAccountsApi.md#getBankAccountsByUuidBalance) | **GET** /api/v3/bank-accounts/{uuid}/balance | Fetch a bank account balance. ( STABLE ) |
+| [**getBankAccountsByUuidHistory()**](BankAccountsApi.md#getBankAccountsByUuidHistory) | **GET** /api/v3/bank-accounts/{uuid}/history | Fetch bank account transaction history. ( STABLE ) |
 | [**getBankAccountsByUuidOwners()**](BankAccountsApi.md#getBankAccountsByUuidOwners) | **GET** /api/v3/bank-accounts/{uuid}/owners | Get Bank Account Owners ( STABLE ) |
-| [**getUsersByUuidBankAccounts()**](BankAccountsApi.md#getUsersByUuidBankAccounts) | **GET** /3p/api/v2/users/{uuid}/bank-accounts | Get all bank accounts for a user ( STABLE ) |
-| [**getUsersByUuidBankAccountsByAccountUuidBalance()**](BankAccountsApi.md#getUsersByUuidBankAccountsByAccountUuidBalance) | **GET** /3p/api/v2/users/{uuid}/bank-accounts/{account_uuid}/balance | Fetch the bank account balance ( STABLE ) |
-| [**postBankAccountBalanceByUserUuid()**](BankAccountsApi.md#postBankAccountBalanceByUserUuid) | **POST** /3p/api/v1/bank-account/balance/{user_uuid} | Get balance approval ( STABLE ) |
-| [**postBankAccountUser()**](BankAccountsApi.md#postBankAccountUser) | **POST** /3p/api/v1/bank-account/user | Get User Details by bank account ( STABLE ) |
+| [**postBankAccounts()**](BankAccountsApi.md#postBankAccounts) | **POST** /api/v3/bank-accounts | Add a bank account to an entity. ( STABLE ) |
 | [**postBankAccountsValidate()**](BankAccountsApi.md#postBankAccountsValidate) | **POST** /api/v3/bank-accounts/validate | Validate a bank account&#39;s routing and account number. ( STABLE ) |
 | [**postPeopleByUuidBankAccounts()**](BankAccountsApi.md#postPeopleByUuidBankAccounts) | **POST** /api/v3/people/{uuid}/bank-accounts | Add a new bank account to a person. ( STABLE ) |
-| [**putBankAccountSwitchDefaultByUserUuid()**](BankAccountsApi.md#putBankAccountSwitchDefaultByUserUuid) | **PUT** /3p/api/v1/bank-account/switch/default/{user_uuid} | Switch default bank account ( STABLE ) |
+| [**putBankAccountsByUuidDefault()**](BankAccountsApi.md#putBankAccountsByUuidDefault) | **PUT** /api/v3/bank-accounts/{uuid}/default | Switch the default bank account. ( STABLE ) |
 
 
-## `deleteBankAccountsByAggregatorTypeByAccountUuid()`
+## `deleteBankAccountsByUuid()`
 
 ```php
-deleteBankAccountsByAggregatorTypeByAccountUuid($aggregator_type, $account_uuid): \TheLogicStudio\GrailPay\Model\DeleteBankAccountsByAggregatorTypeByAccountUuid200Response
+deleteBankAccountsByUuid($uuid): \TheLogicStudio\GrailPay\Model\DeleteBankAccountsByUuid200Response
 ```
 
-Delete a bank account ( STABLE )
+Delete a bank account. ( STABLE )
 
-Deletes a bank account by its UUID and aggregator type.
+This endpoint deletes a bank account by its UUID. The bank account must be eligible for deletion (no recent transaction activity within the configured period).
 
 ### Example
 
@@ -49,14 +45,13 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$aggregator_type = 'aggregator_type_example'; // string | The type of the bank aggregator
-$account_uuid = 'account_uuid_example'; // string | The UUID of the bank account
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account to delete
 
 try {
-    $result = $apiInstance->deleteBankAccountsByAggregatorTypeByAccountUuid($aggregator_type, $account_uuid);
+    $result = $apiInstance->deleteBankAccountsByUuid($uuid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->deleteBankAccountsByAggregatorTypeByAccountUuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BankAccountsApi->deleteBankAccountsByUuid: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -64,72 +59,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **aggregator_type** | **string**| The type of the bank aggregator | |
-| **account_uuid** | **string**| The UUID of the bank account | |
+| **uuid** | **string**| UUID of the bank account to delete | |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\DeleteBankAccountsByAggregatorTypeByAccountUuid200Response**](../Model/DeleteBankAccountsByAggregatorTypeByAccountUuid200Response.md)
-
-### Authorization
-
-[ApiToken](../../README.md#ApiToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getBankAccountByUserUuid()`
-
-```php
-getBankAccountByUserUuid($user_uuid): \TheLogicStudio\GrailPay\Model\GetBankAccountByUserUuid200Response
-```
-
-Get bank account details ( STABLE )
-
-Retrieve the bank account details for a specific user.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (Token) authorization: ApiToken
-$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$user_uuid = 'user_uuid_example'; // string | UUID of the user
-
-try {
-    $result = $apiInstance->getBankAccountByUserUuid($user_uuid);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->getBankAccountByUserUuid: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **user_uuid** | **string**| UUID of the user | |
-
-### Return type
-
-[**\TheLogicStudio\GrailPay\Model\GetBankAccountByUserUuid200Response**](../Model/GetBankAccountByUserUuid200Response.md)
+[**\TheLogicStudio\GrailPay\Model\DeleteBankAccountsByUuid200Response**](../Model/DeleteBankAccountsByUuid200Response.md)
 
 ### Authorization
 
@@ -147,12 +81,12 @@ try {
 ## `getBankAccounts()`
 
 ```php
-getBankAccounts($filter_entity_uuid, $filter_account_type, $filter_is_default, $filter_provider, $filter_account_name, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetBankAccounts200Response
+getBankAccounts($filter_entity_uuid, $filter_account_type, $filter_is_default, $filter_provider, $filter_account_name, $sort, $per_page, $page): \TheLogicStudio\GrailPay\Model\GetBankAccounts200Response
 ```
 
-Get All Bank Accounts ( STABLE )
+List bank accounts for an entity. ( STABLE )
 
-This endpoint returns a paginated list of bank accounts for the provided entity UUID.
+This endpoint retrieves a paginated list of bank accounts for a given entity. Supports filtering by account type, default status, provider, and account name. Supports sorting by created_at and account_name.
 
 ### Example
 
@@ -171,17 +105,17 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter_entity_uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | Filter by entity UUID
+$filter_entity_uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the entity (person or business) to list bank accounts for
 $filter_account_type = checking; // string | Filter by account type
 $filter_is_default = true; // string | Filter by default account status
-$filter_provider = bank_link; // string | Filter by provider
-$filter_account_name = Primary Checking; // string | Filter by account name
-$sort = -created_at; // string | Sort by field (created_at, account_name). Prefix with '-' for descending order
-$page = 1; // int | Page number for pagination
+$filter_provider = manual; // string | Filter by provider type
+$filter_account_name = Checking; // string | Filter by account name (partial match)
+$sort = -created_at; // string | Sort field. Prefix with - for descending order.
 $per_page = 15; // int | Number of records per page
+$page = 1; // int | Page number
 
 try {
-    $result = $apiInstance->getBankAccounts($filter_entity_uuid, $filter_account_type, $filter_is_default, $filter_provider, $filter_account_name, $sort, $page, $per_page);
+    $result = $apiInstance->getBankAccounts($filter_entity_uuid, $filter_account_type, $filter_is_default, $filter_provider, $filter_account_name, $sort, $per_page, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankAccountsApi->getBankAccounts: ', $e->getMessage(), PHP_EOL;
@@ -192,80 +126,18 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **filter_entity_uuid** | **string**| Filter by entity UUID | |
+| **filter_entity_uuid** | **string**| UUID of the entity (person or business) to list bank accounts for | |
 | **filter_account_type** | **string**| Filter by account type | [optional] |
 | **filter_is_default** | **string**| Filter by default account status | [optional] |
-| **filter_provider** | **string**| Filter by provider | [optional] |
-| **filter_account_name** | **string**| Filter by account name | [optional] |
-| **sort** | **string**| Sort by field (created_at, account_name). Prefix with &#39;-&#39; for descending order | [optional] |
-| **page** | **int**| Page number for pagination | [optional] |
-| **per_page** | **int**| Number of records per page | [optional] [default to 15] |
+| **filter_provider** | **string**| Filter by provider type | [optional] |
+| **filter_account_name** | **string**| Filter by account name (partial match) | [optional] |
+| **sort** | **string**| Sort field. Prefix with - for descending order. | [optional] |
+| **per_page** | **int**| Number of records per page | [optional] |
+| **page** | **int**| Page number | [optional] |
 
 ### Return type
 
 [**\TheLogicStudio\GrailPay\Model\GetBankAccounts200Response**](../Model/GetBankAccounts200Response.md)
-
-### Authorization
-
-[ApiToken](../../README.md#ApiToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getBankAccountsByAggregatorTypeByAccountUuidHistory()`
-
-```php
-getBankAccountsByAggregatorTypeByAccountUuidHistory($aggregator_type, $account_uuid): \TheLogicStudio\GrailPay\Model\GetBankAccountsByAggregatorTypeByAccountUuidHistory200Response
-```
-
-Fetch the transaction history for a bank account. ( STABLE )
-
-Fetch a list of transactions for a bank account.  This currently only works with accounts linked through the Bank Link SDK.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (Token) authorization: ApiToken
-$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$aggregator_type = 'aggregator_type_example'; // string | Bank Account Provider.  Possible Values: bank_link
-$account_uuid = 'account_uuid_example'; // string | UUID of the bank account
-
-try {
-    $result = $apiInstance->getBankAccountsByAggregatorTypeByAccountUuidHistory($aggregator_type, $account_uuid);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->getBankAccountsByAggregatorTypeByAccountUuidHistory: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **aggregator_type** | **string**| Bank Account Provider.  Possible Values: bank_link | |
-| **account_uuid** | **string**| UUID of the bank account | |
-
-### Return type
-
-[**\TheLogicStudio\GrailPay\Model\GetBankAccountsByAggregatorTypeByAccountUuidHistory200Response**](../Model/GetBankAccountsByAggregatorTypeByAccountUuidHistory200Response.md)
 
 ### Authorization
 
@@ -286,9 +158,9 @@ try {
 getBankAccountsByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuid200Response
 ```
 
-Get Bank Account ( STABLE )
+Show a bank account. ( STABLE )
 
-This endpoint returns the details of a single bank account and its associated entity information.
+This endpoint retrieves the details of a specific bank account by its UUID, including the associated entity information.
 
 ### Example
 
@@ -307,7 +179,7 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$uuid = 9b97f121-a449-4b52-9f36-6c55f18394d6; // string | bank account UUID
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account
 
 try {
     $result = $apiInstance->getBankAccountsByUuid($uuid);
@@ -321,7 +193,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| bank account UUID | |
+| **uuid** | **string**| UUID of the bank account | |
 
 ### Return type
 
@@ -346,9 +218,9 @@ try {
 getBankAccountsByUuidBalance($uuid): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidBalance200Response
 ```
 
-Get Bank Account Balance (STABLE)
+Fetch a bank account balance. ( STABLE )
 
-This endpoint returns the current balance for a specific Quiltt-linked bank account.
+This endpoint fetches the current balance of a bank account. Only available for bank-link (Quiltt/MoneyKit) provider accounts.
 
 ### Example
 
@@ -367,7 +239,7 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$uuid = 9b97f121-a449-4b52-9f36-6c55f18394d6; // string | Bank account UUID
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account
 
 try {
     $result = $apiInstance->getBankAccountsByUuidBalance($uuid);
@@ -381,11 +253,81 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| Bank account UUID | |
+| **uuid** | **string**| UUID of the bank account | |
 
 ### Return type
 
 [**\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidBalance200Response**](../Model/GetBankAccountsByUuidBalance200Response.md)
+
+### Authorization
+
+[ApiToken](../../README.md#ApiToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getBankAccountsByUuidHistory()`
+
+```php
+getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $page, $cursor): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response
+```
+
+Fetch bank account transaction history. ( STABLE )
+
+This endpoint fetches the transaction history for a bank account. Supports two providers: **Quiltt** (cursor-based pagination with advanced filtering) and **MoneyKit** (page-based pagination with basic date filtering). The available parameters and response format depend on the bank account's provider.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: ApiToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account. (Both providers)
+$per_page = 15; // int | Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers)
+$start_date = Mon Jan 01 13:00:00 NZDT 2024; // \DateTime | Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers)
+$end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers)
+$page = 1; // int | Page number for page-based pagination. (MoneyKit only)
+$cursor = 'cursor_example'; // string | Cursor for cursor-based pagination. (Quiltt only)
+
+try {
+    $result = $apiInstance->getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $page, $cursor);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BankAccountsApi->getBankAccountsByUuidHistory: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uuid** | **string**| UUID of the bank account. (Both providers) | |
+| **per_page** | **int**| Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) | [optional] |
+| **start_date** | **\DateTime**| Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) | [optional] |
+| **end_date** | **\DateTime**| End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) | [optional] |
+| **page** | **int**| Page number for page-based pagination. (MoneyKit only) | [optional] |
+| **cursor** | **string**| Cursor for cursor-based pagination. (Quiltt only) | [optional] |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response**](../Model/GetBankAccountsByUuidHistory200Response.md)
 
 ### Authorization
 
@@ -460,15 +402,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getUsersByUuidBankAccounts()`
+## `postBankAccounts()`
 
 ```php
-getUsersByUuidBankAccounts($uuid): \TheLogicStudio\GrailPay\Model\GetUsersByUuidBankAccounts200Response
+postBankAccounts($post_bank_accounts_request): \TheLogicStudio\GrailPay\Model\PostBankAccounts200Response
 ```
 
-Get all bank accounts for a user ( STABLE )
+Add a bank account to an entity. ( STABLE )
 
-This API retrieves a list of all bank accounts associated with a business or person. The response includes details such as the account number, routing number, account holder's name, account type, and other relevant information.
+This endpoint allows for adding a new Bank Account to an entity (person or business) using their entity UUID. You can pass either Plaid information or account and routing information. You should never pass both.
 
 ### Example
 
@@ -487,13 +429,13 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$uuid = 'uuid_example'; // string | UUID of the user
+$post_bank_accounts_request = new \TheLogicStudio\GrailPay\Model\PostBankAccountsRequest(); // \TheLogicStudio\GrailPay\Model\PostBankAccountsRequest
 
 try {
-    $result = $apiInstance->getUsersByUuidBankAccounts($uuid);
+    $result = $apiInstance->postBankAccounts($post_bank_accounts_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->getUsersByUuidBankAccounts: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BankAccountsApi->postBankAccounts: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -501,195 +443,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| UUID of the user | |
+| **post_bank_accounts_request** | [**\TheLogicStudio\GrailPay\Model\PostBankAccountsRequest**](../Model/PostBankAccountsRequest.md)|  | |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\GetUsersByUuidBankAccounts200Response**](../Model/GetUsersByUuidBankAccounts200Response.md)
-
-### Authorization
-
-[ApiToken](../../README.md#ApiToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getUsersByUuidBankAccountsByAccountUuidBalance()`
-
-```php
-getUsersByUuidBankAccountsByAccountUuidBalance($uuid, $account_uuid): \TheLogicStudio\GrailPay\Model\GetUsersByUuidBankAccountsByAccountUuidBalance200Response
-```
-
-Fetch the bank account balance ( STABLE )
-
-Fetch the balance of a specific bank account for a user.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (Token) authorization: ApiToken
-$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$uuid = 'uuid_example'; // string | UUID of the user
-$account_uuid = 'account_uuid_example'; // string | UUID of the bank account
-
-try {
-    $result = $apiInstance->getUsersByUuidBankAccountsByAccountUuidBalance($uuid, $account_uuid);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->getUsersByUuidBankAccountsByAccountUuidBalance: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| UUID of the user | |
-| **account_uuid** | **string**| UUID of the bank account | |
-
-### Return type
-
-[**\TheLogicStudio\GrailPay\Model\GetUsersByUuidBankAccountsByAccountUuidBalance200Response**](../Model/GetUsersByUuidBankAccountsByAccountUuidBalance200Response.md)
-
-### Authorization
-
-[ApiToken](../../README.md#ApiToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `postBankAccountBalanceByUserUuid()`
-
-```php
-postBankAccountBalanceByUserUuid($user_uuid, $v1_get_bank_account_balance_request): \TheLogicStudio\GrailPay\Model\PostBankAccountBalanceByUserUuid200Response
-```
-
-Get balance approval ( STABLE )
-
-Retrieve the balance approval for a specific user.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (Token) authorization: ApiToken
-$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$user_uuid = 'user_uuid_example'; // string | UUID of the user
-$v1_get_bank_account_balance_request = new \TheLogicStudio\GrailPay\Model\V1GetBankAccountBalanceRequest(); // \TheLogicStudio\GrailPay\Model\V1GetBankAccountBalanceRequest
-
-try {
-    $result = $apiInstance->postBankAccountBalanceByUserUuid($user_uuid, $v1_get_bank_account_balance_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->postBankAccountBalanceByUserUuid: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **user_uuid** | **string**| UUID of the user | |
-| **v1_get_bank_account_balance_request** | [**\TheLogicStudio\GrailPay\Model\V1GetBankAccountBalanceRequest**](../Model/V1GetBankAccountBalanceRequest.md)|  | |
-
-### Return type
-
-[**\TheLogicStudio\GrailPay\Model\PostBankAccountBalanceByUserUuid200Response**](../Model/PostBankAccountBalanceByUserUuid200Response.md)
-
-### Authorization
-
-[ApiToken](../../README.md#ApiToken)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `postBankAccountUser()`
-
-```php
-postBankAccountUser($post_bank_account_user_request): \TheLogicStudio\GrailPay\Model\PostBankAccountUser200Response
-```
-
-Get User Details by bank account ( STABLE )
-
-This API will return the details of the user associated with a specific bank account
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (Token) authorization: ApiToken
-$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$post_bank_account_user_request = new \TheLogicStudio\GrailPay\Model\PostBankAccountUserRequest(); // \TheLogicStudio\GrailPay\Model\PostBankAccountUserRequest
-
-try {
-    $result = $apiInstance->postBankAccountUser($post_bank_account_user_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->postBankAccountUser: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **post_bank_account_user_request** | [**\TheLogicStudio\GrailPay\Model\PostBankAccountUserRequest**](../Model/PostBankAccountUserRequest.md)|  | |
-
-### Return type
-
-[**\TheLogicStudio\GrailPay\Model\PostBankAccountUser200Response**](../Model/PostBankAccountUser200Response.md)
+[**\TheLogicStudio\GrailPay\Model\PostBankAccounts200Response**](../Model/PostBankAccounts200Response.md)
 
 ### Authorization
 
@@ -826,15 +584,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `putBankAccountSwitchDefaultByUserUuid()`
+## `putBankAccountsByUuidDefault()`
 
 ```php
-putBankAccountSwitchDefaultByUserUuid($user_uuid, $v1_switch_bank_account_request): \TheLogicStudio\GrailPay\Model\PutBankAccountSwitchDefaultByUserUuid200Response
+putBankAccountsByUuidDefault($uuid): \TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault200Response
 ```
 
-Switch default bank account ( STABLE )
+Switch the default bank account. ( STABLE )
 
-Switch default bank account
+This endpoint sets a bank account as the default bank account for the entity. The bank account must be in a connected state for Quiltt/MoneyKit providers, and the entity must be approved and not scheduled for deletion.
 
 ### Example
 
@@ -853,14 +611,13 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$user_uuid = 'user_uuid_example'; // string | UUID of the user
-$v1_switch_bank_account_request = new \TheLogicStudio\GrailPay\Model\V1SwitchBankAccountRequest(); // \TheLogicStudio\GrailPay\Model\V1SwitchBankAccountRequest | Switch default bank account
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account to set as default
 
 try {
-    $result = $apiInstance->putBankAccountSwitchDefaultByUserUuid($user_uuid, $v1_switch_bank_account_request);
+    $result = $apiInstance->putBankAccountsByUuidDefault($uuid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling BankAccountsApi->putBankAccountSwitchDefaultByUserUuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling BankAccountsApi->putBankAccountsByUuidDefault: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -868,12 +625,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **user_uuid** | **string**| UUID of the user | |
-| **v1_switch_bank_account_request** | [**\TheLogicStudio\GrailPay\Model\V1SwitchBankAccountRequest**](../Model/V1SwitchBankAccountRequest.md)| Switch default bank account | [optional] |
+| **uuid** | **string**| UUID of the bank account to set as default | |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\PutBankAccountSwitchDefaultByUserUuid200Response**](../Model/PutBankAccountSwitchDefaultByUserUuid200Response.md)
+[**\TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault200Response**](../Model/PutBankAccountsByUuidDefault200Response.md)
 
 ### Authorization
 
@@ -881,7 +637,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

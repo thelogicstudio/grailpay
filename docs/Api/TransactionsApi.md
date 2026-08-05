@@ -7,8 +7,8 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**deleteTransactionsByUuidCancel()**](TransactionsApi.md#deleteTransactionsByUuidCancel) | **DELETE** /api/v3/transactions/{uuid}/cancel | Cancel a transaction in the ACH application ( STABLE ) |
-| [**getTransactions()**](TransactionsApi.md#getTransactions) | **GET** /3p/api/v2/transactions | Get Transactions ( STABLE ) |
-| [**getTransactionsByUuid()**](TransactionsApi.md#getTransactionsByUuid) | **GET** /3p/api/v2/transactions/{uuid} | Get Transaction by UUID ( STABLE ) |
+| [**getTransactions()**](TransactionsApi.md#getTransactions) | **GET** /api/v3/transactions | Get All Transactions ( STABLE ) |
+| [**getTransactionsByUuid()**](TransactionsApi.md#getTransactionsByUuid) | **GET** /api/v3/transactions/{uuid} | Get Transaction ( STABLE ) |
 | [**postTransaction()**](TransactionsApi.md#postTransaction) | **POST** /3p/api/v1/transaction | Create a new transaction ( STABLE ) |
 | [**postTransactionsByUuidPause()**](TransactionsApi.md#postTransactionsByUuidPause) | **POST** /api/v3/transactions/{uuid}/pause | Pause a transaction in the ACH application ( STABLE ) |
 | [**postTransactionsByUuidResume()**](TransactionsApi.md#postTransactionsByUuidResume) | **POST** /api/v3/transactions/{uuid}/resume | Resume a transaction in the ACH application ( STABLE ) |
@@ -17,7 +17,7 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 ## `deleteTransactionsByUuidCancel()`
 
 ```php
-deleteTransactionsByUuidCancel($uuid): \TheLogicStudio\GrailPay\Model\DeleteTransactionsByUuidCancel200Response
+deleteTransactionsByUuidCancel($uuid): \TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault200Response
 ```
 
 Cancel a transaction in the ACH application ( STABLE )
@@ -59,7 +59,7 @@ try {
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\DeleteTransactionsByUuidCancel200Response**](../Model/DeleteTransactionsByUuidCancel200Response.md)
+[**\TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault200Response**](../Model/PutBankAccountsByUuidDefault200Response.md)
 
 ### Authorization
 
@@ -77,12 +77,12 @@ try {
 ## `getTransactions()`
 
 ```php
-getTransactions($per_page, $page, $start_date, $end_date, $sort_order, $payer_account_uuid, $payer_account_aggregator_type, $payee_account_uuid, $payee_account_aggregator_type): \TheLogicStudio\GrailPay\Model\GetTransactions200Response
+getTransactions($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_client_reference_id, $filter_start_date, $filter_end_date, $filter_amount, $filter_merchant_uuid, $filter_person_uuid, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetTransactions200Response
 ```
 
-Get Transactions ( STABLE )
+Get All Transactions ( STABLE )
 
-Retrieve a list of transactions based on filter parameters
+This endpoint provides a paginated list of transactions visible to the authenticated user, with filtering and sorting options.
 
 ### Example
 
@@ -101,18 +101,22 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\TransactionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$per_page = 56; // int | Number of records per page
-$page = 56; // int | Page number
-$start_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Start date for filtering transactions
-$end_date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | End date for filtering transactions
-$sort_order = 'sort_order_example'; // string | Sort order
-$payer_account_uuid = 'payer_account_uuid_example'; // string | UUID of the payer account
-$payer_account_aggregator_type = 'payer_account_aggregator_type_example'; // string | Aggregator type of the payer account (Required when payer_account_uuid is provided)
-$payee_account_uuid = 'payee_account_uuid_example'; // string | UUID of the payee account
-$payee_account_aggregator_type = 'payee_account_aggregator_type_example'; // string | Aggregator type of the payee account
+$filter_uuid = 3fa85f64-5717-4562-b3fc-2c963f66afa6; // string | Filter by transaction UUID
+$filter_status = CAPTURE_COMPLETE; // string | Filter by transaction status
+$filter_ach_id = ach_1331Ds7MrGmp8iCkEFFdmR; // string | Filter by ACH trace ID
+$filter_r_code = R01; // string | Filter by ACH return code on the transaction or its payout
+$filter_client_reference_id = reference_12345; // string | Filter by client reference ID (partial match)
+$filter_start_date = Mon Jan 01 13:00:00 NZDT 2024; // \DateTime | Filter transactions created on or after this date (YYYY-MM-DD)
+$filter_end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | Filter transactions created on or before this date (YYYY-MM-DD)
+$filter_amount = >=100; // string | Filter by amount. Supports dynamic operators (e.g. filter[amount]=100, filter[amount]=>100, filter[amount]=<=500)
+$filter_merchant_uuid = 6a8fc154-1a50-483b-a690-fd1dfaf9408b; // string | Filter by payee or payer merchant/business UUID
+$filter_person_uuid = 019e0834-c96a-7d71-bb60-bda7b9a26d1a; // string | Filter by payee or payer person UUID
+$sort = -created_at; // string | Sort by field (created_at, amount). Prefix with '-' for descending order
+$page = 1; // int | Page number for pagination
+$per_page = 15; // int | Number of records per page
 
 try {
-    $result = $apiInstance->getTransactions($per_page, $page, $start_date, $end_date, $sort_order, $payer_account_uuid, $payer_account_aggregator_type, $payee_account_uuid, $payee_account_aggregator_type);
+    $result = $apiInstance->getTransactions($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_client_reference_id, $filter_start_date, $filter_end_date, $filter_amount, $filter_merchant_uuid, $filter_person_uuid, $sort, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->getTransactions: ', $e->getMessage(), PHP_EOL;
@@ -123,15 +127,19 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**| Number of records per page | [optional] |
-| **page** | **int**| Page number | [optional] |
-| **start_date** | **\DateTime**| Start date for filtering transactions | [optional] |
-| **end_date** | **\DateTime**| End date for filtering transactions | [optional] |
-| **sort_order** | **string**| Sort order | [optional] |
-| **payer_account_uuid** | **string**| UUID of the payer account | [optional] |
-| **payer_account_aggregator_type** | **string**| Aggregator type of the payer account (Required when payer_account_uuid is provided) | [optional] |
-| **payee_account_uuid** | **string**| UUID of the payee account | [optional] |
-| **payee_account_aggregator_type** | **string**| Aggregator type of the payee account | [optional] |
+| **filter_uuid** | **string**| Filter by transaction UUID | [optional] |
+| **filter_status** | **string**| Filter by transaction status | [optional] |
+| **filter_ach_id** | **string**| Filter by ACH trace ID | [optional] |
+| **filter_r_code** | **string**| Filter by ACH return code on the transaction or its payout | [optional] |
+| **filter_client_reference_id** | **string**| Filter by client reference ID (partial match) | [optional] |
+| **filter_start_date** | **\DateTime**| Filter transactions created on or after this date (YYYY-MM-DD) | [optional] |
+| **filter_end_date** | **\DateTime**| Filter transactions created on or before this date (YYYY-MM-DD) | [optional] |
+| **filter_amount** | **string**| Filter by amount. Supports dynamic operators (e.g. filter[amount]&#x3D;100, filter[amount]&#x3D;&gt;100, filter[amount]&#x3D;&lt;&#x3D;500) | [optional] |
+| **filter_merchant_uuid** | **string**| Filter by payee or payer merchant/business UUID | [optional] |
+| **filter_person_uuid** | **string**| Filter by payee or payer person UUID | [optional] |
+| **sort** | **string**| Sort by field (created_at, amount). Prefix with &#39;-&#39; for descending order | [optional] |
+| **page** | **int**| Page number for pagination | [optional] |
+| **per_page** | **int**| Number of records per page | [optional] [default to 15] |
 
 ### Return type
 
@@ -156,9 +164,9 @@ try {
 getTransactionsByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetTransactionsByUuid200Response
 ```
 
-Get Transaction by UUID ( STABLE )
+Get Transaction ( STABLE )
 
-When making a request to an API for a transaction's information, you typically need to provide a unique identifier UUID. The UUID is generated at the time of creating a transaction and is associated with the each transaction.
+This endpoint returns the details of a single transaction along with its payout, refunds and clawback. The UUID is generated when the transaction is created and is associated with the transaction record.
 
 ### Example
 
@@ -177,7 +185,7 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\TransactionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$uuid = 'uuid_example'; // string | UUID of the transaction
+$uuid = 3fa85f64-5717-4562-b3fc-2c963f66afa6; // string | transaction UUID
 
 try {
     $result = $apiInstance->getTransactionsByUuid($uuid);
@@ -191,7 +199,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| UUID of the transaction | |
+| **uuid** | **string**| transaction UUID | |
 
 ### Return type
 

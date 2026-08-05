@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **client_reference_id** | **object** |  | [optional]
 **billing_merchant_uuid** | **object** |  | [optional]
 **billing_processor_mid** | **object** |  | [optional]
-**payout_type** | **object** |  | [optional]
 **bank_account** | **object** |  | [optional]
 **bank_account_plaid_account_id** | **object** |  | [optional]
 **bank_account_plaid_access_token** | **object** |  | [optional]

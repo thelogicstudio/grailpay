@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **status** | **bool** |  | [optional]
 **message** | **string** |  | [optional]
 **data** | **object** |  | [optional]
-**errors** | [**\TheLogicStudio\GrailPay\Model\GetBankAccounts422ResponseErrors**](GetBankAccounts422ResponseErrors.md) |  | [optional]
+**errors** | [**\TheLogicStudio\GrailPay\Model\V3BankAccountValidationError**](V3BankAccountValidationError.md) |  | [optional]
 **request_id** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

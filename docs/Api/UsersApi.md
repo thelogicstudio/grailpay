@@ -21,13 +21,14 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 | [**postMerchantsByUuidActivate()**](UsersApi.md#postMerchantsByUuidActivate) | **POST** /api/v3/merchants/{uuid}/activate | Activate a Merchant ( STABLE ) |
 | [**postMerchantsByUuidDeactivate()**](UsersApi.md#postMerchantsByUuidDeactivate) | **POST** /api/v3/merchants/{uuid}/deactivate | Deactivate a Merchant ( STABLE ) |
 | [**postPeople()**](UsersApi.md#postPeople) | **POST** /api/v3/people | Onboard a new Person into the ACH application ( STABLE ) |
+| [**postPeopleKyc()**](UsersApi.md#postPeopleKyc) | **POST** /api/v3/people/kyc | Register Person KYC ( STABLE ) |
 | [**postRegisterPerson()**](UsersApi.md#postRegisterPerson) | **POST** /3p/api/v1/register/person | Onboard a new person ( DEPRECATED ) |
 
 
 ## `deleteUsersByUuid()`
 
 ```php
-deleteUsersByUuid($uuid): mixed[]
+deleteUsersByUuid($uuid): \TheLogicStudio\GrailPay\Model\DeleteUsersByUuid200Response
 ```
 
 Deleting a User ( STABLE )
@@ -69,7 +70,7 @@ try {
 
 ### Return type
 
-**mixed[]**
+[**\TheLogicStudio\GrailPay\Model\DeleteUsersByUuid200Response**](../Model/DeleteUsersByUuid200Response.md)
 
 ### Authorization
 
@@ -948,6 +949,66 @@ try {
 ### Return type
 
 [**\TheLogicStudio\GrailPay\Model\PostPeople201Response**](../Model/PostPeople201Response.md)
+
+### Authorization
+
+[ApiToken](../../README.md#ApiToken)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postPeopleKyc()`
+
+```php
+postPeopleKyc($post_people_kyc_request): \TheLogicStudio\GrailPay\Model\PostPeopleKyc200Response
+```
+
+Register Person KYC ( STABLE )
+
+This endpoint registers a person's KYC profile. If matching KYC data already exists, the existing record is returned instead of creating a duplicate.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: ApiToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_people_kyc_request = new \TheLogicStudio\GrailPay\Model\PostPeopleKycRequest(); // \TheLogicStudio\GrailPay\Model\PostPeopleKycRequest
+
+try {
+    $result = $apiInstance->postPeopleKyc($post_people_kyc_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->postPeopleKyc: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_people_kyc_request** | [**\TheLogicStudio\GrailPay\Model\PostPeopleKycRequest**](../Model/PostPeopleKycRequest.md)|  | |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\PostPeopleKyc200Response**](../Model/PostPeopleKyc200Response.md)
 
 ### Authorization
 

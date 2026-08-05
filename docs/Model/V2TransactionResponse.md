@@ -33,7 +33,9 @@ Name | Type | Description | Notes
 **payout_ach_return_code** | **string** |  | [optional]
 **payout_failure_reason** | **string** |  | [optional]
 **vendor_name** | **string** |  | [optional]
-**trace_ids** | [**\TheLogicStudio\GrailPay\Model\V1TransactionResponseTraceIds**](V1TransactionResponseTraceIds.md) |  | [optional]
+**trace_ids** | [**\TheLogicStudio\GrailPay\Model\V2TransactionResponseTraceIds**](V2TransactionResponseTraceIds.md) |  | [optional]
+**bank_identifiers** | [**\TheLogicStudio\GrailPay\Model\V2TransactionResponseBankIdentifiers**](V2TransactionResponseBankIdentifiers.md) |  | [optional]
+**declined_at** | **string** |  | [optional]
 **created_at** | **string** |  | [optional]
 **updated_at** | **string** |  | [optional]
 

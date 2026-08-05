@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **string** |  | [optional]
 **provider_type** | **string** |  | [optional]
+**aggregator_type** | **string** |  | [optional]
 **account_number** | **string** |  | [optional]
 **routing_number** | **string** |  | [optional]
 **account_name** | **string** |  | [optional]
@@ -15,6 +16,6 @@ Name | Type | Description | Notes
 **is_default** | **bool** |  | [optional]
 **client_reference_id** | **string** |  | [optional]
 **status** | **string** |  | [optional]
-**timestamps** | [**\TheLogicStudio\GrailPay\Model\V3TimestampsObject**](V3TimestampsObject.md) |  | [optional]
+**timestamps** | [**\TheLogicStudio\GrailPay\Model\GetBankAccounts200ResponseDataBankAccountsInnerTimestamps**](GetBankAccounts200ResponseDataBankAccountsInnerTimestamps.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

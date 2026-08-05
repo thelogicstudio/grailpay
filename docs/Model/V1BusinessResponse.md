@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **kyb_rejected_reason** | **string** |  | [optional]
 **email** | **string** |  | [optional]
 **phone** | **string** |  | [optional]
-**financing_credit_balance** | **string** |  | [optional]
 **address** | [**\TheLogicStudio\GrailPay\Model\V1BusinessResponseAddress**](V1BusinessResponseAddress.md) |  | [optional]
 **business_owners** | [**\TheLogicStudio\GrailPay\Model\V1BusinessResponseBusinessOwners**](V1BusinessResponseBusinessOwners.md) |  | [optional]
 **created_at** | **\DateTime** |  | [optional]

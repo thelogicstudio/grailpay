@@ -13,5 +13,7 @@ Name | Type | Description | Notes
 **name_match** | **string** |  | [optional]
 **phone_number_present** | **bool** |  | [optional]
 **valid_routing_number** | **bool** |  | [optional]
+**name_match_score** | **int** |  | [optional]
+**taxpayer_number_match** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ach_return_code** | **string** |  | [optional]
 **failure_reason** | **string** |  | [optional]
 **modality** | [**\TheLogicStudio\GrailPay\Model\GetBatchPayouts200ResponseDataBatchPayoutsInnerModality**](GetBatchPayouts200ResponseDataBatchPayoutsInnerModality.md) |  | [optional]
+**bank_identifiers** | [**\TheLogicStudio\GrailPay\Model\GetBatchPayouts200ResponseDataBatchPayoutsInnerBankIdentifiers**](GetBatchPayouts200ResponseDataBatchPayoutsInnerBankIdentifiers.md) |  | [optional]
 **created_at** | **\DateTime** |  | [optional]
 **updated_at** | **\DateTime** |  | [optional]
 

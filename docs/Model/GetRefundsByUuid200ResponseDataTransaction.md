@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **status** | **string** |  | [optional]
 **currency** | **string** |  | [optional]
 **trace_id** | **string** |  | [optional]
+**bank_identifiers** | [**\TheLogicStudio\GrailPay\Model\GetPayoutsByUuid200ResponseDataTransactionsInnerBankIdentifiers**](GetPayoutsByUuid200ResponseDataTransactionsInnerBankIdentifiers.md) |  | [optional]
 **amount** | **float** |  | [optional]
 **transaction_fee** | **float** |  | [optional]
 **payout_delay_days** | **int** |  | [optional]

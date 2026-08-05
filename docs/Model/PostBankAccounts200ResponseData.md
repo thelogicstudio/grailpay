@@ -1,0 +1,11 @@
+# # PostBankAccounts200ResponseData
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**entity** | [**\TheLogicStudio\GrailPay\Model\PostBankAccounts200ResponseDataEntity**](PostBankAccounts200ResponseDataEntity.md) |  | [optional]
+**bank_account** | [**\TheLogicStudio\GrailPay\Model\V3BankAccountResponse**](V3BankAccountResponse.md) |  | [optional]
+**account_intelligence** | [**\TheLogicStudio\GrailPay\Model\PostBankAccounts201ResponseDataAccountIntelligence**](PostBankAccounts201ResponseDataAccountIntelligence.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
