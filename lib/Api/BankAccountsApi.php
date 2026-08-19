@@ -1547,21 +1547,20 @@ class BankAccountsApi
      *
      * Fetch bank account transaction history. ( STABLE )
      *
-     * @param  string $uuid UUID of the bank account. (Both providers) (required)
-     * @param  int|null $per_page Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) (optional)
-     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) (optional)
-     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) (optional)
-     * @param  int|null $page Page number for page-based pagination. (MoneyKit only) (optional)
-     * @param  string|null $cursor Cursor for cursor-based pagination. (Quiltt only) (optional)
+     * @param  string $uuid UUID of the bank account. (required)
+     * @param  int|null $per_page Number of records per page (first/page size for cursor-based pagination). (optional)
+     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (optional)
+     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (optional)
+     * @param  string|null $cursor Cursor for cursor-based pagination. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountsByUuidHistory'] to see the possible values for this operation
      *
      * @throws \TheLogicStudio\GrailPay\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response|\TheLogicStudio\GrailPay\Model\GetBankAccounts401Response|\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuid404Response|\TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault422Response|\TheLogicStudio\GrailPay\Model\PostBankAccounts403Response
+     * @return \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response|\TheLogicStudio\GrailPay\Model\GetBankAccounts401Response|\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuid404Response|\TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault422Response|\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory500Response
      */
-    public function getBankAccountsByUuidHistory($uuid, $per_page = null, $start_date = null, $end_date = null, $page = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
+    public function getBankAccountsByUuidHistory($uuid, $per_page = null, $start_date = null, $end_date = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
     {
-        list($response) = $this->getBankAccountsByUuidHistoryWithHttpInfo($uuid, $per_page, $start_date, $end_date, $page, $cursor, $contentType);
+        list($response) = $this->getBankAccountsByUuidHistoryWithHttpInfo($uuid, $per_page, $start_date, $end_date, $cursor, $contentType);
         return $response;
     }
 
@@ -1570,21 +1569,20 @@ class BankAccountsApi
      *
      * Fetch bank account transaction history. ( STABLE )
      *
-     * @param  string $uuid UUID of the bank account. (Both providers) (required)
-     * @param  int|null $per_page Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) (optional)
-     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) (optional)
-     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) (optional)
-     * @param  int|null $page Page number for page-based pagination. (MoneyKit only) (optional)
-     * @param  string|null $cursor Cursor for cursor-based pagination. (Quiltt only) (optional)
+     * @param  string $uuid UUID of the bank account. (required)
+     * @param  int|null $per_page Number of records per page (first/page size for cursor-based pagination). (optional)
+     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (optional)
+     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (optional)
+     * @param  string|null $cursor Cursor for cursor-based pagination. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountsByUuidHistory'] to see the possible values for this operation
      *
      * @throws \TheLogicStudio\GrailPay\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response|\TheLogicStudio\GrailPay\Model\GetBankAccounts401Response|\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuid404Response|\TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault422Response|\TheLogicStudio\GrailPay\Model\PostBankAccounts403Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response|\TheLogicStudio\GrailPay\Model\GetBankAccounts401Response|\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuid404Response|\TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault422Response|\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory500Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBankAccountsByUuidHistoryWithHttpInfo($uuid, $per_page = null, $start_date = null, $end_date = null, $page = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
+    public function getBankAccountsByUuidHistoryWithHttpInfo($uuid, $per_page = null, $start_date = null, $end_date = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
     {
-        $request = $this->getBankAccountsByUuidHistoryRequest($uuid, $per_page, $start_date, $end_date, $page, $cursor, $contentType);
+        $request = $this->getBankAccountsByUuidHistoryRequest($uuid, $per_page, $start_date, $end_date, $cursor, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1636,7 +1634,7 @@ class BankAccountsApi
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\TheLogicStudio\GrailPay\Model\PostBankAccounts403Response',
+                        '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory500Response',
                         $request,
                         $response,
                     );
@@ -1699,7 +1697,7 @@ class BankAccountsApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\TheLogicStudio\GrailPay\Model\PostBankAccounts403Response',
+                        '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1716,20 +1714,19 @@ class BankAccountsApi
      *
      * Fetch bank account transaction history. ( STABLE )
      *
-     * @param  string $uuid UUID of the bank account. (Both providers) (required)
-     * @param  int|null $per_page Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) (optional)
-     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) (optional)
-     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) (optional)
-     * @param  int|null $page Page number for page-based pagination. (MoneyKit only) (optional)
-     * @param  string|null $cursor Cursor for cursor-based pagination. (Quiltt only) (optional)
+     * @param  string $uuid UUID of the bank account. (required)
+     * @param  int|null $per_page Number of records per page (first/page size for cursor-based pagination). (optional)
+     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (optional)
+     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (optional)
+     * @param  string|null $cursor Cursor for cursor-based pagination. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountsByUuidHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBankAccountsByUuidHistoryAsync($uuid, $per_page = null, $start_date = null, $end_date = null, $page = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
+    public function getBankAccountsByUuidHistoryAsync($uuid, $per_page = null, $start_date = null, $end_date = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
     {
-        return $this->getBankAccountsByUuidHistoryAsyncWithHttpInfo($uuid, $per_page, $start_date, $end_date, $page, $cursor, $contentType)
+        return $this->getBankAccountsByUuidHistoryAsyncWithHttpInfo($uuid, $per_page, $start_date, $end_date, $cursor, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1742,21 +1739,20 @@ class BankAccountsApi
      *
      * Fetch bank account transaction history. ( STABLE )
      *
-     * @param  string $uuid UUID of the bank account. (Both providers) (required)
-     * @param  int|null $per_page Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) (optional)
-     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) (optional)
-     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) (optional)
-     * @param  int|null $page Page number for page-based pagination. (MoneyKit only) (optional)
-     * @param  string|null $cursor Cursor for cursor-based pagination. (Quiltt only) (optional)
+     * @param  string $uuid UUID of the bank account. (required)
+     * @param  int|null $per_page Number of records per page (first/page size for cursor-based pagination). (optional)
+     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (optional)
+     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (optional)
+     * @param  string|null $cursor Cursor for cursor-based pagination. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountsByUuidHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBankAccountsByUuidHistoryAsyncWithHttpInfo($uuid, $per_page = null, $start_date = null, $end_date = null, $page = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
+    public function getBankAccountsByUuidHistoryAsyncWithHttpInfo($uuid, $per_page = null, $start_date = null, $end_date = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
     {
         $returnType = '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response';
-        $request = $this->getBankAccountsByUuidHistoryRequest($uuid, $per_page, $start_date, $end_date, $page, $cursor, $contentType);
+        $request = $this->getBankAccountsByUuidHistoryRequest($uuid, $per_page, $start_date, $end_date, $cursor, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1797,18 +1793,17 @@ class BankAccountsApi
     /**
      * Create request for operation 'getBankAccountsByUuidHistory'
      *
-     * @param  string $uuid UUID of the bank account. (Both providers) (required)
-     * @param  int|null $per_page Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) (optional)
-     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) (optional)
-     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) (optional)
-     * @param  int|null $page Page number for page-based pagination. (MoneyKit only) (optional)
-     * @param  string|null $cursor Cursor for cursor-based pagination. (Quiltt only) (optional)
+     * @param  string $uuid UUID of the bank account. (required)
+     * @param  int|null $per_page Number of records per page (first/page size for cursor-based pagination). (optional)
+     * @param  \DateTime|null $start_date Start date filter (Y-m-d format). Must be before or equal to end_date. (optional)
+     * @param  \DateTime|null $end_date End date filter (Y-m-d format). Must be after or equal to start_date. (optional)
+     * @param  string|null $cursor Cursor for cursor-based pagination. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getBankAccountsByUuidHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getBankAccountsByUuidHistoryRequest($uuid, $per_page = null, $start_date = null, $end_date = null, $page = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
+    public function getBankAccountsByUuidHistoryRequest($uuid, $per_page = null, $start_date = null, $end_date = null, $cursor = null, string $contentType = self::contentTypes['getBankAccountsByUuidHistory'][0])
     {
 
         // verify the required parameter 'uuid' is set
@@ -1817,7 +1812,6 @@ class BankAccountsApi
                 'Missing the required parameter $uuid when calling getBankAccountsByUuidHistory'
             );
         }
-
 
 
 
@@ -1854,15 +1848,6 @@ class BankAccountsApi
             $end_date,
             'end_date', // param base name
             'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page,
-            'page', // param base name
-            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

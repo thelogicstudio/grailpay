@@ -1,6 +1,6 @@
 <?php
 /**
- * GetBankAccountsByUuidHistory200Response
+ * GetBankAccountsByUuidHistory500Response
  *
  * PHP version 8.1
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \TheLogicStudio\GrailPay\ObjectSerializer;
 
 /**
- * GetBankAccountsByUuidHistory200Response Class Doc Comment
+ * GetBankAccountsByUuidHistory500Response Class Doc Comment
  *
  * @category Class
- * @description Uses cursor-based pagination.
  * @package  TheLogicStudio\GrailPay
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetBankAccountsByUuidHistory500Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetBankAccountsByUuidHistory200Response';
+    protected static $openAPIModelName = 'getBankAccountsByUuidHistory_500_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +59,7 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
     protected static $openAPITypes = [
         'status' => 'bool',
         'message' => 'string',
-        'data' => '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData',
+        'data' => 'object',
         'errors' => 'object',
         'request_id' => 'string'
     ];
@@ -88,7 +87,7 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
     protected static array $openAPINullables = [
         'status' => false,
         'message' => false,
-        'data' => false,
+        'data' => true,
         'errors' => true,
         'request_id' => false
     ];
@@ -375,7 +374,7 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
     /**
      * Gets data
      *
-     * @return \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData|null
+     * @return object|null
      */
     public function getData()
     {
@@ -385,14 +384,21 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
     /**
      * Sets data
      *
-     * @param \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData|null $data data
+     * @param object|null $data data
      *
      * @return self
      */
     public function setData($data)
     {
         if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
+            array_push($this->openAPINullablesSetToNull, 'data');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('data', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
         $this->container['data'] = $data;
 

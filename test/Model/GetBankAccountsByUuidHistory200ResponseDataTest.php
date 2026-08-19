@@ -1,6 +1,6 @@
 <?php
 /**
- * GetBankAccountsByUuidHistory200ResponseTest
+ * GetBankAccountsByUuidHistory200ResponseDataTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace TheLogicStudio\GrailPay\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GetBankAccountsByUuidHistory200ResponseTest Class Doc Comment
+ * GetBankAccountsByUuidHistory200ResponseDataTest Class Doc Comment
  *
  * @category    Class
- * @description Uses cursor-based pagination.
+ * @description GetBankAccountsByUuidHistory200ResponseData
  * @package     TheLogicStudio\GrailPay
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GetBankAccountsByUuidHistory200ResponseTest extends TestCase
+class GetBankAccountsByUuidHistory200ResponseDataTest extends TestCase
 {
 
     /**
@@ -71,54 +71,27 @@ class GetBankAccountsByUuidHistory200ResponseTest extends TestCase
     }
 
     /**
-     * Test "GetBankAccountsByUuidHistory200Response"
+     * Test "GetBankAccountsByUuidHistory200ResponseData"
      */
-    public function testGetBankAccountsByUuidHistory200Response()
+    public function testGetBankAccountsByUuidHistory200ResponseData()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "transactions"
      */
-    public function testPropertyStatus()
+    public function testPropertyTransactions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "pagination"
      */
-    public function testPropertyMessage()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "errors"
-     */
-    public function testPropertyErrors()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "request_id"
-     */
-    public function testPropertyRequestId()
+    public function testPropertyPagination()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

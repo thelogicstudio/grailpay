@@ -1,6 +1,6 @@
 <?php
 /**
- * GetBankAccountsByUuidHistory200ResponseTest
+ * GetBankAccountsByUuidHistory500ResponseTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace TheLogicStudio\GrailPay\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GetBankAccountsByUuidHistory200ResponseTest Class Doc Comment
+ * GetBankAccountsByUuidHistory500ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Uses cursor-based pagination.
+ * @description GetBankAccountsByUuidHistory500Response
  * @package     TheLogicStudio\GrailPay
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GetBankAccountsByUuidHistory200ResponseTest extends TestCase
+class GetBankAccountsByUuidHistory500ResponseTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class GetBankAccountsByUuidHistory200ResponseTest extends TestCase
     }
 
     /**
-     * Test "GetBankAccountsByUuidHistory200Response"
+     * Test "GetBankAccountsByUuidHistory500Response"
      */
-    public function testGetBankAccountsByUuidHistory200Response()
+    public function testGetBankAccountsByUuidHistory500Response()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

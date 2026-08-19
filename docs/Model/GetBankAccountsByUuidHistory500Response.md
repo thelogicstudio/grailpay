@@ -1,4 +1,4 @@
-# # GetBankAccountsByUuidHistory200Response
+# # GetBankAccountsByUuidHistory500Response
 
 ## Properties
 
@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **bool** |  | [optional]
 **message** | **string** |  | [optional]
-**data** | [**\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData**](GetBankAccountsByUuidHistory200ResponseData.md) |  | [optional]
+**data** | **object** |  | [optional]
 **errors** | **object** |  | [optional]
 **request_id** | **string** |  | [optional]
 

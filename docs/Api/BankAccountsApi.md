@@ -275,12 +275,12 @@ try {
 ## `getBankAccountsByUuidHistory()`
 
 ```php
-getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $page, $cursor): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response
+getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $cursor): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response
 ```
 
 Fetch bank account transaction history. ( STABLE )
 
-This endpoint fetches the transaction history for a bank account. Supports two providers: **Quiltt** (cursor-based pagination with advanced filtering) and **MoneyKit** (page-based pagination with basic date filtering). The available parameters and response format depend on the bank account's provider.
+This endpoint fetches the transaction history for a bank account. Uses Quiltt (cursor-based pagination with advanced filtering).
 
 ### Example
 
@@ -299,15 +299,14 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account. (Both providers)
-$per_page = 15; // int | Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers)
-$start_date = Mon Jan 01 13:00:00 NZDT 2024; // \DateTime | Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers)
-$end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers)
-$page = 1; // int | Page number for page-based pagination. (MoneyKit only)
-$cursor = 'cursor_example'; // string | Cursor for cursor-based pagination. (Quiltt only)
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account.
+$per_page = 15; // int | Number of records per page (first/page size for cursor-based pagination).
+$start_date = Mon Jan 01 13:00:00 NZDT 2024; // \DateTime | Start date filter (Y-m-d format). Must be before or equal to end_date.
+$end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | End date filter (Y-m-d format). Must be after or equal to start_date.
+$cursor = 'cursor_example'; // string | Cursor for cursor-based pagination.
 
 try {
-    $result = $apiInstance->getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $page, $cursor);
+    $result = $apiInstance->getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankAccountsApi->getBankAccountsByUuidHistory: ', $e->getMessage(), PHP_EOL;
@@ -318,12 +317,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| UUID of the bank account. (Both providers) | |
-| **per_page** | **int**| Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) | [optional] |
-| **start_date** | **\DateTime**| Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) | [optional] |
-| **end_date** | **\DateTime**| End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) | [optional] |
-| **page** | **int**| Page number for page-based pagination. (MoneyKit only) | [optional] |
-| **cursor** | **string**| Cursor for cursor-based pagination. (Quiltt only) | [optional] |
+| **uuid** | **string**| UUID of the bank account. | |
+| **per_page** | **int**| Number of records per page (first/page size for cursor-based pagination). | [optional] |
+| **start_date** | **\DateTime**| Start date filter (Y-m-d format). Must be before or equal to end_date. | [optional] |
+| **end_date** | **\DateTime**| End date filter (Y-m-d format). Must be after or equal to start_date. | [optional] |
+| **cursor** | **string**| Cursor for cursor-based pagination. | [optional] |
 
 ### Return type
 

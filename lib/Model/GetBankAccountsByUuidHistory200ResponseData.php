@@ -1,6 +1,6 @@
 <?php
 /**
- * GetBankAccountsByUuidHistory200Response
+ * GetBankAccountsByUuidHistory200ResponseData
  *
  * PHP version 8.1
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \TheLogicStudio\GrailPay\ObjectSerializer;
 
 /**
- * GetBankAccountsByUuidHistory200Response Class Doc Comment
+ * GetBankAccountsByUuidHistory200ResponseData Class Doc Comment
  *
  * @category Class
- * @description Uses cursor-based pagination.
  * @package  TheLogicStudio\GrailPay
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetBankAccountsByUuidHistory200ResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetBankAccountsByUuidHistory200Response';
+    protected static $openAPIModelName = 'GetBankAccountsByUuidHistory200Response_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +57,8 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'bool',
-        'message' => 'string',
-        'data' => '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData',
-        'errors' => 'object',
-        'request_id' => 'string'
+        'transactions' => '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseDataTransactionsInner[]',
+        'pagination' => '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseDataPagination'
     ];
 
     /**
@@ -73,11 +69,8 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'message' => null,
-        'data' => null,
-        'errors' => null,
-        'request_id' => 'uuid'
+        'transactions' => null,
+        'pagination' => null
     ];
 
     /**
@@ -86,11 +79,8 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'status' => false,
-        'message' => false,
-        'data' => false,
-        'errors' => true,
-        'request_id' => false
+        'transactions' => false,
+        'pagination' => false
     ];
 
     /**
@@ -179,11 +169,8 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'message' => 'message',
-        'data' => 'data',
-        'errors' => 'errors',
-        'request_id' => 'request_id'
+        'transactions' => 'transactions',
+        'pagination' => 'pagination'
     ];
 
     /**
@@ -192,11 +179,8 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'message' => 'setMessage',
-        'data' => 'setData',
-        'errors' => 'setErrors',
-        'request_id' => 'setRequestId'
+        'transactions' => 'setTransactions',
+        'pagination' => 'setPagination'
     ];
 
     /**
@@ -205,11 +189,8 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'message' => 'getMessage',
-        'data' => 'getData',
-        'errors' => 'getErrors',
-        'request_id' => 'getRequestId'
+        'transactions' => 'getTransactions',
+        'pagination' => 'getPagination'
     ];
 
     /**
@@ -269,11 +250,8 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('message', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('errors', $data ?? [], null);
-        $this->setIfExists('request_id', $data ?? [], null);
+        $this->setIfExists('transactions', $data ?? [], null);
+        $this->setIfExists('pagination', $data ?? [], null);
     }
 
     /**
@@ -319,143 +297,55 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets status
+     * Gets transactions
      *
-     * @return bool|null
+     * @return \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseDataTransactionsInner[]|null
      */
-    public function getStatus()
+    public function getTransactions()
     {
-        return $this->container['status'];
+        return $this->container['transactions'];
     }
 
     /**
-     * Sets status
+     * Sets transactions
      *
-     * @param bool|null $status status
+     * @param \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseDataTransactionsInner[]|null $transactions transactions
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setTransactions($transactions)
     {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        if (is_null($transactions)) {
+            throw new \InvalidArgumentException('non-nullable transactions cannot be null');
         }
-        $this->container['status'] = $status;
+        $this->container['transactions'] = $transactions;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets pagination
      *
-     * @return string|null
+     * @return \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseDataPagination|null
      */
-    public function getMessage()
+    public function getPagination()
     {
-        return $this->container['message'];
+        return $this->container['pagination'];
     }
 
     /**
-     * Sets message
+     * Sets pagination
      *
-     * @param string|null $message message
+     * @param \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseDataPagination|null $pagination pagination
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setPagination($pagination)
     {
-        if (is_null($message)) {
-            throw new \InvalidArgumentException('non-nullable message cannot be null');
+        if (is_null($pagination)) {
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData|null $data data
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
-        }
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return object|null
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param object|null $errors errors
-     *
-     * @return self
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['errors'] = $errors;
-
-        return $this;
-    }
-
-    /**
-     * Gets request_id
-     *
-     * @return string|null
-     */
-    public function getRequestId()
-    {
-        return $this->container['request_id'];
-    }
-
-    /**
-     * Sets request_id
-     *
-     * @param string|null $request_id request_id
-     *
-     * @return self
-     */
-    public function setRequestId($request_id)
-    {
-        if (is_null($request_id)) {
-            throw new \InvalidArgumentException('non-nullable request_id cannot be null');
-        }
-        $this->container['request_id'] = $request_id;
+        $this->container['pagination'] = $pagination;
 
         return $this;
     }

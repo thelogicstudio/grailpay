@@ -1,6 +1,6 @@
 <?php
 /**
- * GetBankAccountsByUuidHistory200ResponseTest
+ * GetBankAccountsByUuidHistory200ResponseDataPaginationTest
  *
  * PHP version 8.1
  *
@@ -31,15 +31,15 @@ namespace TheLogicStudio\GrailPay\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GetBankAccountsByUuidHistory200ResponseTest Class Doc Comment
+ * GetBankAccountsByUuidHistory200ResponseDataPaginationTest Class Doc Comment
  *
  * @category    Class
- * @description Uses cursor-based pagination.
+ * @description GetBankAccountsByUuidHistory200ResponseDataPagination
  * @package     TheLogicStudio\GrailPay
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GetBankAccountsByUuidHistory200ResponseTest extends TestCase
+class GetBankAccountsByUuidHistory200ResponseDataPaginationTest extends TestCase
 {
 
     /**
@@ -71,54 +71,63 @@ class GetBankAccountsByUuidHistory200ResponseTest extends TestCase
     }
 
     /**
-     * Test "GetBankAccountsByUuidHistory200Response"
+     * Test "GetBankAccountsByUuidHistory200ResponseDataPagination"
      */
-    public function testGetBankAccountsByUuidHistory200Response()
+    public function testGetBankAccountsByUuidHistory200ResponseDataPagination()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "total_items"
      */
-    public function testPropertyStatus()
+    public function testPropertyTotalItems()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "page_size"
      */
-    public function testPropertyMessage()
+    public function testPropertyPageSize()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "data"
+     * Test attribute "has_next_page"
      */
-    public function testPropertyData()
+    public function testPropertyHasNextPage()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "errors"
+     * Test attribute "has_previous_page"
      */
-    public function testPropertyErrors()
+    public function testPropertyHasPreviousPage()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "request_id"
+     * Test attribute "start_cursor"
      */
-    public function testPropertyRequestId()
+    public function testPropertyStartCursor()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "next_cursor"
+     */
+    public function testPropertyNextCursor()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

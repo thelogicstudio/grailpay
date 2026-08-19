@@ -1,6 +1,6 @@
 <?php
 /**
- * GetBankAccountsByUuidHistory200Response
+ * GetBankAccountsByUuidHistory200ResponseDataPagination
  *
  * PHP version 8.1
  *
@@ -32,16 +32,15 @@ use \ArrayAccess;
 use \TheLogicStudio\GrailPay\ObjectSerializer;
 
 /**
- * GetBankAccountsByUuidHistory200Response Class Doc Comment
+ * GetBankAccountsByUuidHistory200ResponseDataPagination Class Doc Comment
  *
  * @category Class
- * @description Uses cursor-based pagination.
  * @package  TheLogicStudio\GrailPay
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class GetBankAccountsByUuidHistory200ResponseDataPagination implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GetBankAccountsByUuidHistory200Response';
+    protected static $openAPIModelName = 'GetBankAccountsByUuidHistory200Response_data_pagination';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +57,12 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'bool',
-        'message' => 'string',
-        'data' => '\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData',
-        'errors' => 'object',
-        'request_id' => 'string'
+        'total_items' => 'int',
+        'page_size' => 'int',
+        'has_next_page' => 'bool',
+        'has_previous_page' => 'bool',
+        'start_cursor' => 'string',
+        'next_cursor' => 'string'
     ];
 
     /**
@@ -73,11 +73,12 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'message' => null,
-        'data' => null,
-        'errors' => null,
-        'request_id' => 'uuid'
+        'total_items' => null,
+        'page_size' => null,
+        'has_next_page' => null,
+        'has_previous_page' => null,
+        'start_cursor' => null,
+        'next_cursor' => null
     ];
 
     /**
@@ -86,11 +87,12 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'status' => false,
-        'message' => false,
-        'data' => false,
-        'errors' => true,
-        'request_id' => false
+        'total_items' => false,
+        'page_size' => false,
+        'has_next_page' => false,
+        'has_previous_page' => false,
+        'start_cursor' => true,
+        'next_cursor' => true
     ];
 
     /**
@@ -179,11 +181,12 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'message' => 'message',
-        'data' => 'data',
-        'errors' => 'errors',
-        'request_id' => 'request_id'
+        'total_items' => 'total_items',
+        'page_size' => 'page_size',
+        'has_next_page' => 'has_next_page',
+        'has_previous_page' => 'has_previous_page',
+        'start_cursor' => 'start_cursor',
+        'next_cursor' => 'next_cursor'
     ];
 
     /**
@@ -192,11 +195,12 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'message' => 'setMessage',
-        'data' => 'setData',
-        'errors' => 'setErrors',
-        'request_id' => 'setRequestId'
+        'total_items' => 'setTotalItems',
+        'page_size' => 'setPageSize',
+        'has_next_page' => 'setHasNextPage',
+        'has_previous_page' => 'setHasPreviousPage',
+        'start_cursor' => 'setStartCursor',
+        'next_cursor' => 'setNextCursor'
     ];
 
     /**
@@ -205,11 +209,12 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'message' => 'getMessage',
-        'data' => 'getData',
-        'errors' => 'getErrors',
-        'request_id' => 'getRequestId'
+        'total_items' => 'getTotalItems',
+        'page_size' => 'getPageSize',
+        'has_next_page' => 'getHasNextPage',
+        'has_previous_page' => 'getHasPreviousPage',
+        'start_cursor' => 'getStartCursor',
+        'next_cursor' => 'getNextCursor'
     ];
 
     /**
@@ -269,11 +274,12 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('message', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('errors', $data ?? [], null);
-        $this->setIfExists('request_id', $data ?? [], null);
+        $this->setIfExists('total_items', $data ?? [], null);
+        $this->setIfExists('page_size', $data ?? [], null);
+        $this->setIfExists('has_next_page', $data ?? [], null);
+        $this->setIfExists('has_previous_page', $data ?? [], null);
+        $this->setIfExists('start_cursor', $data ?? [], null);
+        $this->setIfExists('next_cursor', $data ?? [], null);
     }
 
     /**
@@ -319,143 +325,177 @@ class GetBankAccountsByUuidHistory200Response implements ModelInterface, ArrayAc
 
 
     /**
-     * Gets status
+     * Gets total_items
+     *
+     * @return int|null
+     */
+    public function getTotalItems()
+    {
+        return $this->container['total_items'];
+    }
+
+    /**
+     * Sets total_items
+     *
+     * @param int|null $total_items total_items
+     *
+     * @return self
+     */
+    public function setTotalItems($total_items)
+    {
+        if (is_null($total_items)) {
+            throw new \InvalidArgumentException('non-nullable total_items cannot be null');
+        }
+        $this->container['total_items'] = $total_items;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_size
+     *
+     * @return int|null
+     */
+    public function getPageSize()
+    {
+        return $this->container['page_size'];
+    }
+
+    /**
+     * Sets page_size
+     *
+     * @param int|null $page_size page_size
+     *
+     * @return self
+     */
+    public function setPageSize($page_size)
+    {
+        if (is_null($page_size)) {
+            throw new \InvalidArgumentException('non-nullable page_size cannot be null');
+        }
+        $this->container['page_size'] = $page_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_next_page
      *
      * @return bool|null
      */
-    public function getStatus()
+    public function getHasNextPage()
     {
-        return $this->container['status'];
+        return $this->container['has_next_page'];
     }
 
     /**
-     * Sets status
+     * Sets has_next_page
      *
-     * @param bool|null $status status
+     * @param bool|null $has_next_page has_next_page
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setHasNextPage($has_next_page)
     {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        if (is_null($has_next_page)) {
+            throw new \InvalidArgumentException('non-nullable has_next_page cannot be null');
         }
-        $this->container['status'] = $status;
+        $this->container['has_next_page'] = $has_next_page;
 
         return $this;
     }
 
     /**
-     * Gets message
+     * Gets has_previous_page
+     *
+     * @return bool|null
+     */
+    public function getHasPreviousPage()
+    {
+        return $this->container['has_previous_page'];
+    }
+
+    /**
+     * Sets has_previous_page
+     *
+     * @param bool|null $has_previous_page has_previous_page
+     *
+     * @return self
+     */
+    public function setHasPreviousPage($has_previous_page)
+    {
+        if (is_null($has_previous_page)) {
+            throw new \InvalidArgumentException('non-nullable has_previous_page cannot be null');
+        }
+        $this->container['has_previous_page'] = $has_previous_page;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_cursor
      *
      * @return string|null
      */
-    public function getMessage()
+    public function getStartCursor()
     {
-        return $this->container['message'];
+        return $this->container['start_cursor'];
     }
 
     /**
-     * Sets message
+     * Sets start_cursor
      *
-     * @param string|null $message message
+     * @param string|null $start_cursor start_cursor
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setStartCursor($start_cursor)
     {
-        if (is_null($message)) {
-            throw new \InvalidArgumentException('non-nullable message cannot be null');
-        }
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200ResponseData|null $data data
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
-        }
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return object|null
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param object|null $errors errors
-     *
-     * @return self
-     */
-    public function setErrors($errors)
-    {
-        if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
+        if (is_null($start_cursor)) {
+            array_push($this->openAPINullablesSetToNull, 'start_cursor');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
+            $index = array_search('start_cursor', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['errors'] = $errors;
+        $this->container['start_cursor'] = $start_cursor;
 
         return $this;
     }
 
     /**
-     * Gets request_id
+     * Gets next_cursor
      *
      * @return string|null
      */
-    public function getRequestId()
+    public function getNextCursor()
     {
-        return $this->container['request_id'];
+        return $this->container['next_cursor'];
     }
 
     /**
-     * Sets request_id
+     * Sets next_cursor
      *
-     * @param string|null $request_id request_id
+     * @param string|null $next_cursor next_cursor
      *
      * @return self
      */
-    public function setRequestId($request_id)
+    public function setNextCursor($next_cursor)
     {
-        if (is_null($request_id)) {
-            throw new \InvalidArgumentException('non-nullable request_id cannot be null');
+        if (is_null($next_cursor)) {
+            array_push($this->openAPINullablesSetToNull, 'next_cursor');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('next_cursor', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['request_id'] = $request_id;
+        $this->container['next_cursor'] = $next_cursor;
 
         return $this;
     }
