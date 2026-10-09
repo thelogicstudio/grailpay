@@ -6,7 +6,7 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getReturns()**](ReturnsApi.md#getReturns) | **GET** /api/v3/returns | Get All Returns ( STABLE ) |
+| [**getReturns()**](ReturnsApi.md#getReturns) | **GET** /api/v3/returns | Get All Returns |
 
 
 ## `getReturns()`
@@ -15,7 +15,7 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 getReturns($filter_leg, $filter_ach_return_code, $filter_ach_return_codes, $filter_amount, $filter_transaction_uuid, $filter_payout_uuid, $filter_clawback_uuid, $filter_reverse_payout_uuid, $filter_entity_uuid, $filter_vendor_id, $filter_bank_id, $filter_trace_id, $filter_start_date, $filter_end_date, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetReturns200Response
 ```
 
-Get All Returns ( STABLE )
+Get All Returns
 
 This endpoint provides a paginated list of ACH returns visible to the authenticated user. Returns are sourced from capture (transaction) and payout legs, with filtering and sorting options.
 

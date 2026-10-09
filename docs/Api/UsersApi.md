@@ -6,34 +6,33 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteUsersByUuid()**](UsersApi.md#deleteUsersByUuid) | **DELETE** /3p/api/v2/users/{uuid} | Deleting a User ( STABLE ) |
-| [**getBusinesses()**](UsersApi.md#getBusinesses) | **GET** /api/v3/businesses | Get All Businesses ( STABLE ) |
-| [**getBusinessesByUuid()**](UsersApi.md#getBusinessesByUuid) | **GET** /api/v3/businesses/{uuid} | Get Business ( STABLE ) |
-| [**getMerchants()**](UsersApi.md#getMerchants) | **GET** /api/v3/merchants | Get All Merchants ( STABLE ) |
-| [**getMerchantsByUuid()**](UsersApi.md#getMerchantsByUuid) | **GET** /api/v3/merchants/{uuid} | Get Merchant ( STABLE ) |
-| [**getPeople()**](UsersApi.md#getPeople) | **GET** /api/v3/people | Get All People ( STABLE ) |
-| [**getPeopleByUuid()**](UsersApi.md#getPeopleByUuid) | **GET** /api/v3/people/{uuid} | Get Person ( STABLE ) |
-| [**patchBusinessesByUuid()**](UsersApi.md#patchBusinessesByUuid) | **PATCH** /api/v3/businesses/{uuid} | Update a Business into the ACH application ( STABLE ) |
-| [**patchMerchantsByUuid()**](UsersApi.md#patchMerchantsByUuid) | **PATCH** /api/v3/merchants/{uuid} | Update a Merchant into the ACH application ( STABLE ) |
-| [**patchPeopleByUuid()**](UsersApi.md#patchPeopleByUuid) | **PATCH** /api/v3/people/{uuid} | Update a Person into the ACH application ( STABLE ) |
-| [**postBusinesses()**](UsersApi.md#postBusinesses) | **POST** /api/v3/businesses | Onboard a new Business into the ACH application ( STABLE ) |
-| [**postMerchants()**](UsersApi.md#postMerchants) | **POST** /api/v3/merchants | Onboard a new Merchant into the ACH application ( STABLE ) |
-| [**postMerchantsByUuidActivate()**](UsersApi.md#postMerchantsByUuidActivate) | **POST** /api/v3/merchants/{uuid}/activate | Activate a Merchant ( STABLE ) |
-| [**postMerchantsByUuidDeactivate()**](UsersApi.md#postMerchantsByUuidDeactivate) | **POST** /api/v3/merchants/{uuid}/deactivate | Deactivate a Merchant ( STABLE ) |
-| [**postPeople()**](UsersApi.md#postPeople) | **POST** /api/v3/people | Onboard a new Person into the ACH application ( STABLE ) |
-| [**postPeopleKyc()**](UsersApi.md#postPeopleKyc) | **POST** /api/v3/people/kyc | Register Person KYC ( STABLE ) |
-| [**postRegisterPerson()**](UsersApi.md#postRegisterPerson) | **POST** /3p/api/v1/register/person | Onboard a new person ( DEPRECATED ) |
+| [**deletePeopleByUuid()**](UsersApi.md#deletePeopleByUuid) | **DELETE** /api/v3/people/{uuid} | Delete Person |
+| [**getBusinesses()**](UsersApi.md#getBusinesses) | **GET** /api/v3/businesses | Get All Businesses |
+| [**getBusinessesByUuid()**](UsersApi.md#getBusinessesByUuid) | **GET** /api/v3/businesses/{uuid} | Get Business |
+| [**getMerchants()**](UsersApi.md#getMerchants) | **GET** /api/v3/merchants | Get All Merchants |
+| [**getMerchantsByUuid()**](UsersApi.md#getMerchantsByUuid) | **GET** /api/v3/merchants/{uuid} | Get Merchant |
+| [**getPeople()**](UsersApi.md#getPeople) | **GET** /api/v3/people | Get All People |
+| [**getPeopleByUuid()**](UsersApi.md#getPeopleByUuid) | **GET** /api/v3/people/{uuid} | Get Person |
+| [**patchBusinessesByUuid()**](UsersApi.md#patchBusinessesByUuid) | **PATCH** /api/v3/businesses/{uuid} | Update a Business into the ACH application |
+| [**patchMerchantsByUuid()**](UsersApi.md#patchMerchantsByUuid) | **PATCH** /api/v3/merchants/{uuid} | Update a Merchant into the ACH application |
+| [**patchPeopleByUuid()**](UsersApi.md#patchPeopleByUuid) | **PATCH** /api/v3/people/{uuid} | Update a Person into the ACH application |
+| [**postBusinesses()**](UsersApi.md#postBusinesses) | **POST** /api/v3/businesses | Onboard a new Business into the ACH application |
+| [**postMerchants()**](UsersApi.md#postMerchants) | **POST** /api/v3/merchants | Onboard a new Merchant into the ACH application |
+| [**postMerchantsByUuidActivate()**](UsersApi.md#postMerchantsByUuidActivate) | **POST** /api/v3/merchants/{uuid}/activate | Activate a Merchant |
+| [**postMerchantsByUuidDeactivate()**](UsersApi.md#postMerchantsByUuidDeactivate) | **POST** /api/v3/merchants/{uuid}/deactivate | Deactivate a Merchant |
+| [**postPeople()**](UsersApi.md#postPeople) | **POST** /api/v3/people | Onboard a new Person into the ACH application |
+| [**postPeopleKyc()**](UsersApi.md#postPeopleKyc) | **POST** /api/v3/people/kyc | Register Person KYC |
 
 
-## `deleteUsersByUuid()`
+## `deletePeopleByUuid()`
 
 ```php
-deleteUsersByUuid($uuid): \TheLogicStudio\GrailPay\Model\DeleteUsersByUuid200Response
+deletePeopleByUuid($uuid): \TheLogicStudio\GrailPay\Model\DeletePeopleByUuid202Response
 ```
 
-Deleting a User ( STABLE )
+Delete Person
 
-This API deletes a specific user from the system based on their unique user UUID.
+This endpoint schedules a person for deletion. The person is not removed immediately: they are marked as scheduled for deletion, after which requests for that person return 403, and their email address is released so it can be registered again. The API token must belong to the vendor that owns the person, or to the processor of that vendor. Only people can be deleted with this endpoint.
 
 ### Example
 
@@ -52,13 +51,13 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\UsersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$uuid = 'uuid_example'; // string | User UUID
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | person UUID
 
 try {
-    $result = $apiInstance->deleteUsersByUuid($uuid);
+    $result = $apiInstance->deletePeopleByUuid($uuid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UsersApi->deleteUsersByUuid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UsersApi->deletePeopleByUuid: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -66,11 +65,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| User UUID | |
+| **uuid** | **string**| person UUID | |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\DeleteUsersByUuid200Response**](../Model/DeleteUsersByUuid200Response.md)
+[**\TheLogicStudio\GrailPay\Model\DeletePeopleByUuid202Response**](../Model/DeletePeopleByUuid202Response.md)
 
 ### Authorization
 
@@ -91,7 +90,7 @@ try {
 getBusinesses($filter_uuid, $filter_name, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetBusinesses200Response
 ```
 
-Get All Businesses ( STABLE )
+Get All Businesses
 
 This endpoint provides a comprehensive list of all registered businesses, including essential details. Pagination options are available to efficiently manage large datasets.
 
@@ -159,7 +158,7 @@ try {
 getBusinessesByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetBusinessesByUuid200Response
 ```
 
-Get Business ( STABLE )
+Get Business
 
 This endpoint will return detail of the business. When making a request to an API for a business's information, you typically need to provide a unique identifier UUID. The UUID is generated at the time of registration and is associated with the business's account.
 
@@ -219,7 +218,7 @@ try {
 getMerchants($filter_uuid, $filter_name, $filter_tin, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetMerchants200Response
 ```
 
-Get All Merchants ( STABLE )
+Get All Merchants
 
 This endpoint provides a comprehensive list of all registered merchants, including essential details. Pagination options are available to efficiently manage large datasets.
 
@@ -289,7 +288,7 @@ try {
 getMerchantsByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetMerchantsByUuid200Response
 ```
 
-Get Merchant ( STABLE )
+Get Merchant
 
 This endpoint will return detail of the merchant. When making a request to an API for a merchant's information, you typically need to provide a unique identifier UUID. The UUID is generated at the time of registration and is associated with the merchant's account.
 
@@ -349,7 +348,7 @@ try {
 getPeople($filter_uuid, $filter_client_reference_id, $filter_first_name, $filter_last_name, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetPeople200Response
 ```
 
-Get All People ( STABLE )
+Get All People
 
 This endpoint provides a comprehensive list of all registered people, including essential details. Pagination options are available to efficiently manage large datasets.
 
@@ -421,7 +420,7 @@ try {
 getPeopleByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetPeopleByUuid200Response
 ```
 
-Get Person ( STABLE )
+Get Person
 
 This endpoint will return detail of the person. When making a request to an API for a person's information, you typically need to provide a unique identifier UUID. The UUID is generated at the time of registration and is associated with the person's account.
 
@@ -481,7 +480,7 @@ try {
 patchBusinessesByUuid($uuid, $post_businesses_request): \TheLogicStudio\GrailPay\Model\PatchBusinessesByUuid200Response
 ```
 
-Update a Business into the ACH application ( STABLE )
+Update a Business into the ACH application
 
 This endpoint allows for updating a Business to the GrailPay ACH API Ecosystem.
 
@@ -543,7 +542,7 @@ try {
 patchMerchantsByUuid($uuid, $post_merchants_request): \TheLogicStudio\GrailPay\Model\PatchMerchantsByUuid200Response
 ```
 
-Update a Merchant into the ACH application ( STABLE )
+Update a Merchant into the ACH application
 
 This endpoint allows for updating a Merchant to the GrailPay ACH API Ecosystem.
 
@@ -605,7 +604,7 @@ try {
 patchPeopleByUuid($uuid, $post_people_request): \TheLogicStudio\GrailPay\Model\PatchPeopleByUuid200Response
 ```
 
-Update a Person into the ACH application ( STABLE )
+Update a Person into the ACH application
 
 This endpoint allows for updating a Person to the GrailPay ACH API Ecosystem.
 
@@ -667,7 +666,7 @@ try {
 postBusinesses($post_businesses_request): \TheLogicStudio\GrailPay\Model\PostBusinesses201Response
 ```
 
-Onboard a new Business into the ACH application ( STABLE )
+Onboard a new Business into the ACH application
 
 This endpoint allows for adding a new Business to the GrailPay ACH API Ecosystem.  The only item that is required is the Bank Account object, but we strongly encourage that you supply as much information as possible.  When including the bank account, you can pass either Plaid information or account and routing information.  You should never pass both.
 
@@ -727,7 +726,7 @@ try {
 postMerchants($post_merchants_request): \TheLogicStudio\GrailPay\Model\PostMerchants201Response
 ```
 
-Onboard a new Merchant into the ACH application ( STABLE )
+Onboard a new Merchant into the ACH application
 
 This endpoint allows for adding a new Merchant to the GrailPay ACH API Ecosystem.
 
@@ -787,7 +786,7 @@ try {
 postMerchantsByUuidActivate($uuid): \TheLogicStudio\GrailPay\Model\PostMerchantsByUuidActivate200Response
 ```
 
-Activate a Merchant ( STABLE )
+Activate a Merchant
 
 This endpoint allows for activating a Merchant in the GrailPay ACH API Ecosystem. The operation is idempotent: calling it on an already active merchant returns 200 and leaves state unchanged.
 
@@ -847,7 +846,7 @@ try {
 postMerchantsByUuidDeactivate($uuid, $post_merchants_by_uuid_deactivate_request): \TheLogicStudio\GrailPay\Model\PostMerchantsByUuidDeactivate200Response
 ```
 
-Deactivate a Merchant ( STABLE )
+Deactivate a Merchant
 
 This endpoint allows for deactivating a Merchant in the GrailPay ACH API Ecosystem. The operation is idempotent: calling it on an already inactive merchant returns 200 and leaves state unchanged.
 
@@ -909,7 +908,7 @@ try {
 postPeople($post_people_request): \TheLogicStudio\GrailPay\Model\PostPeople201Response
 ```
 
-Onboard a new Person into the ACH application ( STABLE )
+Onboard a new Person into the ACH application
 
 This endpoint allows for adding a new Person to the GrailPay ACH API Ecosystem.  The only item that is required is the Bank Account object, but we strongly encourage that you supply as much information as possible.  When including the bank account, you can pass either Plaid information or account and routing information.  You should never pass both.
 
@@ -969,7 +968,7 @@ try {
 postPeopleKyc($post_people_kyc_request): \TheLogicStudio\GrailPay\Model\PostPeopleKyc200Response
 ```
 
-Register Person KYC ( STABLE )
+Register Person KYC
 
 This endpoint registers a person's KYC profile. If matching KYC data already exists, the existing record is returned instead of creating a duplicate.
 
@@ -1009,66 +1008,6 @@ try {
 ### Return type
 
 [**\TheLogicStudio\GrailPay\Model\PostPeopleKyc200Response**](../Model/PostPeopleKyc200Response.md)
-
-### Authorization
-
-[ApiToken](../../README.md#ApiToken)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `postRegisterPerson()`
-
-```php
-postRegisterPerson($v1_register_person_request): \TheLogicStudio\GrailPay\Model\PostRegisterPerson201Response
-```
-
-Onboard a new person ( DEPRECATED )
-
-**This Endpoint is deprecated. Deprecated APIs that are no longer supported and should be removed from your integration. Please use the Stable version for your integration.*
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (Token) authorization: ApiToken
-$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new TheLogicStudio\GrailPay\Api\UsersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$v1_register_person_request = new \TheLogicStudio\GrailPay\Model\V1RegisterPersonRequest(); // \TheLogicStudio\GrailPay\Model\V1RegisterPersonRequest
-
-try {
-    $result = $apiInstance->postRegisterPerson($v1_register_person_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->postRegisterPerson: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **v1_register_person_request** | [**\TheLogicStudio\GrailPay\Model\V1RegisterPersonRequest**](../Model/V1RegisterPersonRequest.md)|  | |
-
-### Return type
-
-[**\TheLogicStudio\GrailPay\Model\PostRegisterPerson201Response**](../Model/PostRegisterPerson201Response.md)
 
 ### Authorization
 

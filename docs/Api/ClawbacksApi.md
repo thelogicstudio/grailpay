@@ -1,13 +1,13 @@
 # TheLogicStudio\GrailPay\ClawbacksApi
 
-Clawbacks
+API Endpoints used for retrieving clawback information.
 
 All URIs are relative to https://api.grailpay.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getClawbacks()**](ClawbacksApi.md#getClawbacks) | **GET** /api/v3/clawbacks | Get All Clawbacks ( STABLE ) |
-| [**getClawbacksByUuid()**](ClawbacksApi.md#getClawbacksByUuid) | **GET** /api/v3/clawbacks/{uuid} | Get Clawback ( STABLE ) |
+| [**getClawbacks()**](ClawbacksApi.md#getClawbacks) | **GET** /api/v3/clawbacks | Get All Clawbacks |
+| [**getClawbacksByUuid()**](ClawbacksApi.md#getClawbacksByUuid) | **GET** /api/v3/clawbacks/{uuid} | Get Clawback |
 
 
 ## `getClawbacks()`
@@ -16,7 +16,7 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 getClawbacks($filter_uuid, $filter_status, $filter_ach_id, $filter_client_reference_id, $filter_start_date, $filter_end_date, $filter_amount, $filter_transaction_uuid, $filter_merchant_uuid, $filter_payee_uuid, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetClawbacks200Response
 ```
 
-Get All Clawbacks ( STABLE )
+Get All Clawbacks
 
 This endpoint provides a paginated list of clawbacks visible to the authenticated user, with filtering and sorting options.
 
@@ -100,9 +100,9 @@ try {
 getClawbacksByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetClawbacksByUuid200Response
 ```
 
-Get Clawback ( STABLE )
+Get Clawback
 
-This endpoint returns the details of a single clawback along with identity pointers to its related transaction and payout. The UUID is generated when the clawback is created and is associated with the clawback record.
+This endpoint returns the details of a single clawback along with identity pointers to its related transaction and payout, plus the reverse payout or refund it recovers when clawback_type is reverse_payout or refund. The UUID is generated when the clawback is created and is associated with the clawback record.
 
 ### Example
 

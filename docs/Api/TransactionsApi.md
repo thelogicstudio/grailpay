@@ -6,12 +6,12 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteTransactionsByUuidCancel()**](TransactionsApi.md#deleteTransactionsByUuidCancel) | **DELETE** /api/v3/transactions/{uuid}/cancel | Cancel a transaction in the ACH application ( STABLE ) |
-| [**getTransactions()**](TransactionsApi.md#getTransactions) | **GET** /api/v3/transactions | Get All Transactions ( STABLE ) |
-| [**getTransactionsByUuid()**](TransactionsApi.md#getTransactionsByUuid) | **GET** /api/v3/transactions/{uuid} | Get Transaction ( STABLE ) |
-| [**postTransaction()**](TransactionsApi.md#postTransaction) | **POST** /3p/api/v1/transaction | Create a new transaction ( STABLE ) |
-| [**postTransactionsByUuidPause()**](TransactionsApi.md#postTransactionsByUuidPause) | **POST** /api/v3/transactions/{uuid}/pause | Pause a transaction in the ACH application ( STABLE ) |
-| [**postTransactionsByUuidResume()**](TransactionsApi.md#postTransactionsByUuidResume) | **POST** /api/v3/transactions/{uuid}/resume | Resume a transaction in the ACH application ( STABLE ) |
+| [**deleteTransactionsByUuidCancel()**](TransactionsApi.md#deleteTransactionsByUuidCancel) | **DELETE** /api/v3/transactions/{uuid}/cancel | Cancel a transaction in the ACH application |
+| [**getTransactions()**](TransactionsApi.md#getTransactions) | **GET** /api/v3/transactions | Get All Transactions |
+| [**getTransactionsByUuid()**](TransactionsApi.md#getTransactionsByUuid) | **GET** /api/v3/transactions/{uuid} | Get Transaction |
+| [**postTransactions()**](TransactionsApi.md#postTransactions) | **POST** /api/v3/transactions | Create Transaction |
+| [**postTransactionsByUuidPause()**](TransactionsApi.md#postTransactionsByUuidPause) | **POST** /api/v3/transactions/{uuid}/pause | Pause a transaction in the ACH application |
+| [**postTransactionsByUuidResume()**](TransactionsApi.md#postTransactionsByUuidResume) | **POST** /api/v3/transactions/{uuid}/resume | Resume a transaction in the ACH application |
 
 
 ## `deleteTransactionsByUuidCancel()`
@@ -20,7 +20,7 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 deleteTransactionsByUuidCancel($uuid): \TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault200Response
 ```
 
-Cancel a transaction in the ACH application ( STABLE )
+Cancel a transaction in the ACH application
 
 This endpoint allows to cancel a transaction in the GrailPay ACH API Ecosystem.
 
@@ -77,10 +77,10 @@ try {
 ## `getTransactions()`
 
 ```php
-getTransactions($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_client_reference_id, $filter_start_date, $filter_end_date, $filter_amount, $filter_merchant_uuid, $filter_person_uuid, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetTransactions200Response
+getTransactions($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_client_reference_id, $filter_start_date, $filter_end_date, $filter_amount, $filter_merchant_uuid, $filter_person_uuid, $filter_payout_uuid, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetTransactions200Response
 ```
 
-Get All Transactions ( STABLE )
+Get All Transactions
 
 This endpoint provides a paginated list of transactions visible to the authenticated user, with filtering and sorting options.
 
@@ -111,12 +111,13 @@ $filter_end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | Filter transact
 $filter_amount = >=100; // string | Filter by amount. Supports dynamic operators (e.g. filter[amount]=100, filter[amount]=>100, filter[amount]=<=500)
 $filter_merchant_uuid = 6a8fc154-1a50-483b-a690-fd1dfaf9408b; // string | Filter by payee or payer merchant/business UUID
 $filter_person_uuid = 019e0834-c96a-7d71-bb60-bda7b9a26d1a; // string | Filter by payee or payer person UUID
+$filter_payout_uuid = a1e52556-7b0e-40d1-a787-9af5df215a57; // string | Filter by payout UUID (regular payout or processor payout). Results are limited to transactions the authenticated user can see.
 $sort = -created_at; // string | Sort by field (created_at, amount). Prefix with '-' for descending order
 $page = 1; // int | Page number for pagination
 $per_page = 15; // int | Number of records per page
 
 try {
-    $result = $apiInstance->getTransactions($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_client_reference_id, $filter_start_date, $filter_end_date, $filter_amount, $filter_merchant_uuid, $filter_person_uuid, $sort, $page, $per_page);
+    $result = $apiInstance->getTransactions($filter_uuid, $filter_status, $filter_ach_id, $filter_r_code, $filter_client_reference_id, $filter_start_date, $filter_end_date, $filter_amount, $filter_merchant_uuid, $filter_person_uuid, $filter_payout_uuid, $sort, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionsApi->getTransactions: ', $e->getMessage(), PHP_EOL;
@@ -137,6 +138,7 @@ try {
 | **filter_amount** | **string**| Filter by amount. Supports dynamic operators (e.g. filter[amount]&#x3D;100, filter[amount]&#x3D;&gt;100, filter[amount]&#x3D;&lt;&#x3D;500) | [optional] |
 | **filter_merchant_uuid** | **string**| Filter by payee or payer merchant/business UUID | [optional] |
 | **filter_person_uuid** | **string**| Filter by payee or payer person UUID | [optional] |
+| **filter_payout_uuid** | **string**| Filter by payout UUID (regular payout or processor payout). Results are limited to transactions the authenticated user can see. | [optional] |
 | **sort** | **string**| Sort by field (created_at, amount). Prefix with &#39;-&#39; for descending order | [optional] |
 | **page** | **int**| Page number for pagination | [optional] |
 | **per_page** | **int**| Number of records per page | [optional] [default to 15] |
@@ -164,7 +166,7 @@ try {
 getTransactionsByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetTransactionsByUuid200Response
 ```
 
-Get Transaction ( STABLE )
+Get Transaction
 
 This endpoint returns the details of a single transaction along with its payout, refunds and clawback. The UUID is generated when the transaction is created and is associated with the transaction record.
 
@@ -218,15 +220,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `postTransaction()`
+## `postTransactions()`
 
 ```php
-postTransaction($create_transaction): \TheLogicStudio\GrailPay\Model\PostTransaction201Response
+postTransactions($post_transactions_request): \TheLogicStudio\GrailPay\Model\PostTransactions201Response
 ```
 
-Create a new transaction ( STABLE )
+Create Transaction
 
-Once authenticated, the client application can send a request to create a new transaction by providing relevant details such as the payment amount, sender and receiver. GrailPay will then return a UUID, which serves as the unique identifier and can be used to fetch the details and status of the transaction. Please note that only one transaction can be created per request.
+Creates a queued ACH debit transaction between a payor and payee using entity UUIDs. Optional modality controls debit (transaction) ACH speed and credit (payout) rail/speed. When modality.payout is omitted, the server resolves and stores a default payout modality. modality.payout is rejected when the vendor uses processor batch payouts. Supports idempotency via Idempotency-Key header.
 
 ### Example
 
@@ -245,13 +247,13 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\TransactionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$create_transaction = new \TheLogicStudio\GrailPay\Model\CreateTransaction(); // \TheLogicStudio\GrailPay\Model\CreateTransaction
+$post_transactions_request = new \TheLogicStudio\GrailPay\Model\PostTransactionsRequest(); // \TheLogicStudio\GrailPay\Model\PostTransactionsRequest | Transaction creation payload. Authenticate with Authorization: Bearer <API_TOKEN>. Optional X-Request-ID may be supplied for request tracing. Optional Idempotency-Key may be supplied to safely retry the same create request; reuse of a key with a different payload returns 409.
 
 try {
-    $result = $apiInstance->postTransaction($create_transaction);
+    $result = $apiInstance->postTransactions($post_transactions_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionsApi->postTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling TransactionsApi->postTransactions: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -259,11 +261,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_transaction** | [**\TheLogicStudio\GrailPay\Model\CreateTransaction**](../Model/CreateTransaction.md)|  | |
+| **post_transactions_request** | [**\TheLogicStudio\GrailPay\Model\PostTransactionsRequest**](../Model/PostTransactionsRequest.md)| Transaction creation payload. Authenticate with Authorization: Bearer &lt;API_TOKEN&gt;. Optional X-Request-ID may be supplied for request tracing. Optional Idempotency-Key may be supplied to safely retry the same create request; reuse of a key with a different payload returns 409. | |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\PostTransaction201Response**](../Model/PostTransaction201Response.md)
+[**\TheLogicStudio\GrailPay\Model\PostTransactions201Response**](../Model/PostTransactions201Response.md)
 
 ### Authorization
 
@@ -284,7 +286,7 @@ try {
 postTransactionsByUuidPause($uuid): \TheLogicStudio\GrailPay\Model\PostTransactionsByUuidPause200Response
 ```
 
-Pause a transaction in the ACH application ( STABLE )
+Pause a transaction in the ACH application
 
 This endpoint allows to pause a transaction in the GrailPay ACH API Ecosystem.
 
@@ -344,7 +346,7 @@ try {
 postTransactionsByUuidResume($uuid): \TheLogicStudio\GrailPay\Model\PostTransactionsByUuidResume200Response
 ```
 
-Resume a transaction in the ACH application ( STABLE )
+Resume a transaction in the ACH application
 
 This endpoint allows to resume a paused transaction in the GrailPay ACH API Ecosystem.
 

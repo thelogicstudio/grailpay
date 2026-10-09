@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter_uuid** | **object** |  | [optional]
-**filter_name** | **object** |  | [optional]
-**sort** | **object** |  | [optional]
-**per_page** | **object** |  | [optional]
-**page** | **object** |  | [optional]
+**filter_uuid** | **string[]** |  | [optional]
+**filter_name** | **string[]** |  | [optional]
+**sort** | **string[]** |  | [optional]
+**per_page** | **string[]** |  | [optional]
+**page** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

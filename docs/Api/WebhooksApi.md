@@ -6,20 +6,21 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteWebhook()**](WebhooksApi.md#deleteWebhook) | **DELETE** /3p/api/v1/webhook | De-register Webhook ( STABLE ) |
-| [**getWebhook()**](WebhooksApi.md#getWebhook) | **GET** /3p/api/v1/webhook | Get registered webhooks ( STABLE ) |
-| [**postWebhook()**](WebhooksApi.md#postWebhook) | **POST** /3p/api/v1/webhook | Register Webhook ( STABLE ) |
+| [**deleteWebhooksByUuid()**](WebhooksApi.md#deleteWebhooksByUuid) | **DELETE** /api/v3/webhooks/{uuid} | Delete Webhook |
+| [**getWebhooks()**](WebhooksApi.md#getWebhooks) | **GET** /api/v3/webhooks | Get All Webhooks |
+| [**getWebhooksByUuid()**](WebhooksApi.md#getWebhooksByUuid) | **GET** /api/v3/webhooks/{uuid} | Get Webhook |
+| [**postWebhooks()**](WebhooksApi.md#postWebhooks) | **POST** /api/v3/webhooks | Register Webhook |
 
 
-## `deleteWebhook()`
+## `deleteWebhooksByUuid()`
 
 ```php
-deleteWebhook($v1_de_register_webhook_request): \TheLogicStudio\GrailPay\Model\DeleteWebhook200Response
+deleteWebhooksByUuid($uuid): \TheLogicStudio\GrailPay\Model\DeleteWebhooksByUuid200Response
 ```
 
-De-register Webhook ( STABLE )
+Delete Webhook
 
-Deregistering a webhook via API involves removing a previously registered webhook configuration from the GrailPay. To disable notification related to particular transaction events, you need to de-register webhook with registered events name.
+Deletes a webhook registration that belongs to the authenticated vendor or processor. Events are no longer delivered to its URL, and requesting the registration afterwards returns 404.
 
 ### Example
 
@@ -38,13 +39,13 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$v1_de_register_webhook_request = new \TheLogicStudio\GrailPay\Model\V1DeRegisterWebhookRequest(); // \TheLogicStudio\GrailPay\Model\V1DeRegisterWebhookRequest
+$uuid = 0199b6a2-4c1e-7d3a-9f2b-6e8d1c5a7b30; // string | Webhook registration UUID
 
 try {
-    $result = $apiInstance->deleteWebhook($v1_de_register_webhook_request);
+    $result = $apiInstance->deleteWebhooksByUuid($uuid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->deleteWebhook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WebhooksApi->deleteWebhooksByUuid: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -52,68 +53,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **v1_de_register_webhook_request** | [**\TheLogicStudio\GrailPay\Model\V1DeRegisterWebhookRequest**](../Model/V1DeRegisterWebhookRequest.md)|  | |
+| **uuid** | **string**| Webhook registration UUID | |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\DeleteWebhook200Response**](../Model/DeleteWebhook200Response.md)
-
-### Authorization
-
-[ApiToken](../../README.md#ApiToken)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getWebhook()`
-
-```php
-getWebhook(): \TheLogicStudio\GrailPay\Model\GetWebhook200Response
-```
-
-Get registered webhooks ( STABLE )
-
-Retrieve a list of registered webhooks for the authenticated user.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (Token) authorization: ApiToken
-$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->getWebhook();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->getWebhook: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\TheLogicStudio\GrailPay\Model\GetWebhook200Response**](../Model/GetWebhook200Response.md)
+[**\TheLogicStudio\GrailPay\Model\DeleteWebhooksByUuid200Response**](../Model/DeleteWebhooksByUuid200Response.md)
 
 ### Authorization
 
@@ -128,15 +72,15 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `postWebhook()`
+## `getWebhooks()`
 
 ```php
-postWebhook($v1_register_webhook_request): \TheLogicStudio\GrailPay\Model\PostWebhook201Response
+getWebhooks($filter_is_active, $filter_url, $sort, $page, $per_page): \TheLogicStudio\GrailPay\Model\GetWebhooks200Response
 ```
 
-Register Webhook ( STABLE )
+Get All Webhooks
 
-Registering a webhook via API call involves configuring a client application to receive notifications and updates from GrailPay. To enable notification related to transaction, you need to register webhook with sets of predefined Events.
+This endpoint returns a paginated list of the webhook registrations that belong to the authenticated vendor or processor, with filtering and sorting options. Deleted registrations are not included.
 
 ### Example
 
@@ -155,13 +99,17 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
     new GuzzleHttp\Client(),
     $config
 );
-$v1_register_webhook_request = new \TheLogicStudio\GrailPay\Model\V1RegisterWebhookRequest(); // \TheLogicStudio\GrailPay\Model\V1RegisterWebhookRequest
+$filter_is_active = true; // bool | Filter by whether the registration is active
+$filter_url = example.com; // string | Filter by URL (case-insensitive partial match)
+$sort = -created_at; // string | Sort by created_at. Prefix with '-' for descending order (the default)
+$page = 1; // int | Page number for pagination
+$per_page = 15; // int | Number of records per page
 
 try {
-    $result = $apiInstance->postWebhook($v1_register_webhook_request);
+    $result = $apiInstance->getWebhooks($filter_is_active, $filter_url, $sort, $page, $per_page);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhooksApi->postWebhook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WebhooksApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -169,11 +117,137 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **v1_register_webhook_request** | [**\TheLogicStudio\GrailPay\Model\V1RegisterWebhookRequest**](../Model/V1RegisterWebhookRequest.md)|  | |
+| **filter_is_active** | **bool**| Filter by whether the registration is active | [optional] |
+| **filter_url** | **string**| Filter by URL (case-insensitive partial match) | [optional] |
+| **sort** | **string**| Sort by created_at. Prefix with &#39;-&#39; for descending order (the default) | [optional] |
+| **page** | **int**| Page number for pagination | [optional] |
+| **per_page** | **int**| Number of records per page | [optional] [default to 15] |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\PostWebhook201Response**](../Model/PostWebhook201Response.md)
+[**\TheLogicStudio\GrailPay\Model\GetWebhooks200Response**](../Model/GetWebhooks200Response.md)
+
+### Authorization
+
+[ApiToken](../../README.md#ApiToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getWebhooksByUuid()`
+
+```php
+getWebhooksByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetWebhooksByUuid200Response
+```
+
+Get Webhook
+
+Retrieves a single webhook registration that belongs to the authenticated vendor or processor, including its signing `secret`.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: ApiToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$uuid = 0199b6a2-4c1e-7d3a-9f2b-6e8d1c5a7b30; // string | Webhook registration UUID
+
+try {
+    $result = $apiInstance->getWebhooksByUuid($uuid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WebhooksApi->getWebhooksByUuid: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **uuid** | **string**| Webhook registration UUID | |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\GetWebhooksByUuid200Response**](../Model/GetWebhooksByUuid200Response.md)
+
+### Authorization
+
+[ApiToken](../../README.md#ApiToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `postWebhooks()`
+
+```php
+postWebhooks($post_webhooks_request, $idempotency_key): \TheLogicStudio\GrailPay\Model\PostWebhooks201Response
+```
+
+Register Webhook
+
+Registers an HTTPS URL to receive webhook events for the authenticated vendor or processor. This replaces the deprecated `/3p/api/v1/webhook` and `/processor/api/v1/webhook` registration endpoints. The response includes the registration's `secret`: every delivery carries a `Signature` header containing the hex-encoded HMAC-SHA256 of the raw JSON request body, keyed with this secret, so you can verify the delivery came from GrailPay. A URL can be registered once per vendor or processor, with up to 25 registrations each. Only `url` is accepted in the request body. Supports idempotency via the `Idempotency-Key` header.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (Token) authorization: ApiToken
+$config = TheLogicStudio\GrailPay\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new TheLogicStudio\GrailPay\Api\WebhooksApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$post_webhooks_request = new \TheLogicStudio\GrailPay\Model\PostWebhooksRequest(); // \TheLogicStudio\GrailPay\Model\PostWebhooksRequest
+$idempotency_key = webhook-idempotency-key-123; // string | Optional idempotency key. Replaying the same key with the same request body returns the original response; a conflicting body returns 409.
+
+try {
+    $result = $apiInstance->postWebhooks($post_webhooks_request, $idempotency_key);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WebhooksApi->postWebhooks: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **post_webhooks_request** | [**\TheLogicStudio\GrailPay\Model\PostWebhooksRequest**](../Model/PostWebhooksRequest.md)|  | |
+| **idempotency_key** | **string**| Optional idempotency key. Replaying the same key with the same request body returns the original response; a conflicting body returns 409. | [optional] |
+
+### Return type
+
+[**\TheLogicStudio\GrailPay\Model\PostWebhooks201Response**](../Model/PostWebhooks201Response.md)
 
 ### Authorization
 

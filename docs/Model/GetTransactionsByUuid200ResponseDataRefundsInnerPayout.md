@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **trace_id** | **string** |  | [optional]
+**sec_code** | **string** |  | [optional]
+**ach_return_code** | **string** | ACH return code when the refund payout is the most recent leg to fail; otherwise null. | [optional]
 **bank_identifiers** | [**\TheLogicStudio\GrailPay\Model\GetRefunds200ResponseDataRefundsInnerPayoutBankIdentifiers**](GetRefunds200ResponseDataRefundsInnerPayoutBankIdentifiers.md) |  | [optional]
 **ach_timestamps** | [**\TheLogicStudio\GrailPay\Model\V3AchTimestampsObject**](V3AchTimestampsObject.md) |  | [optional]
 

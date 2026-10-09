@@ -6,16 +6,16 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteBankAccountsByUuid()**](BankAccountsApi.md#deleteBankAccountsByUuid) | **DELETE** /api/v3/bank-accounts/{uuid} | Delete a bank account. ( STABLE ) |
-| [**getBankAccounts()**](BankAccountsApi.md#getBankAccounts) | **GET** /api/v3/bank-accounts | List bank accounts for an entity. ( STABLE ) |
-| [**getBankAccountsByUuid()**](BankAccountsApi.md#getBankAccountsByUuid) | **GET** /api/v3/bank-accounts/{uuid} | Show a bank account. ( STABLE ) |
-| [**getBankAccountsByUuidBalance()**](BankAccountsApi.md#getBankAccountsByUuidBalance) | **GET** /api/v3/bank-accounts/{uuid}/balance | Fetch a bank account balance. ( STABLE ) |
-| [**getBankAccountsByUuidHistory()**](BankAccountsApi.md#getBankAccountsByUuidHistory) | **GET** /api/v3/bank-accounts/{uuid}/history | Fetch bank account transaction history. ( STABLE ) |
-| [**getBankAccountsByUuidOwners()**](BankAccountsApi.md#getBankAccountsByUuidOwners) | **GET** /api/v3/bank-accounts/{uuid}/owners | Get Bank Account Owners ( STABLE ) |
-| [**postBankAccounts()**](BankAccountsApi.md#postBankAccounts) | **POST** /api/v3/bank-accounts | Add a bank account to an entity. ( STABLE ) |
-| [**postBankAccountsValidate()**](BankAccountsApi.md#postBankAccountsValidate) | **POST** /api/v3/bank-accounts/validate | Validate a bank account&#39;s routing and account number. ( STABLE ) |
-| [**postPeopleByUuidBankAccounts()**](BankAccountsApi.md#postPeopleByUuidBankAccounts) | **POST** /api/v3/people/{uuid}/bank-accounts | Add a new bank account to a person. ( STABLE ) |
-| [**putBankAccountsByUuidDefault()**](BankAccountsApi.md#putBankAccountsByUuidDefault) | **PUT** /api/v3/bank-accounts/{uuid}/default | Switch the default bank account. ( STABLE ) |
+| [**deleteBankAccountsByUuid()**](BankAccountsApi.md#deleteBankAccountsByUuid) | **DELETE** /api/v3/bank-accounts/{uuid} | Delete a bank account. |
+| [**getBankAccounts()**](BankAccountsApi.md#getBankAccounts) | **GET** /api/v3/bank-accounts | List bank accounts for an entity. |
+| [**getBankAccountsByUuid()**](BankAccountsApi.md#getBankAccountsByUuid) | **GET** /api/v3/bank-accounts/{uuid} | Show a bank account. |
+| [**getBankAccountsByUuidBalance()**](BankAccountsApi.md#getBankAccountsByUuidBalance) | **GET** /api/v3/bank-accounts/{uuid}/balance | Fetch a bank account balance. |
+| [**getBankAccountsByUuidHistory()**](BankAccountsApi.md#getBankAccountsByUuidHistory) | **GET** /api/v3/bank-accounts/{uuid}/history | Fetch bank account transaction history. |
+| [**getBankAccountsByUuidOwners()**](BankAccountsApi.md#getBankAccountsByUuidOwners) | **GET** /api/v3/bank-accounts/{uuid}/owners | Get Bank Account Owners |
+| [**postBankAccounts()**](BankAccountsApi.md#postBankAccounts) | **POST** /api/v3/bank-accounts | Add a bank account to an entity. |
+| [**postBankAccountsValidate()**](BankAccountsApi.md#postBankAccountsValidate) | **POST** /api/v3/bank-accounts/validate | Validate a bank account&#39;s routing and account number. |
+| [**postPeopleByUuidBankAccounts()**](BankAccountsApi.md#postPeopleByUuidBankAccounts) | **POST** /api/v3/people/{uuid}/bank-accounts | Add a new bank account to a person. |
+| [**putBankAccountsByUuidDefault()**](BankAccountsApi.md#putBankAccountsByUuidDefault) | **PUT** /api/v3/bank-accounts/{uuid}/default | Switch the default bank account. |
 
 
 ## `deleteBankAccountsByUuid()`
@@ -24,7 +24,7 @@ All URIs are relative to https://api.grailpay.com, except if the operation defin
 deleteBankAccountsByUuid($uuid): \TheLogicStudio\GrailPay\Model\DeleteBankAccountsByUuid200Response
 ```
 
-Delete a bank account. ( STABLE )
+Delete a bank account.
 
 This endpoint deletes a bank account by its UUID. The bank account must be eligible for deletion (no recent transaction activity within the configured period).
 
@@ -84,7 +84,7 @@ try {
 getBankAccounts($filter_entity_uuid, $filter_account_type, $filter_is_default, $filter_provider, $filter_account_name, $sort, $per_page, $page): \TheLogicStudio\GrailPay\Model\GetBankAccounts200Response
 ```
 
-List bank accounts for an entity. ( STABLE )
+List bank accounts for an entity.
 
 This endpoint retrieves a paginated list of bank accounts for a given entity. Supports filtering by account type, default status, provider, and account name. Supports sorting by created_at and account_name.
 
@@ -158,7 +158,7 @@ try {
 getBankAccountsByUuid($uuid): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuid200Response
 ```
 
-Show a bank account. ( STABLE )
+Show a bank account.
 
 This endpoint retrieves the details of a specific bank account by its UUID, including the associated entity information.
 
@@ -218,7 +218,7 @@ try {
 getBankAccountsByUuidBalance($uuid): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidBalance200Response
 ```
 
-Fetch a bank account balance. ( STABLE )
+Fetch a bank account balance.
 
 This endpoint fetches the current balance of a bank account. Only available for bank-link (Quiltt/MoneyKit) provider accounts.
 
@@ -275,12 +275,12 @@ try {
 ## `getBankAccountsByUuidHistory()`
 
 ```php
-getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $cursor): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response
+getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $page, $cursor): \TheLogicStudio\GrailPay\Model\QuilttProviderResponse
 ```
 
-Fetch bank account transaction history. ( STABLE )
+Fetch bank account transaction history.
 
-This endpoint fetches the transaction history for a bank account. Uses Quiltt (cursor-based pagination with advanced filtering).
+This endpoint fetches the transaction history for a bank account. Supports two providers: **Quiltt** (cursor-based pagination with advanced filtering) and **MoneyKit** (page-based pagination with basic date filtering). The available parameters and response format depend on the bank account's provider.
 
 ### Example
 
@@ -299,14 +299,15 @@ $apiInstance = new TheLogicStudio\GrailPay\Api\BankAccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account.
-$per_page = 15; // int | Number of records per page (first/page size for cursor-based pagination).
-$start_date = Mon Jan 01 13:00:00 NZDT 2024; // \DateTime | Start date filter (Y-m-d format). Must be before or equal to end_date.
-$end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | End date filter (Y-m-d format). Must be after or equal to start_date.
-$cursor = 'cursor_example'; // string | Cursor for cursor-based pagination.
+$uuid = 7c41f6a2-a4b9-4df8-9225-2c1b7312042e; // string | UUID of the bank account. (Both providers)
+$per_page = 15; // int | Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers)
+$start_date = Mon Jan 01 13:00:00 NZDT 2024; // \DateTime | Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers)
+$end_date = Tue Dec 31 13:00:00 NZDT 2024; // \DateTime | End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers)
+$page = 1; // int | Page number for page-based pagination. (MoneyKit only)
+$cursor = 'cursor_example'; // string | Cursor for cursor-based pagination. (Quiltt only)
 
 try {
-    $result = $apiInstance->getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $cursor);
+    $result = $apiInstance->getBankAccountsByUuidHistory($uuid, $per_page, $start_date, $end_date, $page, $cursor);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BankAccountsApi->getBankAccountsByUuidHistory: ', $e->getMessage(), PHP_EOL;
@@ -317,15 +318,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **uuid** | **string**| UUID of the bank account. | |
-| **per_page** | **int**| Number of records per page (first/page size for cursor-based pagination). | [optional] |
-| **start_date** | **\DateTime**| Start date filter (Y-m-d format). Must be before or equal to end_date. | [optional] |
-| **end_date** | **\DateTime**| End date filter (Y-m-d format). Must be after or equal to start_date. | [optional] |
-| **cursor** | **string**| Cursor for cursor-based pagination. | [optional] |
+| **uuid** | **string**| UUID of the bank account. (Both providers) | |
+| **per_page** | **int**| Number of records per page. Used as page size for MoneyKit and as first/page size for Quiltt cursor-based pagination. (Both providers) | [optional] |
+| **start_date** | **\DateTime**| Start date filter (Y-m-d format). Must be before or equal to end_date. (Both providers) | [optional] |
+| **end_date** | **\DateTime**| End date filter (Y-m-d format). Must be after or equal to start_date. (Both providers) | [optional] |
+| **page** | **int**| Page number for page-based pagination. (MoneyKit only) | [optional] |
+| **cursor** | **string**| Cursor for cursor-based pagination. (Quiltt only) | [optional] |
 
 ### Return type
 
-[**\TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidHistory200Response**](../Model/GetBankAccountsByUuidHistory200Response.md)
+[**\TheLogicStudio\GrailPay\Model\QuilttProviderResponse**](../Model/QuilttProviderResponse.md)
 
 ### Authorization
 
@@ -346,7 +348,7 @@ try {
 getBankAccountsByUuidOwners($uuid): \TheLogicStudio\GrailPay\Model\GetBankAccountsByUuidOwners200Response
 ```
 
-Get Bank Account Owners ( STABLE )
+Get Bank Account Owners
 
 This endpoint returns the account owners of the bank account.
 
@@ -406,7 +408,7 @@ try {
 postBankAccounts($post_bank_accounts_request): \TheLogicStudio\GrailPay\Model\PostBankAccounts200Response
 ```
 
-Add a bank account to an entity. ( STABLE )
+Add a bank account to an entity.
 
 This endpoint allows for adding a new Bank Account to an entity (person or business) using their entity UUID. You can pass either Plaid information or account and routing information. You should never pass both.
 
@@ -466,7 +468,7 @@ try {
 postBankAccountsValidate($post_bank_accounts_validate_request): \TheLogicStudio\GrailPay\Model\PostBankAccountsValidate200Response
 ```
 
-Validate a bank account's routing and account number. ( STABLE )
+Validate a bank account's routing and account number.
 
 This endpoint allows for validating a Bank Account's routing and account number using GrailPay's Account Intelligence system.
 
@@ -526,7 +528,7 @@ try {
 postPeopleByUuidBankAccounts($uuid, $post_people_by_uuid_bank_accounts_request): \TheLogicStudio\GrailPay\Model\PostPeopleByUuidBankAccounts200Response
 ```
 
-Add a new bank account to a person. ( STABLE )
+Add a new bank account to a person.
 
 This endpoint allows for adding a new Bank Account to the GrailPay ACH API Ecosystem. The only item that is required is the Bank Account object. When including the bank account, you can pass either Plaid information or account and routing information. You should never pass both.
 
@@ -588,7 +590,7 @@ try {
 putBankAccountsByUuidDefault($uuid): \TheLogicStudio\GrailPay\Model\PutBankAccountsByUuidDefault200Response
 ```
 
-Switch the default bank account. ( STABLE )
+Switch the default bank account.
 
 This endpoint sets a bank account as the default bank account for the entity. The bank account must be in a connected state for Quiltt/MoneyKit providers, and the entity must be approved and not scheduled for deletion.
 

@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter_uuid** | **object** |  | [optional]
-**filter_transaction_uuid** | **object** |  | [optional]
-**filter_merchant_uuid** | **object** |  | [optional]
-**filter_payee_uuid** | **object** |  | [optional]
-**filter_status** | **object** |  | [optional]
-**filter_ach_id** | **object** |  | [optional]
-**filter_client_reference_id** | **object** |  | [optional]
-**filter_amount** | **object** |  | [optional]
-**filter_start_date** | **object** |  | [optional]
-**filter_end_date** | **object** |  | [optional]
-**sort** | **object** |  | [optional]
-**per_page** | **object** |  | [optional]
-**page** | **object** |  | [optional]
+**filter_uuid** | **string[]** |  | [optional]
+**filter_transaction_uuid** | **string[]** |  | [optional]
+**filter_merchant_uuid** | **string[]** |  | [optional]
+**filter_payee_uuid** | **string[]** |  | [optional]
+**filter_status** | **string[]** |  | [optional]
+**filter_ach_id** | **string[]** |  | [optional]
+**filter_client_reference_id** | **string[]** |  | [optional]
+**filter_amount** | **string[]** |  | [optional]
+**filter_start_date** | **string[]** |  | [optional]
+**filter_end_date** | **string[]** |  | [optional]
+**sort** | **string[]** |  | [optional]
+**per_page** | **string[]** |  | [optional]
+**page** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

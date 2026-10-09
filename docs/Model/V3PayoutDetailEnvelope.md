@@ -1,0 +1,10 @@
+# # V3PayoutDetailEnvelope
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**payout** | [**\TheLogicStudio\GrailPay\Model\PayoutResource**](PayoutResource.md) |  | [optional]
+**relations** | [**\TheLogicStudio\GrailPay\Model\V3PayoutRelationsObject**](V3PayoutRelationsObject.md) |  | [optional]
+
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

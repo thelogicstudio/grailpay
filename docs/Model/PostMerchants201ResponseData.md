@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **merchant** | [**\TheLogicStudio\GrailPay\Model\V3MerchantResponseObject**](V3MerchantResponseObject.md) |  | [optional]
+**bank_accounts** | [**\TheLogicStudio\GrailPay\Model\V3MaskedBankAccountResponse[]**](V3MaskedBankAccountResponse.md) |  | [optional]
 **beneficial_owners** | [**\TheLogicStudio\GrailPay\Model\V3BeneficialOwnerResponseObject[]**](V3BeneficialOwnerResponseObject.md) |  | [optional]
 **relations** | [**\TheLogicStudio\GrailPay\Model\PostBusinesses201ResponseDataRelations**](PostBusinesses201ResponseDataRelations.md) |  | [optional]
 **account_intelligence** | [**\TheLogicStudio\GrailPay\Model\PostBankAccounts201ResponseDataAccountIntelligence**](PostBankAccounts201ResponseDataAccountIntelligence.md) |  | [optional]

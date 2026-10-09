@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transaction** | [**\TheLogicStudio\GrailPay\Model\GetTransactions200ResponseDataTransactionsInner**](GetTransactions200ResponseDataTransactionsInner.md) |  | [optional]
-**payout** | [**\TheLogicStudio\GrailPay\Model\GetTransactionsByUuid200ResponseDataPayout**](GetTransactionsByUuid200ResponseDataPayout.md) |  | [optional]
+**transaction** | [**\TheLogicStudio\GrailPay\Model\TransactionResource**](TransactionResource.md) |  | [optional]
+**payout** | [**\TheLogicStudio\GrailPay\Model\PayoutResource**](PayoutResource.md) |  | [optional]
 **refunds** | [**\TheLogicStudio\GrailPay\Model\GetTransactionsByUuid200ResponseDataRefundsInner[]**](GetTransactionsByUuid200ResponseDataRefundsInner.md) |  | [optional]
 **clawback** | [**\TheLogicStudio\GrailPay\Model\GetTransactionsByUuid200ResponseDataClawback**](GetTransactionsByUuid200ResponseDataClawback.md) |  | [optional]
 
