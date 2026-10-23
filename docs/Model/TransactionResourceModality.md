@@ -1,4 +1,4 @@
-# # TransactionResourceModality
+# TransactionResourceModality
 
 ## Properties
 

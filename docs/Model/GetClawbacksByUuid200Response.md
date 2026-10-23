@@ -1,4 +1,4 @@
-# # GetClawbacksByUuid200Response
+# GetClawbacksByUuid200Response
 
 ## Properties
 

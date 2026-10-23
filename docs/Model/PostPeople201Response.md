@@ -1,4 +1,4 @@
-# # PostPeople201Response
+# PostPeople201Response
 
 ## Properties
 

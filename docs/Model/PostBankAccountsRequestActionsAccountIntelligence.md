@@ -1,4 +1,4 @@
-# # PostBankAccountsRequestActionsAccountIntelligence
+# PostBankAccountsRequestActionsAccountIntelligence
 
 ## Properties
 

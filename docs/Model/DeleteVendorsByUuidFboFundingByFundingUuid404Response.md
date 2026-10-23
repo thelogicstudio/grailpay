@@ -1,4 +1,4 @@
-# # DeleteVendorsByUuidFboFundingByFundingUuid404Response
+# DeleteVendorsByUuidFboFundingByFundingUuid404Response
 
 ## Properties
 

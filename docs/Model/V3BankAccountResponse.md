@@ -1,4 +1,4 @@
-# # V3BankAccountResponse
+# V3BankAccountResponse
 
 ## Properties
 

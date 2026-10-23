@@ -1,4 +1,4 @@
-# # GetBusinesses200ResponseDataBusinessesInner
+# GetBusinesses200ResponseDataBusinessesInner
 
 ## Properties
 

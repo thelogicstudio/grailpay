@@ -1,4 +1,4 @@
-# # GetBankAccounts200ResponseDataBankAccountsInnerTimestamps
+# GetBankAccounts200ResponseDataBankAccountsInnerTimestamps
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # V3BeneficialOwnerResponseObject
+# V3BeneficialOwnerResponseObject
 
 ## Properties
 

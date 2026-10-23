@@ -1,4 +1,4 @@
-# # PostPeopleByUuidBankAccounts404Response
+# PostPeopleByUuidBankAccounts404Response
 
 ## Properties
 

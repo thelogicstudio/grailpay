@@ -1,4 +1,4 @@
-# # PostTransactionsRequest
+# PostTransactionsRequest
 
 ## Properties
 

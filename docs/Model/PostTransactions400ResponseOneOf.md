@@ -1,4 +1,4 @@
-# # PostTransactions400ResponseOneOf
+# PostTransactions400ResponseOneOf
 
 ## Properties
 

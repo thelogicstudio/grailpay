@@ -1,4 +1,4 @@
-# # V3ReturnResource
+# V3ReturnResource
 
 ## Properties
 

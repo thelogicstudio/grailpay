@@ -1,4 +1,4 @@
-# # GetPeopleByUuid403Response
+# GetPeopleByUuid403Response
 
 ## Properties
 

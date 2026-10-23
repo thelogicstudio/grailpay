@@ -1,4 +1,4 @@
-# # GetTransactionsByUuid200ResponseDataClawbackBankIdentifiers
+# GetTransactionsByUuid200ResponseDataClawbackBankIdentifiers
 
 ## Properties
 

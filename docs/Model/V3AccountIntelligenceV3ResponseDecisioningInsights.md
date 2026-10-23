@@ -1,4 +1,4 @@
-# # V3AccountIntelligenceV3ResponseDecisioningInsights
+# V3AccountIntelligenceV3ResponseDecisioningInsights
 
 ## Properties
 

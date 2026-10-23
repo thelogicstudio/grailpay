@@ -1,4 +1,4 @@
-# # DeleteBankAccountsByUuid200Response
+# DeleteBankAccountsByUuid200Response
 
 ## Properties
 

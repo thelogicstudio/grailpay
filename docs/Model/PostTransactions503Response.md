@@ -1,4 +1,4 @@
-# # PostTransactions503Response
+# PostTransactions503Response
 
 ## Properties
 

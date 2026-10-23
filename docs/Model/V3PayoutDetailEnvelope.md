@@ -1,4 +1,4 @@
-# # V3PayoutDetailEnvelope
+# V3PayoutDetailEnvelope
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetMe200ResponseData
+# GetMe200ResponseData
 
 ## Properties
 

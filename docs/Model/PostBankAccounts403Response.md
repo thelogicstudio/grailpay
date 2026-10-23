@@ -1,4 +1,4 @@
-# # PostBankAccounts403Response
+# PostBankAccounts403Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # ProcessorPayoutResource
+# ProcessorPayoutResource
 
 ## Properties
 

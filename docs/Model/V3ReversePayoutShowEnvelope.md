@@ -1,4 +1,4 @@
-# # V3ReversePayoutShowEnvelope
+# V3ReversePayoutShowEnvelope
 
 ## Properties
 

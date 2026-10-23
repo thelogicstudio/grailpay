@@ -1,4 +1,4 @@
-# # GetBusinessesByUuid200Response
+# GetBusinessesByUuid200Response
 
 ## Properties
 

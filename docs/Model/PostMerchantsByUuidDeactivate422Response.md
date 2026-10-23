@@ -1,4 +1,4 @@
-# # PostMerchantsByUuidDeactivate422Response
+# PostMerchantsByUuidDeactivate422Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # V3PersonValidationError
+# V3PersonValidationError
 
 ## Properties
 

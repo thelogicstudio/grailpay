@@ -1,4 +1,4 @@
-# # GetVendorsByUuidFbo503Response
+# GetVendorsByUuidFbo503Response
 
 ## Properties
 

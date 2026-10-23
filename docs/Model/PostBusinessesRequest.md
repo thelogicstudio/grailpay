@@ -1,4 +1,4 @@
-# # PostBusinessesRequest
+# PostBusinessesRequest
 
 ## Properties
 

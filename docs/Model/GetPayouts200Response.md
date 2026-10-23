@@ -1,4 +1,4 @@
-# # GetPayouts200Response
+# GetPayouts200Response
 
 ## Properties
 

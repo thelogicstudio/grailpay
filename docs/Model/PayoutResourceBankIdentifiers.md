@@ -1,4 +1,4 @@
-# # PayoutResourceBankIdentifiers
+# PayoutResourceBankIdentifiers
 
 ## Properties
 

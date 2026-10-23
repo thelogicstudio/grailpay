@@ -1,4 +1,4 @@
-# # V3AccountIntelligenceRequestObject
+# V3AccountIntelligenceRequestObject
 
 ## Properties
 

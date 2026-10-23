@@ -1,4 +1,4 @@
-# # GetBillingSummary200ResponseData
+# GetBillingSummary200ResponseData
 
 ## Properties
 

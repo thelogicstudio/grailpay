@@ -1,4 +1,4 @@
-# # GetRefundsByUuid404Response
+# GetRefundsByUuid404Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetPeople200ResponseDataPeopleInnerRelations
+# GetPeople200ResponseDataPeopleInnerRelations
 
 ## Properties
 

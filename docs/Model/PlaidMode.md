@@ -1,4 +1,4 @@
-# # PlaidMode
+# PlaidMode
 
 ## Properties
 

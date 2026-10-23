@@ -1,4 +1,4 @@
-# # GetWebhooks422ResponseErrors
+# GetWebhooks422ResponseErrors
 
 ## Properties
 

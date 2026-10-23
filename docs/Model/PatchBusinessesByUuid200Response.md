@@ -1,4 +1,4 @@
-# # PatchBusinessesByUuid200Response
+# PatchBusinessesByUuid200Response
 
 ## Properties
 

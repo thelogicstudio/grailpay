@@ -1,4 +1,4 @@
-# # PostPayoutsStandalone201Response
+# PostPayoutsStandalone201Response
 
 ## Properties
 

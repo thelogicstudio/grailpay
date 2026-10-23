@@ -1,4 +1,4 @@
-# # GetMerchants422Response
+# GetMerchants422Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetTransactionsByUuid200Response
+# GetTransactionsByUuid200Response
 
 ## Properties
 

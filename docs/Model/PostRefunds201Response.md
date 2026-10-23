@@ -1,4 +1,4 @@
-# # PostRefunds201Response
+# PostRefunds201Response
 
 ## Properties
 

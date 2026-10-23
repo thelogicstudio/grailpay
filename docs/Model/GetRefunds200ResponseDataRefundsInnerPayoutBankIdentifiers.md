@@ -1,4 +1,4 @@
-# # GetRefunds200ResponseDataRefundsInnerPayoutBankIdentifiers
+# GetRefunds200ResponseDataRefundsInnerPayoutBankIdentifiers
 
 ## Properties
 

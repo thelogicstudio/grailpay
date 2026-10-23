@@ -1,4 +1,4 @@
-# # GetRefundsByUuid200ResponseDataTransaction
+# GetRefundsByUuid200ResponseDataTransaction
 
 ## Properties
 

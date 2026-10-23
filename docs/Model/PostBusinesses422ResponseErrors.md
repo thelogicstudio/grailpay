@@ -1,4 +1,4 @@
-# # PostBusinesses422ResponseErrors
+# PostBusinesses422ResponseErrors
 
 ## Properties
 

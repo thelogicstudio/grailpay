@@ -1,4 +1,4 @@
-# # PutBankAccountsByUuidDefault200Response
+# PutBankAccountsByUuidDefault200Response
 
 ## Properties
 

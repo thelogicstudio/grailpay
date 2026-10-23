@@ -1,4 +1,4 @@
-# # GetRefunds200ResponseDataRefundsInnerCapture
+# GetRefunds200ResponseDataRefundsInnerCapture
 
 ## Properties
 

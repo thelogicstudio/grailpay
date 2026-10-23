@@ -1,4 +1,4 @@
-# # PostBusinesses201ResponseDataRelationsPerson
+# PostBusinesses201ResponseDataRelationsPerson
 
 ## Properties
 

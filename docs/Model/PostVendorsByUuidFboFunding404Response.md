@@ -1,4 +1,4 @@
-# # PostVendorsByUuidFboFunding404Response
+# PostVendorsByUuidFboFunding404Response
 
 ## Properties
 

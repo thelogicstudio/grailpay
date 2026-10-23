@@ -1,4 +1,4 @@
-# # GetBankAccounts200ResponseDataBankAccountsInner
+# GetBankAccounts200ResponseDataBankAccountsInner
 
 ## Properties
 

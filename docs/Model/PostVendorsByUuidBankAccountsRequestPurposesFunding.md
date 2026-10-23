@@ -1,4 +1,4 @@
-# # PostVendorsByUuidBankAccountsRequestPurposesFunding
+# PostVendorsByUuidBankAccountsRequestPurposesFunding
 
 ## Properties
 

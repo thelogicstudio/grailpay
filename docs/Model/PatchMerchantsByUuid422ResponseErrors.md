@@ -1,4 +1,4 @@
-# # PatchMerchantsByUuid422ResponseErrors
+# PatchMerchantsByUuid422ResponseErrors
 
 ## Properties
 

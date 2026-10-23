@@ -1,4 +1,4 @@
-# # PostRefundsRequest
+# PostRefundsRequest
 
 ## Properties
 

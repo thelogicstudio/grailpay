@@ -1,4 +1,4 @@
-# # PostRefunds201ResponseDataRefundPayout
+# PostRefunds201ResponseDataRefundPayout
 
 ## Properties
 

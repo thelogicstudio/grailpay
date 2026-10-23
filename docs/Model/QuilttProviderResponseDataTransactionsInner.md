@@ -1,4 +1,4 @@
-# # QuilttProviderResponseDataTransactionsInner
+# QuilttProviderResponseDataTransactionsInner
 
 ## Properties
 

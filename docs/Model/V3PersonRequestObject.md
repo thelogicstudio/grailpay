@@ -1,4 +1,4 @@
-# # V3PersonRequestObject
+# V3PersonRequestObject
 
 ## Properties
 

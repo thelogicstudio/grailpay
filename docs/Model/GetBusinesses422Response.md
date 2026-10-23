@@ -1,4 +1,4 @@
-# # GetBusinesses422Response
+# GetBusinesses422Response
 
 ## Properties
 

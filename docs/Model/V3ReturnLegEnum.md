@@ -1,4 +1,4 @@
-# # V3ReturnLegEnum
+# V3ReturnLegEnum
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetTransactions422Response
+# GetTransactions422Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # V3BillingSummaryEventResource
+# V3BillingSummaryEventResource
 
 ## Properties
 

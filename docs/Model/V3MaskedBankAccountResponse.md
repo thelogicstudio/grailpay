@@ -1,4 +1,4 @@
-# # V3MaskedBankAccountResponse
+# V3MaskedBankAccountResponse
 
 ## Properties
 

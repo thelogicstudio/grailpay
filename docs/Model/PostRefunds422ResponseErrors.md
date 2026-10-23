@@ -1,4 +1,4 @@
-# # PostRefunds422ResponseErrors
+# PostRefunds422ResponseErrors
 
 ## Properties
 

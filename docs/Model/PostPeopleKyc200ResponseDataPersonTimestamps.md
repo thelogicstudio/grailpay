@@ -1,4 +1,4 @@
-# # PostPeopleKyc200ResponseDataPersonTimestamps
+# PostPeopleKyc200ResponseDataPersonTimestamps
 
 ## Properties
 

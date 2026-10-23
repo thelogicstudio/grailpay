@@ -1,4 +1,4 @@
-# # ProcessorPayoutResourceBankIdentifiers
+# ProcessorPayoutResourceBankIdentifiers
 
 ## Properties
 

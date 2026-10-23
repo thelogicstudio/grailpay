@@ -1,4 +1,4 @@
-# # GetRefunds422ResponseErrors
+# GetRefunds422ResponseErrors
 
 ## Properties
 

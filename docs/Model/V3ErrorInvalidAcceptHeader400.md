@@ -1,4 +1,4 @@
-# # V3ErrorInvalidAcceptHeader400
+# V3ErrorInvalidAcceptHeader400
 
 ## Properties
 

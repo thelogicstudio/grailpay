@@ -1,4 +1,4 @@
-# # V3BusinessRelationResponseObjectBusiness
+# V3BusinessRelationResponseObjectBusiness
 
 ## Properties
 

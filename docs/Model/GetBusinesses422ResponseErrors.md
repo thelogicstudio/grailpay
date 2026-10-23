@@ -1,4 +1,4 @@
-# # GetBusinesses422ResponseErrors
+# GetBusinesses422ResponseErrors
 
 ## Properties
 

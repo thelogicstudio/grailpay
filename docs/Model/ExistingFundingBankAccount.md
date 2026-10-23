@@ -1,4 +1,4 @@
-# # ExistingFundingBankAccount
+# ExistingFundingBankAccount
 
 ## Properties
 

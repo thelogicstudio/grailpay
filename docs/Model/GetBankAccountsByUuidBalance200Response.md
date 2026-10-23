@@ -1,4 +1,4 @@
-# # GetBankAccountsByUuidBalance200Response
+# GetBankAccountsByUuidBalance200Response
 
 ## Properties
 

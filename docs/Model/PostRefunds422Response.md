@@ -1,4 +1,4 @@
-# # PostRefunds422Response
+# PostRefunds422Response
 
 ## Properties
 

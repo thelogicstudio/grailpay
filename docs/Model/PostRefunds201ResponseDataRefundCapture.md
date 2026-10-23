@@ -1,4 +1,4 @@
-# # PostRefunds201ResponseDataRefundCapture
+# PostRefunds201ResponseDataRefundCapture
 
 ## Properties
 

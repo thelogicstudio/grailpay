@@ -1,4 +1,4 @@
-# # PostMerchants201Response
+# PostMerchants201Response
 
 ## Properties
 

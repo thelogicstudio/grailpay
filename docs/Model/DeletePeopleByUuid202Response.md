@@ -1,4 +1,4 @@
-# # DeletePeopleByUuid202Response
+# DeletePeopleByUuid202Response
 
 ## Properties
 

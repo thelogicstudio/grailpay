@@ -1,4 +1,4 @@
-# # V3AchTimestampsObject
+# V3AchTimestampsObject
 
 ## Properties
 

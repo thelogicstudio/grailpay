@@ -1,4 +1,4 @@
-# # V3ReturnResourceReversePayout
+# V3ReturnResourceReversePayout
 
 ## Properties
 

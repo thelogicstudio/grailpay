@@ -1,4 +1,4 @@
-# # PostTransactionsRequestModalityPayout
+# PostTransactionsRequestModalityPayout
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetReversePayoutsByUuid404Response
+# GetReversePayoutsByUuid404Response
 
 ## Properties
 

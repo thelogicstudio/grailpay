@@ -1,4 +1,4 @@
-# # GetTransactionsByUuid404Response
+# GetTransactionsByUuid404Response
 
 ## Properties
 

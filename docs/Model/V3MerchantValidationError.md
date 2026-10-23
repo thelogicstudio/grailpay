@@ -1,4 +1,4 @@
-# # V3MerchantValidationError
+# V3MerchantValidationError
 
 ## Properties
 

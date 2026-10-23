@@ -1,4 +1,4 @@
-# # GetBankAccountsByUuidOwners403Response
+# GetBankAccountsByUuidOwners403Response
 
 ## Properties
 

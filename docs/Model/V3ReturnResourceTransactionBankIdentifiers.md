@@ -1,4 +1,4 @@
-# # V3ReturnResourceTransactionBankIdentifiers
+# V3ReturnResourceTransactionBankIdentifiers
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetWebhooksByUuid404Response
+# GetWebhooksByUuid404Response
 
 ## Properties
 

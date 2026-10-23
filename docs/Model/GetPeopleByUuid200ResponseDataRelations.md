@@ -1,4 +1,4 @@
-# # GetPeopleByUuid200ResponseDataRelations
+# GetPeopleByUuid200ResponseDataRelations
 
 ## Properties
 

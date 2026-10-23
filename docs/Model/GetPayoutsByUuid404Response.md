@@ -1,4 +1,4 @@
-# # GetPayoutsByUuid404Response
+# GetPayoutsByUuid404Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostPeopleKyc200ResponseDataComplianceStatusKycInner
+# PostPeopleKyc200ResponseDataComplianceStatusKycInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # V3ClawbackObjectPayee
+# V3ClawbackObjectPayee
 
 ## Properties
 

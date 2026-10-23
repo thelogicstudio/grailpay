@@ -1,4 +1,4 @@
-# # TransactionResourceBankIdentifiers
+# TransactionResourceBankIdentifiers
 
 ## Properties
 

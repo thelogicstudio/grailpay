@@ -1,4 +1,4 @@
-# # V3BillableEventName
+# V3BillableEventName
 
 ## Properties
 

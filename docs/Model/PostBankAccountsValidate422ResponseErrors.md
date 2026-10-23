@@ -1,4 +1,4 @@
-# # PostBankAccountsValidate422ResponseErrors
+# PostBankAccountsValidate422ResponseErrors
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # V3VendorBankAccountObjectPurposesFunding
+# V3VendorBankAccountObjectPurposesFunding
 
 ## Properties
 

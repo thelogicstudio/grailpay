@@ -1,4 +1,4 @@
-# # GetReturns422ResponseErrors
+# GetReturns422ResponseErrors
 
 ## Properties
 

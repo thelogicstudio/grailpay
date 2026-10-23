@@ -1,4 +1,4 @@
-# # V3BusinessRequestObject
+# V3BusinessRequestObject
 
 ## Properties
 

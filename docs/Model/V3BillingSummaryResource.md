@@ -1,4 +1,4 @@
-# # V3BillingSummaryResource
+# V3BillingSummaryResource
 
 ## Properties
 

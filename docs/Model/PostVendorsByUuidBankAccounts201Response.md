@@ -1,4 +1,4 @@
-# # PostVendorsByUuidBankAccounts201Response
+# PostVendorsByUuidBankAccounts201Response
 
 ## Properties
 

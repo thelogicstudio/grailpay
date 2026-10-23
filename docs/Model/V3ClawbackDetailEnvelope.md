@@ -1,4 +1,4 @@
-# # V3ClawbackDetailEnvelope
+# V3ClawbackDetailEnvelope
 
 ## Properties
 

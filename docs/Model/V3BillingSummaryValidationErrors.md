@@ -1,4 +1,4 @@
-# # V3BillingSummaryValidationErrors
+# V3BillingSummaryValidationErrors
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # BankAccountRejected
+# BankAccountRejected
 
 ## Properties
 

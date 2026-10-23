@@ -1,4 +1,4 @@
-# # GetBankAccounts200ResponseDataEntity
+# GetBankAccounts200ResponseDataEntity
 
 ## Properties
 

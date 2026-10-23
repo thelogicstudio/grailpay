@@ -1,4 +1,4 @@
-# # V3ReturnPartyObject
+# V3ReturnPartyObject
 
 ## Properties
 

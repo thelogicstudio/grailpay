@@ -1,4 +1,4 @@
-# # GetReversePayouts200Response
+# GetReversePayouts200Response
 
 ## Properties
 

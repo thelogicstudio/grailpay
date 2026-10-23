@@ -1,4 +1,4 @@
-# # PostPeopleKyc200Response
+# PostPeopleKyc200Response
 
 ## Properties
 

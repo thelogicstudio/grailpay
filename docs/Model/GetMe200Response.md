@@ -1,4 +1,4 @@
-# # GetMe200Response
+# GetMe200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # QuilttProviderResponseDataPagination
+# QuilttProviderResponseDataPagination
 
 ## Properties
 

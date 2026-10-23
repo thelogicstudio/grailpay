@@ -1,4 +1,4 @@
-# # V3ReturnResourceReversePayoutBankIdentifiers
+# V3ReturnResourceReversePayoutBankIdentifiers
 
 ## Properties
 

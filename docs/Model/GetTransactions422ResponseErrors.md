@@ -1,4 +1,4 @@
-# # GetTransactions422ResponseErrors
+# GetTransactions422ResponseErrors
 
 ## Properties
 

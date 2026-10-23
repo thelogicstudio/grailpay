@@ -1,4 +1,4 @@
-# # GetVendorsByUuid404Response
+# GetVendorsByUuid404Response
 
 ## Properties
 

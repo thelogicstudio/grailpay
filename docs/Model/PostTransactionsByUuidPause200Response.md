@@ -1,4 +1,4 @@
-# # PostTransactionsByUuidPause200Response
+# PostTransactionsByUuidPause200Response
 
 ## Properties
 

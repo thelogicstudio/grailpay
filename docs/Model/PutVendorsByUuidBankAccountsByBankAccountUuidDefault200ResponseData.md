@@ -1,4 +1,4 @@
-# # PutVendorsByUuidBankAccountsByBankAccountUuidDefault200ResponseData
+# PutVendorsByUuidBankAccountsByBankAccountUuidDefault200ResponseData
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostVendorsByUuidFboFundingRequestSourceAccount
+# PostVendorsByUuidFboFundingRequestSourceAccount
 
 ## Properties
 

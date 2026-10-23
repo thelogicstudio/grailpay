@@ -1,4 +1,4 @@
-# # PostBankAccounts422Response
+# PostBankAccounts422Response
 
 ## Properties
 

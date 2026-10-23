@@ -1,4 +1,4 @@
-# # V3BatchPayoutEnvelope
+# V3BatchPayoutEnvelope
 
 ## Properties
 

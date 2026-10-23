@@ -1,4 +1,4 @@
-# # GetVendorsByUuidBankAccounts200Response
+# GetVendorsByUuidBankAccounts200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # V3RefundAchTimestampsObject
+# V3RefundAchTimestampsObject
 
 ## Properties
 

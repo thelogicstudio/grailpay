@@ -1,4 +1,4 @@
-# # V3ErrorUnauthorized401
+# V3ErrorUnauthorized401
 
 ## Properties
 

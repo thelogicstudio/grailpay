@@ -1,4 +1,4 @@
-# # GetReturns422Response
+# GetReturns422Response
 
 ## Properties
 

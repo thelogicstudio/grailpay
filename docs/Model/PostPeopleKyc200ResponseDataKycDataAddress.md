@@ -1,4 +1,4 @@
-# # PostPeopleKyc200ResponseDataKycDataAddress
+# PostPeopleKyc200ResponseDataKycDataAddress
 
 ## Properties
 

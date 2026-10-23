@@ -1,4 +1,4 @@
-# # PostPayoutsStandalone403Response
+# PostPayoutsStandalone403Response
 
 ## Properties
 

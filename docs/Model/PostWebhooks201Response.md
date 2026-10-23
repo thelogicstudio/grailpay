@@ -1,4 +1,4 @@
-# # PostWebhooks201Response
+# PostWebhooks201Response
 
 ## Properties
 

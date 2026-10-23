@@ -1,4 +1,4 @@
-# # GetClawbacks422ResponseErrors
+# GetClawbacks422ResponseErrors
 
 ## Properties
 

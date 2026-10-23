@@ -1,4 +1,4 @@
-# # PostMerchantsRequest
+# PostMerchantsRequest
 
 ## Properties
 

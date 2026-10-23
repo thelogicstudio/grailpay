@@ -1,4 +1,4 @@
-# # PostMerchants201ResponseData
+# PostMerchants201ResponseData
 
 ## Properties
 

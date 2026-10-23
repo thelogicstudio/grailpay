@@ -1,4 +1,4 @@
-# # GetPayouts422Response
+# GetPayouts422Response
 
 ## Properties
 

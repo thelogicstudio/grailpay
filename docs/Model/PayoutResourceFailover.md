@@ -1,4 +1,4 @@
-# # PayoutResourceFailover
+# PayoutResourceFailover
 
 ## Properties
 

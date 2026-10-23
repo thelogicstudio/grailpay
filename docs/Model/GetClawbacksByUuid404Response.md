@@ -1,4 +1,4 @@
-# # GetClawbacksByUuid404Response
+# GetClawbacksByUuid404Response
 
 ## Properties
 

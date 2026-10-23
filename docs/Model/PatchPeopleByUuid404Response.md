@@ -1,4 +1,4 @@
-# # PatchPeopleByUuid404Response
+# PatchPeopleByUuid404Response
 
 ## Properties
 

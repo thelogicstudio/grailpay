@@ -1,4 +1,4 @@
-# # GetRefunds200ResponseDataRefundsInnerBatch
+# GetRefunds200ResponseDataRefundsInnerBatch
 
 ## Properties
 

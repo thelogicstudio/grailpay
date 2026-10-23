@@ -1,4 +1,4 @@
-# # GetTransactions200ResponseData
+# GetTransactions200ResponseData
 
 ## Properties
 

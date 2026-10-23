@@ -1,4 +1,4 @@
-# # GetMe200ResponseDataEntity
+# GetMe200ResponseDataEntity
 
 ## Properties
 

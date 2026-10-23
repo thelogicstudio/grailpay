@@ -1,4 +1,4 @@
-# # V3BeneficialOwnerValidationError
+# V3BeneficialOwnerValidationError
 
 ## Properties
 

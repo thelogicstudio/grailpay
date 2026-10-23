@@ -1,4 +1,4 @@
-# # GetTransactionsByUuid200ResponseDataClawback
+# GetTransactionsByUuid200ResponseDataClawback
 
 ## Properties
 

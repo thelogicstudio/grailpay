@@ -1,4 +1,4 @@
-# # PostBusinesses201ResponseData
+# PostBusinesses201ResponseData
 
 ## Properties
 

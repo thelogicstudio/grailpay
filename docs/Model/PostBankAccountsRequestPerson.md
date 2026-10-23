@@ -1,4 +1,4 @@
-# # PostBankAccountsRequestPerson
+# PostBankAccountsRequestPerson
 
 ## Properties
 

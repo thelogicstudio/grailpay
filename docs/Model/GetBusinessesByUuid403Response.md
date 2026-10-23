@@ -1,4 +1,4 @@
-# # GetBusinessesByUuid403Response
+# GetBusinessesByUuid403Response
 
 ## Properties
 

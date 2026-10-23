@@ -1,4 +1,4 @@
-# # V3BankAccountValidationError
+# V3BankAccountValidationError
 
 ## Properties
 

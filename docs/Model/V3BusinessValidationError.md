@@ -1,4 +1,4 @@
-# # V3BusinessValidationError
+# V3BusinessValidationError
 
 ## Properties
 

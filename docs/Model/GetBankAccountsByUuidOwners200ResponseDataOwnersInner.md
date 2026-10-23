@@ -1,4 +1,4 @@
-# # GetBankAccountsByUuidOwners200ResponseDataOwnersInner
+# GetBankAccountsByUuidOwners200ResponseDataOwnersInner
 
 ## Properties
 

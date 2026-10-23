@@ -1,4 +1,4 @@
-# # TransactionResource
+# TransactionResource
 
 ## Properties
 

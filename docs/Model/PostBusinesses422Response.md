@@ -1,4 +1,4 @@
-# # PostBusinesses422Response
+# PostBusinesses422Response
 
 ## Properties
 

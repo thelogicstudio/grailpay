@@ -1,4 +1,4 @@
-# # V3BillingSummaryEntityObject
+# V3BillingSummaryEntityObject
 
 ## Properties
 

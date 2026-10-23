@@ -1,4 +1,4 @@
-# # GetReturns200Response
+# GetReturns200Response
 
 ## Properties
 

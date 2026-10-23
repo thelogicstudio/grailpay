@@ -1,4 +1,4 @@
-# # V3VendorBankAccountObject
+# V3VendorBankAccountObject
 
 ## Properties
 

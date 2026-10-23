@@ -1,4 +1,4 @@
-# # V3BeneficialOwnerRequestObject
+# V3BeneficialOwnerRequestObject
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostMerchants422ResponseErrors
+# PostMerchants422ResponseErrors
 
 ## Properties
 

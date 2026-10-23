@@ -1,4 +1,4 @@
-# # V3AddressObject
+# V3AddressObject
 
 ## Properties
 

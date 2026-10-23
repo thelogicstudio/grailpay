@@ -1,4 +1,4 @@
-# # GetPeople422Response
+# GetPeople422Response
 
 ## Properties
 

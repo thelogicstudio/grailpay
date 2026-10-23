@@ -1,4 +1,4 @@
-# # PostWebhooks403Response
+# PostWebhooks403Response
 
 ## Properties
 

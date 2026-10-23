@@ -1,4 +1,4 @@
-# # FundingRejected
+# FundingRejected
 
 ## Properties
 

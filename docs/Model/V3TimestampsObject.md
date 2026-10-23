@@ -1,4 +1,4 @@
-# # V3TimestampsObject
+# V3TimestampsObject
 
 ## Properties
 

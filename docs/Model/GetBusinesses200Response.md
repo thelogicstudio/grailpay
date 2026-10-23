@@ -1,4 +1,4 @@
-# # GetBusinesses200Response
+# GetBusinesses200Response
 
 ## Properties
 

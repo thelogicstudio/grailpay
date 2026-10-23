@@ -1,4 +1,4 @@
-# # V3ClawbackObject
+# V3ClawbackObject
 
 ## Properties
 
@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **amount** | **int** |  | [optional]
 **sec_code** | **string** |  | [optional]
 **clawback_type** | **string** |  | [optional]
-**payor** | [**\TheLogicStudio\GrailPay\Model\V3ReturnPartyObject**](V3ReturnPartyObject.md) |  | [optional]
+**payor** | [**\TheLogicStudio\GrailPay\Model\V3ReturnPartyObject**](V3ReturnPartyObject.md) | The party the clawback debits when clawback_type is refund or reverse_payout. Null for every other clawback type. | [optional]
 **payee** | [**\TheLogicStudio\GrailPay\Model\V3ClawbackObjectPayee**](V3ClawbackObjectPayee.md) |  | [optional]
 **ach_return_code** | **string** |  | [optional]
 **delay_days** | **int** |  | [optional]

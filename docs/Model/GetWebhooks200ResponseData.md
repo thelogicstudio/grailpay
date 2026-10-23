@@ -1,4 +1,4 @@
-# # GetWebhooks200ResponseData
+# GetWebhooks200ResponseData
 
 ## Properties
 

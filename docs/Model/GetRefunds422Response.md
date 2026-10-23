@@ -1,4 +1,4 @@
-# # GetRefunds422Response
+# GetRefunds422Response
 
 ## Properties
 

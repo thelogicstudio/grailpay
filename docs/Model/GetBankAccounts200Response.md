@@ -1,4 +1,4 @@
-# # GetBankAccounts200Response
+# GetBankAccounts200Response
 
 ## Properties
 

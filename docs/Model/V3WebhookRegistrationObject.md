@@ -1,4 +1,4 @@
-# # V3WebhookRegistrationObject
+# V3WebhookRegistrationObject
 
 ## Properties
 

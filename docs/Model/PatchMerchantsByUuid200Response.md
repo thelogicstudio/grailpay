@@ -1,4 +1,4 @@
-# # PatchMerchantsByUuid200Response
+# PatchMerchantsByUuid200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostPeopleKycRequest
+# PostPeopleKycRequest
 
 ## Properties
 

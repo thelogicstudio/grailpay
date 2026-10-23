@@ -1,4 +1,4 @@
-# # GetPayoutsByUuid200Response
+# GetPayoutsByUuid200Response
 
 ## Properties
 

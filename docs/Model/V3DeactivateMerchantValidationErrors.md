@@ -1,4 +1,4 @@
-# # V3DeactivateMerchantValidationErrors
+# V3DeactivateMerchantValidationErrors
 
 ## Properties
 

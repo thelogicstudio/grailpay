@@ -1,4 +1,4 @@
-# # V3ErrorInvalidToken401
+# V3ErrorInvalidToken401
 
 ## Properties
 

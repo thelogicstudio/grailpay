@@ -1,4 +1,4 @@
-# # PostPayoutsStandalone422ResponseErrors
+# PostPayoutsStandalone422ResponseErrors
 
 ## Properties
 

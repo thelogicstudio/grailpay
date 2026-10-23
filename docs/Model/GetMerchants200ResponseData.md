@@ -1,4 +1,4 @@
-# # GetMerchants200ResponseData
+# GetMerchants200ResponseData
 
 ## Properties
 

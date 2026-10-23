@@ -1,4 +1,4 @@
-# # PostWebhooks422ResponseErrors
+# PostWebhooks422ResponseErrors
 
 ## Properties
 

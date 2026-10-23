@@ -1,4 +1,4 @@
-# # PatchBusinessesByUuid404Response
+# PatchBusinessesByUuid404Response
 
 ## Properties
 

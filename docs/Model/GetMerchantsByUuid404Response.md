@@ -1,4 +1,4 @@
-# # GetMerchantsByUuid404Response
+# GetMerchantsByUuid404Response
 
 ## Properties
 

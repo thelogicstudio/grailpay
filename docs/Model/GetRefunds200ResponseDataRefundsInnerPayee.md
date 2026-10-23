@@ -1,4 +1,4 @@
-# # GetRefunds200ResponseDataRefundsInnerPayee
+# GetRefunds200ResponseDataRefundsInnerPayee
 
 ## Properties
 

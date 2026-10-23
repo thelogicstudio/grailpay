@@ -1,4 +1,4 @@
-# # GetVendorsByUuid200ResponseDataFboAccount
+# GetVendorsByUuid200ResponseDataFboAccount
 
 ## Properties
 

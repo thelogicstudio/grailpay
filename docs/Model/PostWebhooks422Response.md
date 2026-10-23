@@ -1,4 +1,4 @@
-# # PostWebhooks422Response
+# PostWebhooks422Response
 
 ## Properties
 

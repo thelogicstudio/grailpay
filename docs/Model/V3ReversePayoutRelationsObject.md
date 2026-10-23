@@ -1,4 +1,4 @@
-# # V3ReversePayoutRelationsObject
+# V3ReversePayoutRelationsObject
 
 ## Properties
 

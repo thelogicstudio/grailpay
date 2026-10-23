@@ -1,4 +1,4 @@
-# # PostTransactions201Response
+# PostTransactions201Response
 
 ## Properties
 

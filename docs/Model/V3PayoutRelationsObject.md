@@ -1,4 +1,4 @@
-# # V3PayoutRelationsObject
+# V3PayoutRelationsObject
 
 ## Properties
 

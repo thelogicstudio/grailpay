@@ -1,4 +1,4 @@
-# # PostMerchantsByUuidActivate200Response
+# PostMerchantsByUuidActivate200Response
 
 ## Properties
 

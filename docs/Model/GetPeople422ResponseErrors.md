@@ -1,4 +1,4 @@
-# # GetPeople422ResponseErrors
+# GetPeople422ResponseErrors
 
 ## Properties
 

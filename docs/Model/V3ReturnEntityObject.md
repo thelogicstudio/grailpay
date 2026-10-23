@@ -1,4 +1,4 @@
-# # V3ReturnEntityObject
+# V3ReturnEntityObject
 
 ## Properties
 

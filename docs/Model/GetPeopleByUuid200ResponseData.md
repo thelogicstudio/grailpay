@@ -1,4 +1,4 @@
-# # GetPeopleByUuid200ResponseData
+# GetPeopleByUuid200ResponseData
 
 ## Properties
 

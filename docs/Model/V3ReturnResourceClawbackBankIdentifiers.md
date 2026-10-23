@@ -1,4 +1,4 @@
-# # V3ReturnResourceClawbackBankIdentifiers
+# V3ReturnResourceClawbackBankIdentifiers
 
 ## Properties
 

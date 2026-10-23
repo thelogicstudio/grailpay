@@ -1,4 +1,4 @@
-# # PostPeopleByUuidBankAccountsRequestActions
+# PostPeopleByUuidBankAccountsRequestActions
 
 ## Properties
 

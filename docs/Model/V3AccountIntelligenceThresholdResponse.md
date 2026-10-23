@@ -1,4 +1,4 @@
-# # V3AccountIntelligenceThresholdResponse
+# V3AccountIntelligenceThresholdResponse
 
 ## Properties
 

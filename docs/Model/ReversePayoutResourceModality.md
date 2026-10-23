@@ -1,4 +1,4 @@
-# # ReversePayoutResourceModality
+# ReversePayoutResourceModality
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetBillingItems422Response
+# GetBillingItems422Response
 
 ## Properties
 

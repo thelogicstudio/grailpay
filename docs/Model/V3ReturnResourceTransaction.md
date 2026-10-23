@@ -1,4 +1,4 @@
-# # V3ReturnResourceTransaction
+# V3ReturnResourceTransaction
 
 ## Properties
 

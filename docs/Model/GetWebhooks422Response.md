@@ -1,4 +1,4 @@
-# # GetWebhooks422Response
+# GetWebhooks422Response
 
 ## Properties
 

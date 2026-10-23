@@ -1,4 +1,4 @@
-# # GetTransactionsByUuid200ResponseDataRefundsInnerPayout
+# GetTransactionsByUuid200ResponseDataRefundsInnerPayout
 
 ## Properties
 

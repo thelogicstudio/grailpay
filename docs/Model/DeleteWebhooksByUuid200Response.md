@@ -1,4 +1,4 @@
-# # DeleteWebhooksByUuid200Response
+# DeleteWebhooksByUuid200Response
 
 ## Properties
 

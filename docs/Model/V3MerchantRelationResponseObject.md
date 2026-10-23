@@ -1,4 +1,4 @@
-# # V3MerchantRelationResponseObject
+# V3MerchantRelationResponseObject
 
 ## Properties
 

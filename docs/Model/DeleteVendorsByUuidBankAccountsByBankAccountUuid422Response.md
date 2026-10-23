@@ -1,4 +1,4 @@
-# # DeleteVendorsByUuidBankAccountsByBankAccountUuid422Response
+# DeleteVendorsByUuidBankAccountsByBankAccountUuid422Response
 
 ## Properties
 

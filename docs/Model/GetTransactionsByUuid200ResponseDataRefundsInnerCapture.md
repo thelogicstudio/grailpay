@@ -1,4 +1,4 @@
-# # GetTransactionsByUuid200ResponseDataRefundsInnerCapture
+# GetTransactionsByUuid200ResponseDataRefundsInnerCapture
 
 ## Properties
 

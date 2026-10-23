@@ -1,4 +1,4 @@
-# # V3AccountIntelligenceV3Response
+# V3AccountIntelligenceV3Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostMerchantsByUuidDeactivateRequest
+# PostMerchantsByUuidDeactivateRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # GetRefunds200ResponseData
+# GetRefunds200ResponseData
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostTransactions422Response
+# PostTransactions422Response
 
 ## Properties
 

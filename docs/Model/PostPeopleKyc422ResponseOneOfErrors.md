@@ -1,4 +1,4 @@
-# # PostPeopleKyc422ResponseOneOfErrors
+# PostPeopleKyc422ResponseOneOfErrors
 
 ## Properties
 

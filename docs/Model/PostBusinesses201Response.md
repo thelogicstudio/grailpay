@@ -1,4 +1,4 @@
-# # PostBusinesses201Response
+# PostBusinesses201Response
 
 ## Properties
 

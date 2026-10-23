@@ -1,4 +1,4 @@
-# # GetBankAccounts401Response
+# GetBankAccounts401Response
 
 ## Properties
 

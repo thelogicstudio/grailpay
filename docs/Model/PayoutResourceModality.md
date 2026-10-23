@@ -1,4 +1,4 @@
-# # PayoutResourceModality
+# PayoutResourceModality
 
 ## Properties
 

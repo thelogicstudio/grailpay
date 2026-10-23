@@ -1,4 +1,4 @@
-# # V3ClawbackRelationsObject
+# V3ClawbackRelationsObject
 
 ## Properties
 

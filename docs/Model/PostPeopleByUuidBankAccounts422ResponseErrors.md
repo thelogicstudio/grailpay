@@ -1,4 +1,4 @@
-# # PostPeopleByUuidBankAccounts422ResponseErrors
+# PostPeopleByUuidBankAccounts422ResponseErrors
 
 ## Properties
 

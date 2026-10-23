@@ -1,4 +1,4 @@
-# # V3PersonRelationResponseObject
+# V3PersonRelationResponseObject
 
 ## Properties
 

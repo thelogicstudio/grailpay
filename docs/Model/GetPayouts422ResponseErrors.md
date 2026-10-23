@@ -1,4 +1,4 @@
-# # GetPayouts422ResponseErrors
+# GetPayouts422ResponseErrors
 
 ## Properties
 

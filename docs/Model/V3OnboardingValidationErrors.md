@@ -1,4 +1,4 @@
-# # V3OnboardingValidationErrors
+# V3OnboardingValidationErrors
 
 ## Properties
 

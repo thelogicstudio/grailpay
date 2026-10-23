@@ -1,4 +1,4 @@
-# # PostBankAccounts201ResponseDataAccountIntelligence
+# PostBankAccounts201ResponseDataAccountIntelligence
 
 ## Properties
 

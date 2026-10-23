@@ -1,4 +1,4 @@
-# # V3ReturnResourceClawback
+# V3ReturnResourceClawback
 
 ## Properties
 

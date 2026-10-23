@@ -1,4 +1,4 @@
-# # QuilttProviderResponseData
+# QuilttProviderResponseData
 
 ## Properties
 

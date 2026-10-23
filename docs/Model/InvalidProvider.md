@@ -1,4 +1,4 @@
-# # InvalidProvider
+# InvalidProvider
 
 ## Properties
 

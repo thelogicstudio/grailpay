@@ -1,4 +1,4 @@
-# # GetClawbacks200ResponseData
+# GetClawbacks200ResponseData
 
 ## Properties
 

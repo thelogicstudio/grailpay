@@ -1,4 +1,4 @@
-# # PostBankAccountsValidate200ResponseData
+# PostBankAccountsValidate200ResponseData
 
 ## Properties
 

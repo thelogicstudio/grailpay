@@ -1,4 +1,4 @@
-# # GetMerchants422ResponseErrors
+# GetMerchants422ResponseErrors
 
 ## Properties
 

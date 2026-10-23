@@ -1,4 +1,4 @@
-# # PatchPeopleByUuid200Response
+# PatchPeopleByUuid200Response
 
 ## Properties
 

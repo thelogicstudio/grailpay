@@ -1,4 +1,4 @@
-# # PayoutResourcePayee
+# PayoutResourcePayee
 
 ## Properties
 

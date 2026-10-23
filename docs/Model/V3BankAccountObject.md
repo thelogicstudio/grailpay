@@ -1,4 +1,4 @@
-# # V3BankAccountObject
+# V3BankAccountObject
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # PostTransactions422ResponseErrors
+# PostTransactions422ResponseErrors
 
 ## Properties
 

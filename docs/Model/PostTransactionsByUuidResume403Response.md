@@ -1,4 +1,4 @@
-# # PostTransactionsByUuidResume403Response
+# PostTransactionsByUuidResume403Response
 
 ## Properties
 

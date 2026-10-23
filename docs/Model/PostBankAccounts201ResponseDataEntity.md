@@ -1,4 +1,4 @@
-# # PostBankAccounts201ResponseDataEntity
+# PostBankAccounts201ResponseDataEntity
 
 ## Properties
 

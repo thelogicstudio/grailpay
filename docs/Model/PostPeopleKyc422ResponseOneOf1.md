@@ -1,4 +1,4 @@
-# # PostPeopleKyc422ResponseOneOf1
+# PostPeopleKyc422ResponseOneOf1
 
 ## Properties
 

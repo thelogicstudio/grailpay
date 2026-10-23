@@ -1,4 +1,4 @@
-# # PostMerchants422Response
+# PostMerchants422Response
 
 ## Properties
 

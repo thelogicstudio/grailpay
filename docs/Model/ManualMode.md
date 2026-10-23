@@ -1,4 +1,4 @@
-# # ManualMode
+# ManualMode
 
 ## Properties
 
